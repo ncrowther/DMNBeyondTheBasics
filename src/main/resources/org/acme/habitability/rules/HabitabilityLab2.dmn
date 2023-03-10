@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/HabitabilityLab2" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://www.drools.org/kie-dmn/Breathabililty" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="HabitabilityLab2" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/HabitabilityLab2">
   <dmn:extensionElements/>
-  <dmn:import id="_B7E9B30C-9D0A-4BFC-8D8E-EFAE99FB8645" name="DS1" namespace="https://www.drools.org/kie-dmn/Breathabililty" locationURI="Breathability.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import id="_5A010D61-F881-429E-90AF-CDED2ECA00A7" name="DS1" namespace="https://www.drools.org/kie-dmn/Breathabililty" locationURI="Breathability.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:decision id="_DF5B382E-CD52-4296-8A93-5EAC0EF4DA34" name="Habitability">
     <dmn:extensionElements/>
     <dmn:variable id="_8EB1A023-F3B5-4572-AE7B-FC12B3B59242" name="Habitability" typeRef="string"/>
@@ -82,9 +82,9 @@
       </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
-  <dmn:inputData id="_058E2D12-39AD-4DF1-BDD2-B8C122DFCE4C" name="o2">
+  <dmn:inputData id="_058E2D12-39AD-4DF1-BDD2-B8C122DFCE4C" name="oxygen">
     <dmn:extensionElements/>
-    <dmn:variable id="_8632A7DE-A949-4CE8-B2B7-22D591EF9A8B" name="o2" typeRef="number"/>
+    <dmn:variable id="_8632A7DE-A949-4CE8-B2B7-22D591EF9A8B" name="oxygen" typeRef="number"/>
   </dmn:inputData>
   <dmn:inputData id="_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE" name="pressure">
     <dmn:extensionElements/>
@@ -152,14 +152,23 @@
     <dmn:informationRequirement id="_67DFE25C-B79C-404F-965F-0C6A0C85579C">
       <dmn:requiredInput href="#_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE"/>
     </dmn:informationRequirement>
-    <dmn:knowledgeRequirement id="_6283AD4D-8533-4533-8BDD-34E5487C0C5A">
+    <dmn:informationRequirement id="_A63CF3AA-EE62-4E3C-818E-F089528F2620">
+      <dmn:requiredInput href="#_11BF3CDD-5799-4137-A1E0-27A37FF1D500"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_8DB7F729-0226-4439-AA26-5A1E3AFE26B5">
+      <dmn:requiredInput href="#_91CA2E9D-DA22-435A-8A70-C3B515C7979F"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_4FDFD59E-3E6E-4840-82B9-80D3CE02EFEB">
+      <dmn:requiredInput href="#_34426E4F-0A39-4C88-8B70-9CD911C68CB3"/>
+    </dmn:informationRequirement>
+    <dmn:knowledgeRequirement id="_D10BCA64-34BF-44C1-9362-E8C7DC01B776">
       <dmn:requiredKnowledge href="https://www.drools.org/kie-dmn/Breathabililty#_BF054A6C-11AD-43CD-B885-C0E26BE53BEF"/>
     </dmn:knowledgeRequirement>
     <dmn:context id="_8E58445E-9AEA-467A-8F4A-C1F8B2BA79A8">
       <dmn:contextEntry>
         <dmn:variable id="_950BDD2A-CDC7-4C3D-B512-C190212AC564" name="Breathability" typeRef="string"/>
         <dmn:literalExpression id="_51626557-339B-4EFB-8D99-C40C954FF6E8">
-          <dmn:text>DS1.BreathabiltyDS(o2, pressure)</dmn:text>
+          <dmn:text>DS1.BreathabiltyDS(pressure, carbonDioxide, carbonMonoxide, methane, oxygen)</dmn:text>
         </dmn:literalExpression>
       </dmn:contextEntry>
       <dmn:contextEntry>
@@ -169,6 +178,18 @@
       </dmn:contextEntry>
     </dmn:context>
   </dmn:decision>
+  <dmn:inputData id="_11BF3CDD-5799-4137-A1E0-27A37FF1D500" name="carbonDioxide">
+    <dmn:extensionElements/>
+    <dmn:variable id="_09809DB6-434C-4407-8227-6053D9CC912A" name="carbonDioxide" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:inputData id="_91CA2E9D-DA22-435A-8A70-C3B515C7979F" name="carbonMonoxide">
+    <dmn:extensionElements/>
+    <dmn:variable id="_78821D08-DDA6-4D5B-9E7D-5B937BDFC5C9" name="carbonMonoxide" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:inputData id="_34426E4F-0A39-4C88-8B70-9CD911C68CB3" name="methane">
+    <dmn:extensionElements/>
+    <dmn:variable id="_EE3487E4-491C-4B3D-BE9B-751F7F79AF6F" name="methane" typeRef="number"/>
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_29F4A98A-07F6-46C3-BB7E-007BB02F7B94" name="DRG">
       <di:extension>
@@ -189,13 +210,13 @@
           <kie:ComponentWidths dmnElementRef="_8E58445E-9AEA-467A-8F4A-C1F8B2BA79A8">
             <kie:width>50</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>401</kie:width>
+            <kie:width>656</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_51626557-339B-4EFB-8D99-C40C954FF6E8">
-            <kie:width>401</kie:width>
+            <kie:width>656</kie:width>
           </kie:ComponentWidths>
           <kie:ComponentWidths dmnElementRef="_1475C5E5-7018-4193-B43C-E0EBAC5E65FC">
-            <kie:width>401</kie:width>
+            <kie:width>656</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -205,11 +226,11 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="117" y="4" width="135" height="150"/>
+        <dc:Bounds x="124" y="12" width="144" height="169"/>
         <dmndi:DMNLabel/>
         <dmndi:DMNDecisionServiceDividerLine>
-          <di:waypoint x="117" y="104"/>
-          <di:waypoint x="252" y="104"/>
+          <di:waypoint x="124" y="112"/>
+          <di:waypoint x="268" y="112"/>
         </dmndi:DMNDecisionServiceDividerLine>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_DF5B382E-CD52-4296-8A93-5EAC0EF4DA34" dmnElementRef="_DF5B382E-CD52-4296-8A93-5EAC0EF4DA34" isCollapsed="false">
@@ -227,7 +248,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="134.5981308411215" y="528.3421052631579" width="100" height="50"/>
+        <dc:Bounds x="85.5981308411215" y="517.3421052631579" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE" dmnElementRef="_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE" isCollapsed="false">
@@ -236,7 +257,7 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="417.29906542056074" y="535.3421052631579" width="100" height="50"/>
+        <dc:Bounds x="529.2990654205607" y="526.3421052631579" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNShape id="dmnshape-drg-_9C35A5F8-CBFE-4388-B75D-12D6596CF45E" dmnElementRef="_9C35A5F8-CBFE-4388-B75D-12D6596CF45E" isCollapsed="false">
@@ -263,11 +284,38 @@
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
           <dmndi:FontColor red="0" green="0" blue="0"/>
         </dmndi:DMNStyle>
-        <dc:Bounds x="319" y="221" width="100" height="50"/>
+        <dc:Bounds x="319" y="225" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_11BF3CDD-5799-4137-A1E0-27A37FF1D500" dmnElementRef="_11BF3CDD-5799-4137-A1E0-27A37FF1D500" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="151" y="664" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_91CA2E9D-DA22-435A-8A70-C3B515C7979F" dmnElementRef="_91CA2E9D-DA22-435A-8A70-C3B515C7979F" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="302.73598130841117" y="664" width="109" height="53"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_34426E4F-0A39-4C88-8B70-9CD911C68CB3" dmnElementRef="_34426E4F-0A39-4C88-8B70-9CD911C68CB3" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="455" y="664" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="dmnedge-drg-_0D20E62C-A87D-47B1-ABC1-730476396968-AUTO-SOURCE" dmnElementRef="_0D20E62C-A87D-47B1-ABC1-730476396968">
-        <di:waypoint x="369" y="221"/>
+        <di:waypoint x="369" y="225"/>
         <di:waypoint x="567" y="54"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_F95E162C-98EC-48EF-A214-76213037CD51" dmnElementRef="_F95E162C-98EC-48EF-A214-76213037CD51">
@@ -279,16 +327,28 @@
         <di:waypoint x="836" y="284"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_9B33D050-C551-47FB-A531-D67587242DC7" dmnElementRef="_9B33D050-C551-47FB-A531-D67587242DC7">
-        <di:waypoint x="184.5981308411215" y="553.3421052631579"/>
-        <di:waypoint x="369" y="271"/>
+        <di:waypoint x="135.5981308411215" y="542.3421052631579"/>
+        <di:waypoint x="369" y="275"/>
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="dmnedge-drg-_67DFE25C-B79C-404F-965F-0C6A0C85579C" dmnElementRef="_67DFE25C-B79C-404F-965F-0C6A0C85579C">
-        <di:waypoint x="467.29906542056074" y="560.3421052631579"/>
-        <di:waypoint x="369" y="271"/>
+        <di:waypoint x="579.2990654205607" y="551.3421052631579"/>
+        <di:waypoint x="369" y="275"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_6283AD4D-8533-4533-8BDD-34E5487C0C5A" dmnElementRef="_6283AD4D-8533-4533-8BDD-34E5487C0C5A">
-        <di:waypoint x="184.5" y="79"/>
-        <di:waypoint x="319" y="246"/>
+      <dmndi:DMNEdge id="dmnedge-drg-_A63CF3AA-EE62-4E3C-818E-F089528F2620" dmnElementRef="_A63CF3AA-EE62-4E3C-818E-F089528F2620">
+        <di:waypoint x="201" y="689"/>
+        <di:waypoint x="369" y="275"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_8DB7F729-0226-4439-AA26-5A1E3AFE26B5" dmnElementRef="_8DB7F729-0226-4439-AA26-5A1E3AFE26B5">
+        <di:waypoint x="357.23598130841117" y="690.5"/>
+        <di:waypoint x="369" y="275"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_4FDFD59E-3E6E-4840-82B9-80D3CE02EFEB" dmnElementRef="_4FDFD59E-3E6E-4840-82B9-80D3CE02EFEB">
+        <di:waypoint x="505" y="689"/>
+        <di:waypoint x="369" y="275"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_D10BCA64-34BF-44C1-9362-E8C7DC01B776" dmnElementRef="_D10BCA64-34BF-44C1-9362-E8C7DC01B776">
+        <di:waypoint x="196" y="96.5"/>
+        <di:waypoint x="319" y="250"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>

@@ -150,7 +150,7 @@
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape xmlns:p0="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnshape-drg-_9C3EEE42-B121-428E-BC71-AC0C304694E2" dmnElementRef="p0:_9C3EEE42-B121-428E-BC71-AC0C304694E2" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_9C3EEE42-B121-428E-BC71-AC0C304694E2" dmnElementRef="_9C3EEE42-B121-428E-BC71-AC0C304694E2" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -159,7 +159,7 @@
         <dc:Bounds x="141" y="354" width="113" height="53"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape xmlns:p1="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnshape-drg-_58CC9810-DA41-4BD4-A4D8-C1344B9565B6" dmnElementRef="p1:_58CC9810-DA41-4BD4-A4D8-C1344B9565B6" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_58CC9810-DA41-4BD4-A4D8-C1344B9565B6" dmnElementRef="_58CC9810-DA41-4BD4-A4D8-C1344B9565B6" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -168,7 +168,7 @@
         <dc:Bounds x="350.18691588785055" y="357" width="116" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape xmlns:p2="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnshape-drg-_BEF9F8EB-5CA4-4178-846B-E8EBAB241987" dmnElementRef="p2:_BEF9F8EB-5CA4-4178-846B-E8EBAB241987" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_BEF9F8EB-5CA4-4178-846B-E8EBAB241987" dmnElementRef="_BEF9F8EB-5CA4-4178-846B-E8EBAB241987" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -177,7 +177,7 @@
         <dc:Bounds x="552.2990654205607" y="365" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape xmlns:p3="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnshape-drg-_73034967-A97F-46FE-9567-2314822620A6" dmnElementRef="p3:_73034967-A97F-46FE-9567-2314822620A6" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_73034967-A97F-46FE-9567-2314822620A6" dmnElementRef="_73034967-A97F-46FE-9567-2314822620A6" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -186,7 +186,7 @@
         <dc:Bounds x="728" y="365" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape xmlns:p4="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnshape-drg-_124ABFB2-0502-47AF-AE9B-1FCACF345D3D" dmnElementRef="p4:_124ABFB2-0502-47AF-AE9B-1FCACF345D3D" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_124ABFB2-0502-47AF-AE9B-1FCACF345D3D" dmnElementRef="_124ABFB2-0502-47AF-AE9B-1FCACF345D3D" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -195,7 +195,7 @@
         <dc:Bounds x="903" y="362" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape xmlns:p5="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnshape-drg-_6C3276A0-0B01-4AC3-9CD0-181093232764" dmnElementRef="p5:_6C3276A0-0B01-4AC3-9CD0-181093232764" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_6C3276A0-0B01-4AC3-9CD0-181093232764" dmnElementRef="_6C3276A0-0B01-4AC3-9CD0-181093232764" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -204,7 +204,7 @@
         <dc:Bounds x="1089" y="362" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape xmlns:p6="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnshape-drg-_50673309-AA07-4CCC-8DAF-622F4F1377DA" dmnElementRef="p6:_50673309-AA07-4CCC-8DAF-622F4F1377DA" isCollapsed="false">
+      <dmndi:DMNShape id="dmnshape-drg-_50673309-AA07-4CCC-8DAF-622F4F1377DA" dmnElementRef="_50673309-AA07-4CCC-8DAF-622F4F1377DA" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -213,27 +213,27 @@
         <dc:Bounds x="585" y="80" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNEdge xmlns:p7="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnedge-drg-_A0689999-25BE-4439-8D6A-26BE45845772" dmnElementRef="p7:_A0689999-25BE-4439-8D6A-26BE45845772">
+      <dmndi:DMNEdge id="dmnedge-drg-_A0689999-25BE-4439-8D6A-26BE45845772" dmnElementRef="_A0689999-25BE-4439-8D6A-26BE45845772">
         <di:waypoint x="408.18691588785055" y="382"/>
         <di:waypoint x="635" y="130"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge xmlns:p8="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnedge-drg-_326830D1-A718-496A-B148-9CF6ACB35E14-AUTO-TARGET" dmnElementRef="p8:_326830D1-A718-496A-B148-9CF6ACB35E14">
+      <dmndi:DMNEdge id="dmnedge-drg-_326830D1-A718-496A-B148-9CF6ACB35E14-AUTO-TARGET" dmnElementRef="_326830D1-A718-496A-B148-9CF6ACB35E14">
         <di:waypoint x="1139" y="387"/>
         <di:waypoint x="635" y="130"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge xmlns:p9="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnedge-drg-_1D15CDCC-3FED-44CE-A81E-03859E642908" dmnElementRef="p9:_1D15CDCC-3FED-44CE-A81E-03859E642908">
+      <dmndi:DMNEdge id="dmnedge-drg-_1D15CDCC-3FED-44CE-A81E-03859E642908" dmnElementRef="_1D15CDCC-3FED-44CE-A81E-03859E642908">
         <di:waypoint x="953" y="387"/>
         <di:waypoint x="635" y="130"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge xmlns:p10="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnedge-drg-_1B577A69-8BAE-47BE-A150-1F31FEC260D0" dmnElementRef="p10:_1B577A69-8BAE-47BE-A150-1F31FEC260D0">
+      <dmndi:DMNEdge id="dmnedge-drg-_1B577A69-8BAE-47BE-A150-1F31FEC260D0" dmnElementRef="_1B577A69-8BAE-47BE-A150-1F31FEC260D0">
         <di:waypoint x="778" y="390"/>
         <di:waypoint x="635" y="130"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge xmlns:p11="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnedge-drg-_7EB80D79-C94F-41BF-B6E1-B0555F932D03-AUTO-TARGET" dmnElementRef="p11:_7EB80D79-C94F-41BF-B6E1-B0555F932D03">
+      <dmndi:DMNEdge id="dmnedge-drg-_7EB80D79-C94F-41BF-B6E1-B0555F932D03-AUTO-TARGET" dmnElementRef="_7EB80D79-C94F-41BF-B6E1-B0555F932D03">
         <di:waypoint x="602.2990654205607" y="390"/>
         <di:waypoint x="635" y="130"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge xmlns:p12="https://kiegroup.org/dmn/_3A171390-9E52-4C44-8B71-4C3997A81CED" id="dmnedge-drg-_2A74F893-CFE3-4243-B31B-807DD8F69C1D" dmnElementRef="p12:_2A74F893-CFE3-4243-B31B-807DD8F69C1D">
+      <dmndi:DMNEdge id="dmnedge-drg-_2A74F893-CFE3-4243-B31B-807DD8F69C1D" dmnElementRef="_2A74F893-CFE3-4243-B31B-807DD8F69C1D">
         <di:waypoint x="197.5" y="380.5"/>
         <di:waypoint x="635" y="130"/>
       </dmndi:DMNEdge>

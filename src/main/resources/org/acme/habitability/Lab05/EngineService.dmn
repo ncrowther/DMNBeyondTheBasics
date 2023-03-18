@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_D046A959-BDDB-4ABC-AACC-0ADD6368ACC7" name="EngineService" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_05101EDA-08C3-42DB-967F-482E22235227" name="Insert a name" isCollection="false">
+    <dmn:typeRef>Any</dmn:typeRef>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_10047F36-F929-4850-97BC-26837707C21C" name="AirConditioner" isCollection="false">
+    <dmn:itemComponent id="_3D56F931-310E-40FD-A400-2C4EEFB1AC2A" name="airLevel" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_FC531598-F479-4E09-850D-FEC5CAF921CC" name="Engine" isCollection="false">
+    <dmn:itemComponent id="_5B53D8CF-6E09-4394-8387-D830CA35E88C" name="oilLevel" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_96217A7F-BE0A-4603-A23A-44069401D982" name="co2Emission" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_49A52BFD-4173-4741-8AF6-85CD38D56E92" name="Tyres" isCollection="false">
+    <dmn:itemComponent id="_AC42A2EC-B9AF-4497-AD9C-07D20F5E8DA1" name="rearOffSide" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_9F29653B-70CA-48F3-BEDA-55AC444D62D9" name="rearNearSide" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_A2794675-14DC-4F09-8396-523736E5D9AD" name="frontOffSide" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_BD28D654-7353-461C-B1AE-9978F6C131DC" name="frontNearSide" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_1868BC02-9DFE-4020-8B82-2C3D7926143E" name="Car" isCollection="false">
+    <dmn:itemComponent id="_8EFDC798-73C4-4106-B21E-ECC82757BA60" name="tyres" isCollection="false">
+      <dmn:typeRef>Tyres</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_D0FDF965-94CB-456E-B9AC-F3C344BC9AD8" name="engine" isCollection="false">
+      <dmn:typeRef>Engine</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_66B599F4-5A52-43D4-B8B2-37BB6A756077" name="airCon" isCollection="false">
+      <dmn:typeRef>AirConditioner</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:decisionService id="_3FA57B7C-CCC8-45E4-A24D-3A080513FAB1" name="EngineService">
+    <dmn:extensionElements/>
+    <dmn:variable id="_35D440C0-76AD-4A90-8D82-5E0DBCAD8AE8" name="EngineService"/>
+    <dmn:outputDecision href="#_BD6875D4-6683-4E96-86EA-5E0C7DD9C09C"/>
+    <dmn:inputData href="#_D0DDA0A2-D8FF-4ACD-8879-9B83C036EC77"/>
+  </dmn:decisionService>
+  <dmn:inputData id="_D0DDA0A2-D8FF-4ACD-8879-9B83C036EC77" name="Car">
+    <dmn:extensionElements/>
+    <dmn:variable id="_E715C5FC-5208-41E0-9A4A-AC9B6EB30F05" name="Car" typeRef="Car"/>
+  </dmn:inputData>
+  <dmn:decision id="_BD6875D4-6683-4E96-86EA-5E0C7DD9C09C" name="ServiceTask">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A1AEEF6B-5D2E-49C4-98CD-8D2E1CB0FFCC" name="ServiceTask" typeRef="string"/>
+    <dmn:informationRequirement id="_57C8F4C5-2F22-4BEC-8C7B-718ACBF2711F">
+      <dmn:requiredInput href="#_D0DDA0A2-D8FF-4ACD-8879-9B83C036EC77"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_08EF0955-1C03-4B63-9DE9-7CD2CBDD208D" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_1813795E-3BA9-4B86-A1E5-8E03649AA098">
+        <dmn:inputExpression id="_6C91E58C-833B-42F1-8CF6-C20AC4A4ED9E" typeRef="Car">
+          <dmn:text>Car.engine.oilLevel</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_0EF63A9A-4CC5-46E2-822F-3581108B5DF3"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_0B9FF133-A576-49BC-9105-ED4931F45274">
+        <dmn:inputEntry id="_A63D809D-0701-4E1A-9DE2-C22F68CCC330">
+          <dmn:text>&lt;=50</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_3F70D903-DC5B-48B5-BE38-5E2715A7D751">
+          <dmn:text>"Change Oil"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_8FD8AD97-5F61-4395-8F16-AAFADB6A58BB">
+        <dmn:inputEntry id="_968A85C3-277B-47BA-91DF-EC3675E950D6">
+          <dmn:text>&gt;50</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_0F585925-8B7C-4DE4-80C0-F65E7885BE8B">
+          <dmn:text>"Top-up Oil"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_6EAF70FF-B043-4EFA-BC21-BF6AD228E249">
+        <dmn:inputEntry id="_F5E9BF88-CFA0-4DCB-95EA-359F0A30543B">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_ABD92E85-AC44-4674-AE93-0968A6E6245B">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_958F020E-68FA-4D5B-AE16-75C6BF4AE49B" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_08EF0955-1C03-4B63-9DE9-7CD2CBDD208D">
+            <kie:width>50</kie:width>
+            <kie:width>186</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_3FA57B7C-CCC8-45E4-A24D-3A080513FAB1" dmnElementRef="_3FA57B7C-CCC8-45E4-A24D-3A080513FAB1" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="181" y="129" width="200" height="200"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="181" y="229"/>
+          <di:waypoint x="381" y="229"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_D0DDA0A2-D8FF-4ACD-8879-9B83C036EC77" dmnElementRef="_D0DDA0A2-D8FF-4ACD-8879-9B83C036EC77" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="230" y="386" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_BD6875D4-6683-4E96-86EA-5E0C7DD9C09C" dmnElementRef="_BD6875D4-6683-4E96-86EA-5E0C7DD9C09C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="231" y="167" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_57C8F4C5-2F22-4BEC-8C7B-718ACBF2711F" dmnElementRef="_57C8F4C5-2F22-4BEC-8C7B-718ACBF2711F">
+        <di:waypoint x="280" y="411"/>
+        <di:waypoint x="281" y="217"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

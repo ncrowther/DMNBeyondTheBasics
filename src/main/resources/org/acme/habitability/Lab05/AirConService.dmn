@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_E95C360D-27A6-4925-9A04-7DA860B448D3" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985" id="_4B7DA173-B294-4BB9-BB40-D9253CE40BED" name="AirConService" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_E95C360D-27A6-4925-9A04-7DA860B448D3">
+  <dmn:extensionElements/>
+  <dmn:import id="_5CEF42D0-5DB8-48F4-B603-CDACB35A8E90" name="DS1" namespace="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985" locationURI="EngineService.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:decisionService id="_4BD55004-DAC6-4A5C-80ED-953BDF645306" name="AirConService">
+    <dmn:extensionElements/>
+    <dmn:variable id="_41E7621B-8960-4582-A3D3-F9D7D4CAF4A9" name="AirConService"/>
+    <dmn:outputDecision href="#_088EF050-780E-4495-89AC-18B7A4B9549B"/>
+    <dmn:inputData href="#_0BCF7186-6645-4F7F-8601-20C1CBA8470C"/>
+  </dmn:decisionService>
+  <dmn:inputData id="_0BCF7186-6645-4F7F-8601-20C1CBA8470C" name="Car">
+    <dmn:extensionElements/>
+    <dmn:variable id="_194F5263-1681-4C0E-AF5A-CBD701E299C3" name="Car" typeRef="DS1.Car"/>
+  </dmn:inputData>
+  <dmn:decision id="_088EF050-780E-4495-89AC-18B7A4B9549B" name="ServiceTask">
+    <dmn:extensionElements/>
+    <dmn:variable id="_661A3EE2-DF71-4B0D-8B51-AC4C96EC37DE" name="ServiceTask" typeRef="string"/>
+    <dmn:informationRequirement id="_C7A2D761-B132-40CA-A638-E9F506F6EA65">
+      <dmn:requiredInput href="#_0BCF7186-6645-4F7F-8601-20C1CBA8470C"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_F3927B41-0CBB-4C39-936A-6AA7EF2AC65B" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_424282B7-2F09-463D-9C28-749EE14A0CDF">
+        <dmn:inputExpression id="_EA980857-14C0-43B5-9CBB-B10AF65F74C3" typeRef="DS1.AirConditioner">
+          <dmn:text>Car.airCon.airLevel</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_88EB09F3-715F-4D8C-B3EF-30DDB94591AB"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_A351866E-C4AD-40A5-A9A2-2AC3F9761481">
+        <dmn:inputEntry id="_1EC1C971-754B-4A21-BE74-4F3AA979A195">
+          <dmn:text>[40..70]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D764361A-EAB9-465F-86A3-B188BEDBDA26">
+          <dmn:text>"Regas"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_22D49940-892D-4D2F-ACC8-1EC525116303">
+        <dmn:inputEntry id="_F0267967-1A83-4BF3-B08C-76DCC6154A07">
+          <dmn:text>&lt;40</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_759F63C7-66ED-44BC-B3E4-45F42371FE55">
+          <dmn:text>"Replace Air Con"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_AADA2EAC-C352-407B-810F-71BAEFBCD67D">
+        <dmn:inputEntry id="_72FEB036-0E95-42DD-9439-634102C98D12">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_26F7EF17-587C-4508-940C-AFAD072E4299">
+          <dmn:text>""</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_FCE7D549-D263-4217-A2D9-19D52D8A66BF" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_F3927B41-0CBB-4C39-936A-6AA7EF2AC65B">
+            <kie:width>50</kie:width>
+            <kie:width>142</kie:width>
+            <kie:width>234</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_4BD55004-DAC6-4A5C-80ED-953BDF645306" dmnElementRef="_4BD55004-DAC6-4A5C-80ED-953BDF645306" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="201" y="239" width="200" height="200"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="201" y="339"/>
+          <di:waypoint x="401" y="339"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_0BCF7186-6645-4F7F-8601-20C1CBA8470C" dmnElementRef="_0BCF7186-6645-4F7F-8601-20C1CBA8470C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="257" y="464" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_088EF050-780E-4495-89AC-18B7A4B9549B" dmnElementRef="_088EF050-780E-4495-89AC-18B7A4B9549B" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="258" y="279" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_C7A2D761-B132-40CA-A638-E9F506F6EA65" dmnElementRef="_C7A2D761-B132-40CA-A638-E9F506F6EA65">
+        <di:waypoint x="307" y="489"/>
+        <di:waypoint x="308" y="329"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

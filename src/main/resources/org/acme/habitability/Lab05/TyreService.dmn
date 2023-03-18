@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_5EEA7BAB-A3C7-4F2C-9C45-7C92C9FE2AE4" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985" id="_26F1C63A-F371-482F-8C91-D28E4AE4FF16" name="TyreService" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_5EEA7BAB-A3C7-4F2C-9C45-7C92C9FE2AE4">
+  <dmn:extensionElements/>
+  <dmn:import id="_5BB2C5DC-00BB-41EC-998F-A9263414BC74" name="DS1" namespace="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985" locationURI="EngineService.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:decisionService id="_CDBA3E7A-977D-47AE-B068-6B03C9580ABC" name="TyreService">
+    <dmn:extensionElements/>
+    <dmn:variable id="_D3E2AF8A-DEC5-4A15-B47C-1862CDA60B80" name="TyreService"/>
+    <dmn:outputDecision href="#_86ACDE77-2DE0-4E87-B43F-8F69A6015F56"/>
+    <dmn:inputData href="#_CD1034DF-DAED-4A22-8035-10217D4786D5"/>
+  </dmn:decisionService>
+  <dmn:inputData id="_CD1034DF-DAED-4A22-8035-10217D4786D5" name="Car">
+    <dmn:extensionElements/>
+    <dmn:variable id="_873C9BF6-8A76-4A5B-9567-90714ACB0A4D" name="Car" typeRef="DS1.Car"/>
+  </dmn:inputData>
+  <dmn:decision id="_86ACDE77-2DE0-4E87-B43F-8F69A6015F56" name="ServiceTask">
+    <dmn:extensionElements/>
+    <dmn:variable id="_22101B50-8EED-4DC6-A666-2F9306CCEA86" name="ServiceTask" typeRef="string"/>
+    <dmn:informationRequirement id="_E4F9EB50-C947-4B7D-8685-4C3D2383176D">
+      <dmn:requiredInput href="#_CD1034DF-DAED-4A22-8035-10217D4786D5"/>
+    </dmn:informationRequirement>
+    <dmn:context id="_5BD6DA52-CE64-42E5-800E-137D4E1E2E7F">
+      <dmn:contextEntry>
+        <dmn:variable id="_5705F692-CC8D-47E3-9036-C59F9C0094E6" name="rearOffSideTask" typeRef="string"/>
+        <dmn:literalExpression id="_B4EA7E73-CFA4-4DAC-9ECF-9F70587DE357">
+          <dmn:text>if (Car.tyres.rearOffSide &lt; 2) then "Change rear offside Tyre" else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_E70A9A03-D842-4B65-8E2A-345133DDDF3D" name="rearNearSide" typeRef="string"/>
+        <dmn:literalExpression id="_9B3C6F4A-4635-4D3F-B02C-44F4DB93E043">
+          <dmn:text>if (Car.tyres.rearNearSide &lt; 2) then "Change rear nearside Tyre" else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_C32F33C4-3711-42B4-9507-849E325A26EB" name="frontOffSide" typeRef="string"/>
+        <dmn:literalExpression id="_C10DCDEF-5A6F-42A5-9F0D-606D6861946A">
+          <dmn:text>if (Car.tyres.frontOffSide &lt; 2) then "Change front offside Tyre" else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_99A62220-396B-417A-990D-6576C006D914" name="frontNearSide" typeRef="string"/>
+        <dmn:literalExpression id="_948E77F4-1454-43DE-824D-63F9E60E9FE4">
+          <dmn:text>if (Car.tyres.frontNearSide &lt; 2) then "Change front nearside Tyre" else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_42CC84E6-32C9-4B0E-A3F0-DBE6C9CBDEEA">
+          <dmn:text>[rearOffSideTask, rearNearSide, frontOffSide, frontNearSide]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_1C1ABD70-2207-4A04-B5CF-04B41E809E45" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_5BD6DA52-CE64-42E5-800E-137D4E1E2E7F">
+            <kie:width>50</kie:width>
+            <kie:width>126</kie:width>
+            <kie:width>686</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_B4EA7E73-CFA4-4DAC-9ECF-9F70587DE357">
+            <kie:width>686</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_9B3C6F4A-4635-4D3F-B02C-44F4DB93E043">
+            <kie:width>686</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_C10DCDEF-5A6F-42A5-9F0D-606D6861946A">
+            <kie:width>686</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_948E77F4-1454-43DE-824D-63F9E60E9FE4">
+            <kie:width>686</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_42CC84E6-32C9-4B0E-A3F0-DBE6C9CBDEEA">
+            <kie:width>686</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_CDBA3E7A-977D-47AE-B068-6B03C9580ABC" dmnElementRef="_CDBA3E7A-977D-47AE-B068-6B03C9580ABC" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="361" y="236" width="200" height="200"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="361" y="336"/>
+          <di:waypoint x="561" y="336"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_CD1034DF-DAED-4A22-8035-10217D4786D5" dmnElementRef="_CD1034DF-DAED-4A22-8035-10217D4786D5" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="410" y="464" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_86ACDE77-2DE0-4E87-B43F-8F69A6015F56" dmnElementRef="_86ACDE77-2DE0-4E87-B43F-8F69A6015F56" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="411" y="274" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_E4F9EB50-C947-4B7D-8685-4C3D2383176D" dmnElementRef="_E4F9EB50-C947-4B7D-8685-4C3D2383176D">
+        <di:waypoint x="460" y="489"/>
+        <di:waypoint x="461" y="324"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_13E17516-DB1F-495F-8F42-114F92C1026C" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985" xmlns:included2="https://kiegroup.org/dmn/_5EEA7BAB-A3C7-4F2C-9C45-7C92C9FE2AE4" xmlns:included3="https://kiegroup.org/dmn/_E95C360D-27A6-4925-9A04-7DA860B448D3" id="_12FD4A0A-84EE-4606-9746-8B9FC82806A9" name="CarServiceBlockPattern" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_13E17516-DB1F-495F-8F42-114F92C1026C">
+  <dmn:extensionElements/>
+  <dmn:import id="_74DA9ECA-E6F7-413D-AEBD-E9B81EB23928" name="DS1" namespace="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985" locationURI="EngineService.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import id="_6A229ACB-B92A-47D8-9CCD-D3FF8DD50718" name="DS2" namespace="https://kiegroup.org/dmn/_5EEA7BAB-A3C7-4F2C-9C45-7C92C9FE2AE4" locationURI="TyreService.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:import id="_D5B18E87-1031-4795-975A-F0770222270D" name="DS3" namespace="https://kiegroup.org/dmn/_E95C360D-27A6-4925-9A04-7DA860B448D3" locationURI="AirConService.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
+  <dmn:itemDefinition id="_F3B6527A-9379-4DFD-8C08-B76C52AC7967" name="Services" isCollection="true">
+    <dmn:itemComponent id="_23DDF1B6-DEB8-4B97-8677-9A3A018C4A15" name="service" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_67C6430A-790A-4487-9016-74FB03195C9E" name="ServiceLevel" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_9961F9A7-9C8D-4D72-A554-4C30E509114E">
+      <dmn:text>"Gold", "Silver", "Bronze"</dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_B3CC8341-1D3D-48A8-83C1-7F69D10F569B" name="Car">
+    <dmn:extensionElements/>
+    <dmn:variable id="_D6AF12DB-C5E5-4D57-B83D-9A768729DCC5" name="Car" typeRef="DS1.Car"/>
+  </dmn:inputData>
+  <dmn:inputData id="_C3216697-5C24-4582-8474-7189A0166D02" name="ServiceLevel">
+    <dmn:extensionElements/>
+    <dmn:variable id="_1A0E2641-3582-4A8B-BE34-925DB7AEC09D" name="ServiceLevel" typeRef="ServiceLevel"/>
+  </dmn:inputData>
+  <dmn:decision id="_1900C1FD-558B-446A-9F8B-2CD5E8D5A2CD" name="Service">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A32F79CE-BD1A-4A42-8241-9B3597A8D488" name="Service" typeRef="Services"/>
+    <dmn:informationRequirement id="_DD6B55D2-09D4-4B25-B1E7-2F3C42F804CA">
+      <dmn:requiredInput href="#_B3CC8341-1D3D-48A8-83C1-7F69D10F569B"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_9E563AB9-9747-469D-97E1-21A1E6404F0D">
+      <dmn:requiredDecision href="#_9BF036E0-D06A-40D5-BBFF-CCF2A2D09520"/>
+    </dmn:informationRequirement>
+    <dmn:knowledgeRequirement id="_EF847E25-4AB8-4A8A-AEA7-363D3D4B1511">
+      <dmn:requiredKnowledge href="https://kiegroup.org/dmn/_D2995C53-8E66-40F9-8F4A-09AE855B6985#_3FA57B7C-CCC8-45E4-A24D-3A080513FAB1"/>
+    </dmn:knowledgeRequirement>
+    <dmn:knowledgeRequirement id="_E0594E63-3C5E-4A01-81FF-B3FB1C732866">
+      <dmn:requiredKnowledge href="https://kiegroup.org/dmn/_5EEA7BAB-A3C7-4F2C-9C45-7C92C9FE2AE4#_CDBA3E7A-977D-47AE-B068-6B03C9580ABC"/>
+    </dmn:knowledgeRequirement>
+    <dmn:knowledgeRequirement id="_3ABC3D0B-1D99-47E5-92FB-BCC7386CF9A1">
+      <dmn:requiredKnowledge href="https://kiegroup.org/dmn/_E95C360D-27A6-4925-9A04-7DA860B448D3#_4BD55004-DAC6-4A5C-80ED-953BDF645306"/>
+    </dmn:knowledgeRequirement>
+    <dmn:context id="_C8ABDF64-1010-47CC-9928-2F4C5E887A30">
+      <dmn:contextEntry>
+        <dmn:variable id="_1413DC17-61A2-496D-A5B5-3CB692C5CD25" name="EngineBlock" typeRef="boolean"/>
+        <dmn:literalExpression id="_82902253-18A5-4A4C-AF87-DD341BCD68F2">
+          <dmn:text>list contains(ServiceBlocks, "Engine")</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_FFD87F50-95CF-4DD0-ABEB-10051B0D6886" name="EngineTasks" typeRef="string"/>
+        <dmn:literalExpression id="_30EAF131-F405-4307-9875-E2BECE5C91FD">
+          <dmn:text>if EngineBlock then (DS1.EngineService(Car)) else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_7345F6F9-7468-412D-A186-FB8625BE6418" name="TyreBlock" typeRef="boolean"/>
+        <dmn:literalExpression id="_3879936D-7B45-480F-AD03-402A4D35CD4B">
+          <dmn:text>list contains(ServiceBlocks, "Tyres")</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_C3B4AFE8-152E-4287-AD7E-C32C35EAA5FE" name="TyreTasks" typeRef="string"/>
+        <dmn:literalExpression id="_6DBCFC4B-34F1-4A56-867B-28CF9330CB8F">
+          <dmn:text>if TyreBlock then (DS2.TyreService(Car)) else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_E692DC58-D171-4533-AC30-345466F7BC3F" name="AirConBlock" typeRef="boolean"/>
+        <dmn:literalExpression id="_A52B9241-1441-47B6-895C-054F87BD8BD1">
+          <dmn:text>list contains(ServiceBlocks, "AirCon")</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_588549DA-29B8-4EEF-808F-DD69997A1715" name="AirConTasks" typeRef="string"/>
+        <dmn:literalExpression id="_DDFC2762-13DE-4F89-B166-78B30B584015">
+          <dmn:text>if AirConBlock then (DS3.AirConService(Car)) else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_7F4B61A2-08FE-4E6D-8F7B-0EBCE85BA9BF">
+          <dmn:text>[EngineTasks, TyreTasks, AirConTasks]</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
+  <dmn:decision id="_9BF036E0-D06A-40D5-BBFF-CCF2A2D09520" name="ServiceBlocks">
+    <dmn:extensionElements/>
+    <dmn:variable id="_BA22B305-AB57-4C6C-93A5-193354753359" name="ServiceBlocks" typeRef="Services"/>
+    <dmn:informationRequirement id="_B7614B88-3260-4809-A247-AFD506A36D6F">
+      <dmn:requiredInput href="#_C3216697-5C24-4582-8474-7189A0166D02"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_5BAE64D2-19D2-4C9B-A160-E8F4CE2D25DB" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_4811C7AD-1ABD-474A-A4CF-A954F8B7955D">
+        <dmn:inputExpression id="_4CE498F8-4566-4D14-A6DE-9DEDA34E4CFB" typeRef="string">
+          <dmn:text>ServiceLevel</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_4C050B3E-3DA9-4445-A07C-9036251961CB"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_48800607-F47B-4992-8941-DEAF85A9BFC1">
+        <dmn:inputEntry id="_072961B4-837B-421C-ADF2-B36F2067D0D9">
+          <dmn:text>"Gold"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_482D3350-232A-4E7C-BB90-67906474F8AB">
+          <dmn:text>["Engine", "Tyres", "AirCon"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_09C4CC1E-906B-4763-8F64-232E74B4B032">
+        <dmn:inputEntry id="_B3E6C66D-4B0E-4E3F-879C-38E6886F85F0">
+          <dmn:text>"Silver"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_FA61EB96-8230-4F51-8C01-90D7A65A4549">
+          <dmn:text>["Engine", "Tyres"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_AFB9ECE7-31BC-4D6B-AF8E-4E1D108DF19C">
+        <dmn:inputEntry id="_E65F98C5-2F98-4F7F-9472-5417F1E42647">
+          <dmn:text>"Bronze"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_07986600-3F73-4319-8501-B6FCC5F44FA0">
+          <dmn:text>["Engine"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_55A167B5-961D-422B-851B-357557191EF8" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_C8ABDF64-1010-47CC-9928-2F4C5E887A30">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_82902253-18A5-4A4C-AF87-DD341BCD68F2">
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_30EAF131-F405-4307-9875-E2BECE5C91FD">
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_3879936D-7B45-480F-AD03-402A4D35CD4B">
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_6DBCFC4B-34F1-4A56-867B-28CF9330CB8F">
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_A52B9241-1441-47B6-895C-054F87BD8BD1">
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_DDFC2762-13DE-4F89-B166-78B30B584015">
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_7F4B61A2-08FE-4E6D-8F7B-0EBCE85BA9BF">
+            <kie:width>519</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_5BAE64D2-19D2-4C9B-A160-E8F4CE2D25DB">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>302</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_3FA57B7C-CCC8-45E4-A24D-3A080513FAB1" dmnElementRef="included1:_3FA57B7C-CCC8-45E4-A24D-3A080513FAB1" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="343" y="45" width="131" height="151"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="343" y="145"/>
+          <di:waypoint x="474" y="145"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_CDBA3E7A-977D-47AE-B068-6B03C9580ABC" dmnElementRef="included2:_CDBA3E7A-977D-47AE-B068-6B03C9580ABC" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="615.5" y="6" width="127" height="150"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="615.5" y="106"/>
+          <di:waypoint x="742.5" y="106"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_4BD55004-DAC6-4A5C-80ED-953BDF645306" dmnElementRef="included3:_4BD55004-DAC6-4A5C-80ED-953BDF645306" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="883" y="53" width="127" height="158"/>
+        <dmndi:DMNLabel/>
+        <dmndi:DMNDecisionServiceDividerLine>
+          <di:waypoint x="883" y="153"/>
+          <di:waypoint x="1010" y="153"/>
+        </dmndi:DMNDecisionServiceDividerLine>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_B3CC8341-1D3D-48A8-83C1-7F69D10F569B" dmnElementRef="_B3CC8341-1D3D-48A8-83C1-7F69D10F569B" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="479" y="502" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_C3216697-5C24-4582-8474-7189A0166D02" dmnElementRef="_C3216697-5C24-4582-8474-7189A0166D02" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="765" y="502" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_1900C1FD-558B-446A-9F8B-2CD5E8D5A2CD" dmnElementRef="_1900C1FD-558B-446A-9F8B-2CD5E8D5A2CD" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="632" y="233" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_9BF036E0-D06A-40D5-BBFF-CCF2A2D09520" dmnElementRef="_9BF036E0-D06A-40D5-BBFF-CCF2A2D09520" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="765" y="368" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_DD6B55D2-09D4-4B25-B1E7-2F3C42F804CA-AUTO-TARGET" dmnElementRef="_DD6B55D2-09D4-4B25-B1E7-2F3C42F804CA">
+        <di:waypoint x="529" y="527"/>
+        <di:waypoint x="682" y="283"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_9E563AB9-9747-469D-97E1-21A1E6404F0D" dmnElementRef="_9E563AB9-9747-469D-97E1-21A1E6404F0D">
+        <di:waypoint x="815" y="393"/>
+        <di:waypoint x="682" y="283"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_EF847E25-4AB8-4A8A-AEA7-363D3D4B1511" dmnElementRef="_EF847E25-4AB8-4A8A-AEA7-363D3D4B1511">
+        <di:waypoint x="408.5" y="120.5"/>
+        <di:waypoint x="632" y="258"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_E0594E63-3C5E-4A01-81FF-B3FB1C732866" dmnElementRef="_E0594E63-3C5E-4A01-81FF-B3FB1C732866">
+        <di:waypoint x="679" y="81"/>
+        <di:waypoint x="682" y="258"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_3ABC3D0B-1D99-47E5-92FB-BCC7386CF9A1" dmnElementRef="_3ABC3D0B-1D99-47E5-92FB-BCC7386CF9A1">
+        <di:waypoint x="946.5" y="132"/>
+        <di:waypoint x="732" y="258"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_B7614B88-3260-4809-A247-AFD506A36D6F" dmnElementRef="_B7614B88-3260-4809-A247-AFD506A36D6F">
+        <di:waypoint x="815" y="527"/>
+        <di:waypoint x="815" y="418"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

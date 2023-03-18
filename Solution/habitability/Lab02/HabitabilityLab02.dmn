@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/HabitabilityLab02" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="HabitabilityLab02" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/HabitabilityLab02">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_B46ACDB1-0383-4CCE-8E5A-4B17B4D3C412" name="Atmosphere" isCollection="false">
+    <dmn:itemComponent id="_FA88922D-B5B8-4B10-9418-FDEC16F4E422" name="oxygen" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_2024A0CF-946D-441C-991C-8F4806ECDEC7" name="methane" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_E2640AFC-4C2D-49BA-B587-2E5D13B575C7" name="carbonDioxide" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_E48D3EC1-89A6-4266-AD55-F3C174AAA5DB" name="Surface" isCollection="false">
+    <dmn:itemComponent id="_78160076-C05C-468C-81FA-16EE357D1ED4" name="temperature" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0D6911A8-1B7C-4B50-B683-C9578CBC262B" name="pressure" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_0F99D4D0-95E0-4A4D-85DC-2600DE1F2638" name="gravity" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_1111C901-4FD4-434F-89C0-70B28DD795AE" name="PlanetInfo" isCollection="false">
+    <dmn:itemComponent id="_8809C082-7829-4EAB-BEF8-AF9148F7E551" name="surface" isCollection="false">
+      <dmn:typeRef>Surface</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_CFBB1F9A-0FE1-4E0A-8F7A-E816128C0686" name="atmosphere" isCollection="false">
+      <dmn:typeRef>Atmosphere</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:decision id="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" name="Oxygen">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B6D36E32-4CF5-47E4-A5B9-81F4B9C01119" name="Oxygen" typeRef="string"/>
+    <dmn:informationRequirement id="_58B840CE-4A90-4DFA-B325-3272DCD1B57C">
+      <dmn:requiredInput href="#_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_7CCC4E09-15AD-4108-A087-287BAACE06B3" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_3F11AC5C-4DF2-45DD-86D4-E9A2A4DDE316">
+        <dmn:inputExpression id="_0C0B962B-371D-44A7-91F7-00309A386787" typeRef="number">
+          <dmn:text>planetData.atmosphere.oxygen</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_3EC92DDC-D347-4CAC-86ED-4BE76DFB30E0"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_c30adbe0-f669-4df0-87bb-1d4cc5f92457">
+        <dmn:inputEntry id="_a17a9e43-b825-4616-ab95-fc3e6c9b4aac">
+          <dmn:text>[16..49]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_80cbd1ff-ddf2-4397-814d-f73d8e0c3b99">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_e18ee623-edb7-47a2-a56b-d6f796c03461">
+        <dmn:inputEntry id="_0baa9b26-5ea8-419a-a71a-724c45b383fe">
+          <dmn:text>[5..15]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_21bde4ec-75b6-4aa0-aae3-98a09a498afb">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_179D7DFA-729D-445E-95A2-F65B2E6C7105">
+        <dmn:inputEntry id="_20DAF44E-401D-4D19-860E-F606E6054375">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_6D64A3ED-844F-423C-AC04-9C8564839A8C">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_88B3F141-A317-4D10-846B-E79FD276EB02" name="Pressure">
+    <dmn:extensionElements/>
+    <dmn:variable id="_AC7A4EDE-530D-47A1-B8B5-515CBA508468" name="Pressure" typeRef="string"/>
+    <dmn:informationRequirement id="_67DFE25C-B79C-404F-965F-0C6A0C85579C">
+      <dmn:requiredInput href="#_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_9D10495A-DBC4-440C-92BD-334B6D90F452" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_47234F4B-AF3E-47C5-B3D4-042D9AA5DB19">
+        <dmn:inputExpression id="_C5DBBFB6-324E-4F73-A088-C82F883D9F0D" typeRef="number">
+          <dmn:text>planetData.surface.pressure</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_39548E45-C1A2-4BB8-880E-30EA61ACF8B7"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_65161505-32A5-4D26-98D8-C86B6A480632">
+        <dmn:inputEntry id="_65A4D7AC-6982-4917-A138-A250575C75F1">
+          <dmn:text>[800..1500]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_CF5DBDA4-058D-4FE7-BDB7-D67B6E1832BF">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_60BE359D-E7F5-4BD1-B7A9-D7BE07F0E6D4">
+        <dmn:inputEntry id="_F7566E6A-2D86-423D-9001-AFE86FFC1984">
+          <dmn:text>[600..799]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_F1DC048F-43C8-4CB3-A4F7-D148C71F8EF1">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_E2A77E0C-EDFA-4633-8934-1D9633BAD151">
+        <dmn:inputEntry id="_FA4D4F9A-2988-420D-9118-07C343853F3C">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_50F14173-E435-40C0-B9E1-2948737959CD">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_EF9E2212-8793-4E4B-A629-2BB434D4C4C6" name="Atmosphere">
+    <dmn:extensionElements/>
+    <dmn:variable id="_CB6837F7-F482-44FB-A8A7-3C0568E6D700" name="Atmosphere" typeRef="number"/>
+    <dmn:informationRequirement id="_54CA9720-18D8-43DC-B150-144685F5DC94">
+      <dmn:requiredDecision href="#_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_D13AD02E-1C34-4DB8-B99B-AB53861CDEF6">
+      <dmn:requiredDecision href="#_8E65E99A-2704-4CA9-9D73-32357CCBD898"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_A379F103-0717-4AAD-A2AC-9F85BD6BE6C6">
+      <dmn:requiredDecision href="#_5BF11EAD-22F2-4CE2-A707-11A5F787AF9A"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_BC9689BF-8416-4C24-829B-2A020832D5F4" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_F53DA069-D558-4CE4-9435-F75BC9C548E8">
+        <dmn:inputExpression id="_331DFE23-4378-4218-802A-1502486B9E20" typeRef="string">
+          <dmn:text>Oxygen</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_37D93237-9FF8-4379-856B-1C6754E76A37">
+        <dmn:inputExpression id="_AA9872FA-A97E-4BAD-87E7-A085F35D53D6" typeRef="string">
+          <dmn:text>Methane</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_FF5A3507-9F70-4F19-B832-A2A7939F50A9">
+        <dmn:inputExpression id="_F33A3F10-1AF4-4FCD-A561-7DDE2786BC87" typeRef="string">
+          <dmn:text>CarbonDioxide</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_8485CAC8-CFF4-4404-B79B-EB5E68328240"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_73DB3AA3-DFA6-4074-8CB3-E1FE0D1C35C7">
+        <dmn:inputEntry id="_125AE261-64F0-4B87-A050-0959B23DA891">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_0B8A48F5-45F2-497C-AC88-4B410C2C5FC5">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_B1636973-B559-4BCD-B537-E3E42928EC63">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_5BECC043-5CFC-48C6-9BC9-EF281853A68C">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_3B0A9CEB-4348-4269-8FBC-D1C824EAAFD3">
+        <dmn:inputEntry id="_98AEE776-8AFD-429F-A443-12CF92F7AF23">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_6AB57FB2-DAF8-4BA2-91CB-E14BFA85C1ED">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_CDCE8F7F-E4AE-4194-93A0-D863E4B6473C">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_A78165EE-4571-47E9-BD81-8B2F3D08F726">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_974C2DA9-118C-4CB9-9356-AF5F2465E82C">
+        <dmn:inputEntry id="_DE671230-B71C-4611-B881-779891B08BC7">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_59A0B8A1-20B9-4545-8DEA-17191D1FC0C3">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_BE1A3C38-BDA1-4A20-8A75-2595000D01CC">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_683847B8-DC3B-4796-AFE6-42FC1ED4BE6E">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_E63FFE3A-32A6-4F1E-9B5E-4EC07A2FFCEC">
+        <dmn:inputEntry id="_B4A1A668-FB0E-4CC1-9D73-B055A0C79A89">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_AE918F1F-E977-453A-A746-02DBF85B410C">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_F785B16F-B118-40A0-9C1E-D249B1C076F0">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_A9224124-6515-441F-B9CE-36B6EED573EC">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_5622DDC8-FCAB-4EE8-BD58-29CC8B13CEAC">
+        <dmn:inputEntry id="_B2228660-7AA8-479C-BB31-1A8F769B297D">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_57CA195B-8DB9-4811-9917-801A13452443">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_8F20C75F-B7D3-43DA-A922-29F633A287C8">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_11C22175-8912-4386-B9CE-BA0FFCA25B1E">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_8E65E99A-2704-4CA9-9D73-32357CCBD898" name="Methane">
+    <dmn:extensionElements/>
+    <dmn:variable id="_8A320302-C3F4-41AB-A032-A1B99D4E4ACB" name="Methane" typeRef="string"/>
+    <dmn:informationRequirement id="_FCE37045-A822-4B05-BB1A-0AE3721B1BA4">
+      <dmn:requiredInput href="#_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_7AE508A0-5E45-49CF-8534-49BA8F06D1AB" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_6BF3A298-7786-4914-B0A3-C78716662C92">
+        <dmn:inputExpression id="_5F4FB3CB-8A9D-436F-8587-ED7D0F086DAE" typeRef="number">
+          <dmn:text>planetData.atmosphere.methane</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_F74CB478-DCB6-4608-8B1C-8DFE6FC07C10"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_2D6C4B73-5A82-4527-AC0F-0316526B0432">
+        <dmn:inputEntry id="_6EB2E96F-4F99-4CBC-90A1-0A1823852023">
+          <dmn:text>&gt;0.1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_85B517B7-E8D3-4642-B3E5-61790497DB53">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_F1F4A813-E4EE-4F31-8520-1C4FFF570E8A">
+        <dmn:inputEntry id="_3F054E8F-6AC7-43B8-BF72-95C2801EDEF7">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_E47E01AF-577C-44BD-A125-DA16DF8312E3">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE" name="planetData">
+    <dmn:extensionElements/>
+    <dmn:variable id="_C4E17E0D-0AFC-4379-BB8C-733D01E09950" name="planetData" typeRef="PlanetInfo"/>
+  </dmn:inputData>
+  <dmn:decision id="_5706D546-0EED-4BFD-AA43-2A9306E60186" name="Surface">
+    <dmn:extensionElements/>
+    <dmn:variable id="_13018604-FCAD-42AE-9AF4-9D757EE41931" name="Surface" typeRef="string"/>
+    <dmn:informationRequirement id="_1A99FCED-3BE1-4C47-AA44-0D38DE7E4C01">
+      <dmn:requiredDecision href="#_88B3F141-A317-4D10-846B-E79FD276EB02"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_7D5CAFDD-9189-420A-8DE3-1A4BE959E976">
+      <dmn:requiredDecision href="#_18F8D11B-235E-41F2-863E-3E0B2556AB67"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_7C0A25F5-B545-48A1-80D9-9AA4C8FAD741">
+      <dmn:requiredDecision href="#_B743940F-DC29-466D-BD6A-6FE5102EB700"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_74874E8C-7298-4313-82AE-EF9EEE01CC34" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_58682D57-5FB0-4D37-AB3D-627054846B38">
+        <dmn:inputExpression id="_BA0F8A77-F607-4381-9AC0-2C5C5AB53F03" typeRef="string">
+          <dmn:text>Gravity</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_DCA8CCFC-E838-408D-B226-DE0E82AF285D">
+        <dmn:inputExpression id="_85453C46-A8F1-4156-AF84-E05BD617C86C" typeRef="string">
+          <dmn:text>Pressure</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_17E39D84-360B-4EB3-81FA-AFB0840012DC">
+        <dmn:inputExpression id="_1F1227DE-2A72-4D95-B96F-69064D55DC16" typeRef="string">
+          <dmn:text>Temperature</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_34479095-3428-4C5F-A2E7-AE103AE154F1"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_BF477345-DAD2-407A-8B92-897E55075A40">
+        <dmn:inputEntry id="_4071D700-67EF-46C7-8667-0C0FFDC48FE4">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_89902FEC-11B3-4D94-B24E-F953F0835579">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_891D3E3A-70D4-4CD9-8EF5-5573104194C2">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_84E5CF58-31BE-426A-BBB8-A7644798A282">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_A21B7BC8-967D-444F-8DE0-4CA152FB7EC9">
+        <dmn:inputEntry id="_FA0E495A-78FF-44E7-8919-8FB035A1FE5D">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_30182363-2D16-4C41-8E72-C0191D9D0B37">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_C3470710-D573-4ECE-ACC6-57E50C951FD2">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D3129DD5-941D-4505-8C52-890E0DF3197F">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_1BABBDFD-011F-4D5A-B5E1-F7FFEC0FFD2B">
+        <dmn:inputEntry id="_F28C5A69-7B63-4D73-BC7C-04895D711C97">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_5285AD24-23B9-470B-926A-CA033421AF2A">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_0CD72168-477D-4313-8DE6-168A5C1F8002">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B5EF5E32-39AB-49D2-9FB5-D02D645B0C8D">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_8F390D04-D825-4376-AD8F-FBB2CAF05861">
+        <dmn:inputEntry id="_7AE6D02D-241B-4C1B-928C-A720B7E54189">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9B6F9738-A772-4BA5-AC13-1EC5F2E8FB17">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_957ACCA4-8C8C-4658-AB69-27866D29A72E">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_8E27A098-D2D2-4BC3-8B63-0B5DCDBB3AEB">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_9BBBE8DD-7C1B-4C57-A424-CB6BFA71DF6F">
+        <dmn:inputEntry id="_77425EDF-590A-4A9C-8A13-768072B07594">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D0E37FC4-B921-460D-A44D-335E62C212F0">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_FF76015A-53EA-4E12-973D-2B541FC0E6CC">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_0A8D3F5C-4C48-4F4A-A92F-EC7D80725E60">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_6497A431-1C8F-4729-8EC6-802511C8F471">
+        <dmn:inputEntry id="_37F3C372-5C57-40D9-ABE8-74A1E7AB0ECE">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_1798A815-431C-4D9F-BCCF-19E1E2F9EFD1">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_6FF600BE-A95A-495E-870E-1E0EAC0D46A9">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_561731D8-6FA9-4F38-844A-343E45442334">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_8BC6A01C-C1F4-4835-8E7B-F04FB5E03D58" name="Habitability">
+    <dmn:extensionElements/>
+    <dmn:variable id="_0FC0C2FE-8B84-4039-8405-6B8EE639D960" name="Habitability" typeRef="string"/>
+    <dmn:informationRequirement id="_A56A5635-3928-4557-9256-E88B6D054860">
+      <dmn:requiredDecision href="#_EF9E2212-8793-4E4B-A629-2BB434D4C4C6"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_3CE6E6AB-D04D-4811-838F-1431A6C06248">
+      <dmn:requiredDecision href="#_5706D546-0EED-4BFD-AA43-2A9306E60186"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_E90F1BAB-9831-4791-B618-0E10BD7605C1" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_6AB7A8E4-902E-41B5-A97A-5D5ABA535FA7">
+        <dmn:inputExpression id="_C785EB28-0D12-4F36-9C97-B02DF721BE3F" typeRef="string">
+          <dmn:text>Atmosphere</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_9F5A241E-49EE-4468-81DE-30434E2E60DA">
+        <dmn:inputExpression id="_6285045B-87A9-4114-8CB6-D43B910DA395" typeRef="string">
+          <dmn:text>Surface</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_C6B6993B-1E5C-4717-8ECE-2A1B96CB2BB2"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_B7B10BE7-7FA0-4CEA-81EC-D11B05112FDB">
+        <dmn:inputEntry id="_AC53877E-F0E7-49C9-88CD-FEDF7E7141D8">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_A943E042-D348-42BE-9D11-7ECD8AB5F3AC">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_ECCECD68-D3AC-42A4-B0F0-FF164B9D8609">
+          <dmn:text>"Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_1766AC25-596F-472E-9FE3-D04A9E22EDB5">
+        <dmn:inputEntry id="_39B6C7D1-3A19-4D2D-B428-CE86FEB9168C">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_69C6747E-A19B-4985-B7A3-E89379E5582C">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_A68E7004-3C98-460B-AD11-C5DB6635C7D5">
+          <dmn:text>"Bearly Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_0445A965-8928-4D45-B7FC-210E95A8559F">
+        <dmn:inputEntry id="_2DC52832-6E2B-4EF9-9C2A-D59501FA0A36">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_706A7D27-44EB-4BE9-AD72-8CC965131F1E">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_EB069837-38D9-4B14-906E-85E410247CE4">
+          <dmn:text>"Bearly Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_D5E32A64-CF3E-4983-AD32-EC007347B8BB">
+        <dmn:inputEntry id="_3964DCC1-BB8C-4213-A44D-30D9723707D4">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_8C354A5E-817C-4E2D-A2DF-CFC1DA724B0A">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_BFDC4D43-42BA-4CF8-99C0-372BCC4BEFD2">
+          <dmn:text>"Bearly Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_D70D6F3E-9D86-4D63-BC43-EAD10C2298AA">
+        <dmn:inputEntry id="_5529EC84-CEFA-43CE-8E61-299C5D7085B6">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_2F6DDF01-0E81-4E98-B89F-A2BB90B79CB7">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_ABE8230F-A4F0-422C-9967-2B6DB767C73D">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_5BF11EAD-22F2-4CE2-A707-11A5F787AF9A" name="CarbonDioxide">
+    <dmn:extensionElements/>
+    <dmn:variable id="_38E1AE9B-CA42-4079-816C-8D83213C9667" name="CarbonDioxide" typeRef="string"/>
+    <dmn:informationRequirement id="_3109E192-3BD8-4D58-9F9E-4F9D1CE70CAC">
+      <dmn:requiredInput href="#_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_8C4F19E9-B3D0-41F3-B8E6-21E9005745AB" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_9D06FF4C-AB66-462C-8C09-D7E608053283">
+        <dmn:inputExpression id="_3C10D44D-299F-40AD-8B65-5F06BA7BB247" typeRef="number">
+          <dmn:text>planetData.atmosphere.carbonDioxide</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_744844DA-B8D9-4C04-8F94-A3EC59087A7E"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_EC595FFC-E52B-4803-BA69-78FA34033D02">
+        <dmn:inputEntry id="_B28F10E2-4357-463F-8200-106770BE621A">
+          <dmn:text>[0..5]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B6D6D8D7-C535-48DA-A889-FC43B0742B86">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_3EAC8F40-EA6C-452E-ACFB-53FA5CF41C95">
+        <dmn:inputEntry id="_5C19BF65-4C7E-4501-BAFA-F8ADDC77F49E">
+          <dmn:text>[6..10]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_C6D07C8F-4987-44F2-B5E5-45A8256E3422">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_A74C5397-245B-4E90-B0C1-7776A8DD2856">
+        <dmn:inputEntry id="_325C71CD-B5B1-41CA-B786-3672A579AF6D">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_7A72413C-46B4-4151-9FB3-EFAB7EB52CE6">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_B743940F-DC29-466D-BD6A-6FE5102EB700" name="Temperature">
+    <dmn:extensionElements/>
+    <dmn:variable id="_4E4D355D-EC74-42A7-951A-65BA5DB90362" name="Temperature" typeRef="string"/>
+    <dmn:informationRequirement id="_5703A7F7-6096-4CE1-9DE6-1571C62E8AFD">
+      <dmn:requiredInput href="#_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_A160229A-63FC-4157-9F3C-5C68C73D7207" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_C83883B0-9DEB-4914-9E31-CEADCFF58189">
+        <dmn:inputExpression id="_26CA09F3-A0B0-46DD-A5B4-8943719C9E9E" typeRef="number">
+          <dmn:text>planetData.surface.temperature</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_3CF8C829-EDDF-422D-9A51-341A217200C9"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_E097554A-3314-4393-B902-3B7C8A5D9603">
+        <dmn:inputEntry id="_9B76CE6F-F3FF-4845-B066-8A0056A83D63">
+          <dmn:text>[0..35]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2A1569DE-BBFB-419D-8A47-DE8307E15CDE">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_44136CF5-68EA-420B-B15D-CAE65F7FDAC5">
+        <dmn:inputEntry id="_05C42388-E206-40B7-984E-64A3C262DB4A">
+          <dmn:text>[36..45]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_1DAE05C7-C87B-4E8A-945F-79FE241D61EE">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_BED0C29B-1B4C-4DBC-8B11-66737A72047B">
+        <dmn:inputEntry id="_62BAF69D-4E36-4DBC-91FF-DD811E3B2D68">
+          <dmn:text>[-20..-1]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_FBBD6D6E-17A8-4FA5-A4F2-DD42CFD5EE5B">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_2EB0A528-FA39-41F2-9A43-6568324924CE">
+        <dmn:inputEntry id="_E89ADB76-0F88-4133-B744-0110AEC43A96">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_6A8F0FC0-7519-4F12-A678-C1A7AE843DB5">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:decision id="_18F8D11B-235E-41F2-863E-3E0B2556AB67" name="Gravity">
+    <dmn:extensionElements/>
+    <dmn:variable id="_6D607EC2-C7AF-472F-815F-68A36617F8D7" name="Gravity" typeRef="string"/>
+    <dmn:informationRequirement id="_8F5F2E5B-6174-4602-AF49-299B6870F4E8">
+      <dmn:requiredInput href="#_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_E0FC9D92-A249-4544-A91C-F8809C91AF6C" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_7157B900-65E8-48DE-B6E2-DB25BEFA05D8">
+        <dmn:inputExpression id="_32294273-AD32-46AA-B1F5-E7CA2133CAFA" typeRef="number">
+          <dmn:text>planetData.surface.gravity</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_B3DFEA16-BB40-4C30-BF62-D11A63B079A3"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_D0385035-335A-4889-931D-99F996659266">
+        <dmn:inputEntry id="_A3C91976-1533-4959-80FB-37AA0705AC1C">
+          <dmn:text>[0.5..2]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_FE059B0C-D369-4A02-ACA1-2B4BF8B37B83">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_EB0B74F8-B6FA-4941-964A-F198D2A1AAC1">
+        <dmn:inputEntry id="_2838A7EE-BFD6-4F25-AAF2-CA1E7169D0BF">
+          <dmn:text>&lt; 0.5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_0C3FB3EC-2A82-4B4B-A211-DEB0960BEDA7">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_D7558CC1-FCFE-44DC-8502-6A33F03AA113">
+        <dmn:inputEntry id="_2F4B3E59-A3C6-47D7-AA2F-0DEA6C498ABB">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B283BC35-92B1-4832-9F34-7FF8480D6643">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_29F4A98A-07F6-46C3-BB7E-007BB02F7B94" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_7CCC4E09-15AD-4108-A087-287BAACE06B3">
+            <kie:width>50</kie:width>
+            <kie:width>205</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_9D10495A-DBC4-440C-92BD-334B6D90F452">
+            <kie:width>50</kie:width>
+            <kie:width>173</kie:width>
+            <kie:width>125</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_BC9689BF-8416-4C24-829B-2A020832D5F4">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>121</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_7AE508A0-5E45-49CF-8534-49BA8F06D1AB">
+            <kie:width>50</kie:width>
+            <kie:width>230</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_74874E8C-7298-4313-82AE-EF9EEE01CC34">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_E90F1BAB-9831-4791-B618-0E10BD7605C1">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>168</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_8C4F19E9-B3D0-41F3-B8E6-21E9005745AB">
+            <kie:width>50</kie:width>
+            <kie:width>263</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_A160229A-63FC-4157-9F3C-5C68C73D7207">
+            <kie:width>50</kie:width>
+            <kie:width>185</kie:width>
+            <kie:width>125</kie:width>
+            <kie:width>190</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_E0FC9D92-A249-4544-A91C-F8809C91AF6C">
+            <kie:width>50</kie:width>
+            <kie:width>144</kie:width>
+            <kie:width>125</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape xmlns:p0="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" dmnElementRef="p0:_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="537" y="344" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p1="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_88B3F141-A317-4D10-846B-E79FD276EB02" dmnElementRef="p1:_88B3F141-A317-4D10-846B-E79FD276EB02" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1028" y="344" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p2="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_EF9E2212-8793-4E4B-A629-2BB434D4C4C6" dmnElementRef="p2:_EF9E2212-8793-4E4B-A629-2BB434D4C4C6" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="698" y="159" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p3="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_8E65E99A-2704-4CA9-9D73-32357CCBD898" dmnElementRef="p3:_8E65E99A-2704-4CA9-9D73-32357CCBD898" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="701" y="344" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p4="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE" dmnElementRef="p4:_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="939.5981308411215" y="664.3421052631579" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p5="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_5706D546-0EED-4BFD-AA43-2A9306E60186" dmnElementRef="p5:_5706D546-0EED-4BFD-AA43-2A9306E60186" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1213" y="167" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p6="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_8BC6A01C-C1F4-4835-8E7B-F04FB5E03D58" dmnElementRef="p6:_8BC6A01C-C1F4-4835-8E7B-F04FB5E03D58" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="968" y="16" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p7="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_5BF11EAD-22F2-4CE2-A707-11A5F787AF9A" dmnElementRef="p7:_5BF11EAD-22F2-4CE2-A707-11A5F787AF9A" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="859" y="340" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p8="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_B743940F-DC29-466D-BD6A-6FE5102EB700" dmnElementRef="p8:_B743940F-DC29-466D-BD6A-6FE5102EB700" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1197" y="340" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape xmlns:p9="https://www.drools.org/kie-dmn/Breathabililty" id="dmnshape-drg-_18F8D11B-235E-41F2-863E-3E0B2556AB67" dmnElementRef="p9:_18F8D11B-235E-41F2-863E-3E0B2556AB67" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="1398" y="334" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge xmlns:p10="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_58B840CE-4A90-4DFA-B325-3272DCD1B57C" dmnElementRef="p10:_58B840CE-4A90-4DFA-B325-3272DCD1B57C">
+        <di:waypoint x="989.5981308411215" y="689.3421052631579"/>
+        <di:waypoint x="587" y="394"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p11="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_67DFE25C-B79C-404F-965F-0C6A0C85579C" dmnElementRef="p11:_67DFE25C-B79C-404F-965F-0C6A0C85579C">
+        <di:waypoint x="989.5981308411215" y="689.3421052631579"/>
+        <di:waypoint x="1078" y="394"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p12="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_54CA9720-18D8-43DC-B150-144685F5DC94" dmnElementRef="p12:_54CA9720-18D8-43DC-B150-144685F5DC94">
+        <di:waypoint x="587" y="369"/>
+        <di:waypoint x="748" y="209"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p13="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_D13AD02E-1C34-4DB8-B99B-AB53861CDEF6" dmnElementRef="p13:_D13AD02E-1C34-4DB8-B99B-AB53861CDEF6">
+        <di:waypoint x="751" y="369"/>
+        <di:waypoint x="748" y="209"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p14="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_A379F103-0717-4AAD-A2AC-9F85BD6BE6C6" dmnElementRef="p14:_A379F103-0717-4AAD-A2AC-9F85BD6BE6C6">
+        <di:waypoint x="909" y="340"/>
+        <di:waypoint x="748" y="209"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p15="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_FCE37045-A822-4B05-BB1A-0AE3721B1BA4" dmnElementRef="p15:_FCE37045-A822-4B05-BB1A-0AE3721B1BA4">
+        <di:waypoint x="989.5981308411215" y="689.3421052631579"/>
+        <di:waypoint x="751" y="394"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p16="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_1A99FCED-3BE1-4C47-AA44-0D38DE7E4C01" dmnElementRef="p16:_1A99FCED-3BE1-4C47-AA44-0D38DE7E4C01">
+        <di:waypoint x="1078" y="369"/>
+        <di:waypoint x="1263" y="217"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p17="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_7D5CAFDD-9189-420A-8DE3-1A4BE959E976-AUTO-TARGET" dmnElementRef="p17:_7D5CAFDD-9189-420A-8DE3-1A4BE959E976">
+        <di:waypoint x="1448" y="359"/>
+        <di:waypoint x="1263" y="217"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p18="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_7C0A25F5-B545-48A1-80D9-9AA4C8FAD741-AUTO-TARGET" dmnElementRef="p18:_7C0A25F5-B545-48A1-80D9-9AA4C8FAD741">
+        <di:waypoint x="1247" y="365"/>
+        <di:waypoint x="1263" y="217"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p19="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_A56A5635-3928-4557-9256-E88B6D054860" dmnElementRef="p19:_A56A5635-3928-4557-9256-E88B6D054860">
+        <di:waypoint x="748" y="184"/>
+        <di:waypoint x="1018" y="66"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p20="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_3CE6E6AB-D04D-4811-838F-1431A6C06248" dmnElementRef="p20:_3CE6E6AB-D04D-4811-838F-1431A6C06248">
+        <di:waypoint x="1263" y="192"/>
+        <di:waypoint x="1018" y="66"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p21="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_3109E192-3BD8-4D58-9F9E-4F9D1CE70CAC" dmnElementRef="p21:_3109E192-3BD8-4D58-9F9E-4F9D1CE70CAC">
+        <di:waypoint x="989.5981308411215" y="689.3421052631579"/>
+        <di:waypoint x="909" y="390"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p22="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_5703A7F7-6096-4CE1-9DE6-1571C62E8AFD" dmnElementRef="p22:_5703A7F7-6096-4CE1-9DE6-1571C62E8AFD">
+        <di:waypoint x="989.5981308411215" y="689.3421052631579"/>
+        <di:waypoint x="1247" y="390"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge xmlns:p23="https://www.drools.org/kie-dmn/Breathabililty" id="dmnedge-drg-_8F5F2E5B-6174-4602-AF49-299B6870F4E8-AUTO-TARGET" dmnElementRef="p23:_8F5F2E5B-6174-4602-AF49-299B6870F4E8">
+        <di:waypoint x="989.5981308411215" y="689.3421052631579"/>
+        <di:waypoint x="1448" y="384"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

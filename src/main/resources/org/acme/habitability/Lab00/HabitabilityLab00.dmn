@@ -87,7 +87,7 @@
           <dmn:text>[0..2]</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_D8E608AA-7713-478B-9A17-B2E417917FD2">
-          <dmn:text>&lt;10</dmn:text>
+          <dmn:text>&lt;1</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_7BE22630-E7AB-417F-BE8E-CCC98C3EE677">
           <dmn:text>[20..60]</dmn:text>
@@ -100,6 +100,32 @@
         </dmn:inputEntry>
         <dmn:outputEntry id="_67183BFF-F580-46A0-9A67-D5E1979BA115">
           <dmn:text>"Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_0708295D-56B4-4B61-9CE2-E8D4827F8A8B">
+        <dmn:inputEntry id="_B422887F-F89A-47A7-99A2-176727E8F74C">
+          <dmn:text>&lt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9736EF5A-3F03-49CE-BE72-F51CE6F41B13">
+          <dmn:text>[2..3]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_4FA0E3F3-0E17-4AF9-AE57-52AFEC062EED">
+          <dmn:text>&lt;2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_DB831536-F31B-4FBC-A591-45D1E9109276">
+          <dmn:text>[60-80]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_DFE435CF-938C-45B9-AAA5-AD0E9DF7489E">
+          <dmn:text>[2..3]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_E526632F-4E71-4172-A64E-9CDB4C63F6B1">
+          <dmn:text>[31-50]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_7CF56C5D-1CB2-4BCB-8B2C-E763EFEBB7BB">
+          <dmn:text>"Marginal"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>

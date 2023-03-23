@@ -46,7 +46,7 @@
     <dmn:informationRequirement id="_2A74F893-CFE3-4243-B31B-807DD8F69C1D">
       <dmn:requiredInput href="#_9C3EEE42-B121-428E-BC71-AC0C304694E2"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+    <dmn:decisionTable id="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_16FDF7D3-9F5C-42F8-ADC8-000EC1B44B83">
         <dmn:inputExpression id="_5B70AD84-3BC3-48BC-B079-CBB927DACA9B" typeRef="number">
           <dmn:text>carbonDioxide</dmn:text>
@@ -78,7 +78,7 @@
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_6CE0F167-04A9-4B24-8699-480E6E6CFBC8"/>
-      <dmn:annotation name="annotation-1"/>
+      <dmn:annotation name="Description"/>
       <dmn:rule id="_8CC471BF-B06B-4002-9B5D-373FEFB4E197">
         <dmn:inputEntry id="_64542F90-5925-4312-A87F-0F1BA4D21476">
           <dmn:text>&lt;10</dmn:text>
@@ -102,7 +102,7 @@
           <dmn:text>"Habitable"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text/>
+          <dmn:text>The goldilocks climate and surface conditions</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_0708295D-56B4-4B61-9CE2-E8D4827F8A8B">
@@ -128,7 +128,7 @@
           <dmn:text>"Marginal"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text/>
+          <dmn:text>"Bareable but unpleasant"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_C79EA2C5-4FC4-48B3-857E-BBA18578A456">
@@ -154,7 +154,7 @@
           <dmn:text>"Uninhabitable"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text/>
+          <dmn:text>"Deadly"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
     </dmn:decisionTable>
@@ -172,7 +172,7 @@
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>132</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>481</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>

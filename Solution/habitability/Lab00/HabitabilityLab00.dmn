@@ -102,7 +102,33 @@
           <dmn:text>"Habitable"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text/>
+          <dmn:text>The goldilocks climate and surface conditions</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_5C1F93F9-9687-4AE5-ABE9-D5940920F466">
+        <dmn:inputEntry id="_529BCDB5-2C97-4D13-A38F-79C51C253069">
+          <dmn:text>&lt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_C50A7CFB-1B23-4BAA-836A-0BF3D13AC2D5">
+          <dmn:text>[0..2]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_EFF43C91-66C2-459A-808C-74490A81371A">
+          <dmn:text>&lt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_5533F79E-799A-440E-9A06-E0F217BC8A6C">
+          <dmn:text>60-100]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_082E7FB0-FCEA-47DE-8CB0-093D98E2285C">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_AF75CADC-90F3-482D-9E43-CEC797A69747">
+          <dmn:text>[30-50]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_1685DDED-BB58-4D30-A9D7-E4B8AD12F756">
+          <dmn:text>"Barely Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"Bareable but unpleasant"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_C79EA2C5-4FC4-48B3-857E-BBA18578A456">
@@ -128,7 +154,7 @@
           <dmn:text>"Uninhabitable"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text/>
+          <dmn:text>"Deadly"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
     </dmn:decisionTable>
@@ -145,8 +171,8 @@
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>132</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>160</kie:width>
+            <kie:width>385</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>

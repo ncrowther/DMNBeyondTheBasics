@@ -18,7 +18,7 @@
     <dmn:informationRequirement id="_1B577A69-8BAE-47BE-A150-1F31FEC260D0">
       <dmn:requiredInput href="#_73034967-A97F-46FE-9567-2314822620A6"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A" hitPolicy="COLLECT" preferredOrientation="Rule-as-Row">
+    <dmn:decisionTable id="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_F417C665-F6C0-423C-B5B0-A815265E165E">
         <dmn:inputExpression id="_94D2D839-5FCE-45DC-8AF9-1EE03D52127B" typeRef="number">
           <dmn:text>oxygen</dmn:text>

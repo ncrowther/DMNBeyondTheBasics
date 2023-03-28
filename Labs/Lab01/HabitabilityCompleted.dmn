@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/Habitability01" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_B727A2EB-B76A-4A86-99C9-4598FF447310" name="Habitability01" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/Habitability01">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_34DA5656-58F4-4D48-8ECB-9E285D65147C" name="PlanetInfo" isCollection="false">
+    <dmn:itemComponent id="_606A9B86-1143-4EB6-9D44-AD2D15629AC9" name="surface" isCollection="false">
+      <dmn:typeRef>Surface</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_EECEF30A-AD99-4901-9A62-D92B074FE6E3" name="atmosphere" isCollection="false">
+      <dmn:typeRef>Atmosphere</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_B440EA2D-B235-4CBD-8904-EB26C3503BC8" name="Surface" isCollection="false">
+    <dmn:itemComponent id="_5631D394-4862-4B4A-B909-C0C2CE5C5BA3" name="temperature" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_CC5D3490-5AD3-4D32-AED9-415159C97A28" name="pressure" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_5E2EC733-8E0C-484E-8D05-F7F11D3BD250" name="gravity" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_1F84AF76-4E36-426E-BDDE-8C5B2123A09C" name="Atmosphere" isCollection="false">
+    <dmn:itemComponent id="_5A65B50C-0676-4858-989E-8F31A5261DA5" name="oxygen" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_885FD439-A5C2-4633-AD10-7FBBA6A118DE" name="methane" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_84E6EDF0-C48D-42A6-985B-93651C13BFDE" name="carbonDioxide" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:decision id="_50673309-AA07-4CCC-8DAF-622F4F1377DA" name="Habitability">
+    <dmn:extensionElements/>
+    <dmn:variable id="_D5EF833C-F790-4DE0-8627-FB09D4FC0B66" name="Habitability" typeRef="string"/>
+    <dmn:informationRequirement id="_509B99F0-B47D-4412-BCC6-D452E8E66BD7">
+      <dmn:requiredInput href="#_83CC15BF-F0D5-42D4-93DE-62FA5E23988B"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_16FDF7D3-9F5C-42F8-ADC8-000EC1B44B83">
+        <dmn:inputExpression id="_5B70AD84-3BC3-48BC-B079-CBB927DACA9B" typeRef="number">
+          <dmn:text>planetData.carbonDioxide</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_A09E740B-DF4C-49D1-A52F-9C69E5EB6C80">
+        <dmn:inputExpression id="_0C344D95-2FB3-4515-98E9-A0717D3BBC91" typeRef="number">
+          <dmn:text>planetData.gravity</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_C393907A-75EC-4368-8FC8-EDF48487810B">
+        <dmn:inputExpression id="_9A0046EA-FDCC-4FFC-B63A-419AF9010549" typeRef="number">
+          <dmn:text>planetData.methane</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_F417C665-F6C0-423C-B5B0-A815265E165E">
+        <dmn:inputExpression id="_94D2D839-5FCE-45DC-8AF9-1EE03D52127B" typeRef="number">
+          <dmn:text>planetData.oxygen</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_73454BA7-5F0C-4367-BF5D-56A0051294B1">
+        <dmn:inputExpression id="_F1B70446-0F39-41B9-B193-2CA780EE50C9" typeRef="number">
+          <dmn:text>planetData.surfacePressure</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_1C7878BB-2FDD-4966-BA90-D4A4C099ED9B">
+        <dmn:inputExpression id="_36A893C8-2F2F-4CEF-8BCA-C428650EE337" typeRef="number">
+          <dmn:text>planetData.temperature</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_6CE0F167-04A9-4B24-8699-480E6E6CFBC8"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_8CC471BF-B06B-4002-9B5D-373FEFB4E197">
+        <dmn:inputEntry id="_64542F90-5925-4312-A87F-0F1BA4D21476">
+          <dmn:text>&lt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7653162E-681E-4FD0-B801-8674FE78416F">
+          <dmn:text>[0..2]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D8E608AA-7713-478B-9A17-B2E417917FD2">
+          <dmn:text>&lt;10</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7BE22630-E7AB-417F-BE8E-CCC98C3EE677">
+          <dmn:text>[20..60]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_B4565F5E-35E9-4160-8216-1B69FC3C3CFE">
+          <dmn:text>[0.5..2]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_71DC9317-0EAF-4DBB-B855-62C6B98BC2C1">
+          <dmn:text>[0..30]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_67183BFF-F580-46A0-9A67-D5E1979BA115">
+          <dmn:text>"Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_C79EA2C5-4FC4-48B3-857E-BBA18578A456">
+        <dmn:inputEntry id="_429EDB19-9DDA-4F59-8BFF-8A8CEF5B0280">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_C65E742F-BDF6-4D85-B1B5-85FF08FB2EAD">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7E8C8FDA-EBE4-4F61-A73A-DC03EF0C7FC7">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_882E3D1B-AFBA-44F8-A52C-454296F749CB">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7369306D-7566-4AAC-B42E-0A279F2AF5A5">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_1760DB96-C768-4408-BF39-4E6258E9BDE0">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_D92337A3-B7B3-483B-AEA1-7C6A2058DDD1">
+          <dmn:text>"Uninhabitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="_83CC15BF-F0D5-42D4-93DE-62FA5E23988B" name="planetData">
+    <dmn:extensionElements/>
+    <dmn:variable id="_41EE9A86-35CD-46FA-9F6D-CC786C1A1E02" name="planetData" typeRef="PlanetInfo"/>
+  </dmn:inputData>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_AC37257A-FB81-411C-96D9-FA81D60F94FE" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A">
+            <kie:width>50</kie:width>
+            <kie:width>175</kie:width>
+            <kie:width>139</kie:width>
+            <kie:width>153</kie:width>
+            <kie:width>132</kie:width>
+            <kie:width>224</kie:width>
+            <kie:width>171</kie:width>
+            <kie:width>132</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_50673309-AA07-4CCC-8DAF-622F4F1377DA" dmnElementRef="_50673309-AA07-4CCC-8DAF-622F4F1377DA" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="644" y="276" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_83CC15BF-F0D5-42D4-93DE-62FA5E23988B" dmnElementRef="_83CC15BF-F0D5-42D4-93DE-62FA5E23988B" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="644" y="479" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_509B99F0-B47D-4412-BCC6-D452E8E66BD7" dmnElementRef="_509B99F0-B47D-4412-BCC6-D452E8E66BD7">
+        <di:waypoint x="694" y="504"/>
+        <di:waypoint x="694" y="326"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

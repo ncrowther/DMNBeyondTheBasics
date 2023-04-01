@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_031A5D7C-E7A3-43C1-9F5E-7FAE38D17267" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_50D98261-2740-4904-9475-0133A867FEBA" name="RouteAF" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_031A5D7C-E7A3-43C1-9F5E-7FAE38D17267">
   <dmn:extensionElements/>
-  <dmn:itemDefinition id="_F609C274-EFDD-4945-95B8-8476EC500E2B" name="Swift" isCollection="false">
-    <dmn:itemComponent id="_D484AC5A-8F8C-4445-907C-6083EE63F06C" name="messageType" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_B95938C5-5925-4E03-B33A-92AF05F4DC6E" name="branch" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_FC133AAC-7712-4711-8C73-34E00D37389A" name="bic" isCollection="false">
-      <dmn:typeRef>string</dmn:typeRef>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
   <dmn:decisionService id="_70683FA0-02C7-408B-AD7C-FAE79497801E" name="RouteAF">
     <dmn:extensionElements/>
     <dmn:variable id="_486C93C2-B9BD-4665-9D1C-9CFF88C5E473" name="RouteAF"/>
@@ -20,7 +9,7 @@
   </dmn:decisionService>
   <dmn:inputData id="_77239AEE-FC7A-4F8B-8853-7749E347FF86" name="swiftMessage">
     <dmn:extensionElements/>
-    <dmn:variable id="_143B7413-898E-40E0-86AA-9FEF2C013518" name="swiftMessage" typeRef="Swift"/>
+    <dmn:variable id="_143B7413-898E-40E0-86AA-9FEF2C013518" name="swiftMessage"/>
   </dmn:inputData>
   <dmn:decision id="_71327A55-1CBF-479B-B4EA-5C6670D8CBA2" name="Route">
     <dmn:extensionElements/>

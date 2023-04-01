@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_660E08A8-05AF-468C-ADDE-E54F17E4671B" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_1BDA326D-1FC6-4756-8A61-8FF9C1DFB7D4" name="SwiftRoutingRules" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_660E08A8-05AF-468C-ADDE-E54F17E4671B">
+  <dmn:extensionElements/>
+  <dmn:inputData id="_2169E3CB-C61D-4767-A3D6-90214D0C19E2" name="swiftMessage">
+    <dmn:extensionElements/>
+    <dmn:variable id="_28032AF5-18F2-42FC-90AA-23715631CD51" name="swiftMessage" typeRef="DS1.Swift"/>
+  </dmn:inputData>
+  <dmn:decision id="_8B814570-E940-44F7-855F-451A2E4052CD" name="Route">
+    <dmn:extensionElements/>
+    <dmn:variable id="_CF66EAE8-9E3C-48A2-8112-A65EFE3B3AEB" name="Route" typeRef="string"/>
+    <dmn:informationRequirement id="_4444302B-1ABA-4DBF-9234-BE56CB757F04">
+      <dmn:requiredInput href="#_2169E3CB-C61D-4767-A3D6-90214D0C19E2"/>
+    </dmn:informationRequirement>
+    <dmn:context id="_8C19D42A-911D-4927-88C4-D6EF02C5DBDB">
+      <dmn:contextEntry>
+        <dmn:variable id="_06853CE0-1401-4833-BD73-A6E0C454AFD4" name="A-F" typeRef="boolean"/>
+        <dmn:literalExpression id="_AF47F1A4-8FE3-4765-9C1E-4483ADA4B92F">
+          <dmn:text>matches(swiftMessage.bic,"[A-F][A-Z]*" )</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_7B80AEE0-30D5-47CC-ABAF-47AA638A33DE" name="G-M" typeRef="boolean"/>
+        <dmn:literalExpression id="_613A8784-CC18-4F08-9706-B7E3F3BC4F7F">
+          <dmn:text>matches(swiftMessage.bic,"[G-M][A-Z]*" )</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_D87E10E0-0800-4CF9-B821-C3A1496A404A" name="N-R" typeRef="boolean"/>
+        <dmn:literalExpression id="_4B3A04BE-6012-4E0E-80A1-74C25E86CBA6">
+          <dmn:text>matches(swiftMessage.bic,"[N-R][A-Z]*" )</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_FA3A961C-444C-494D-AE74-49A1465E18FF" name="S-Z" typeRef="boolean"/>
+        <dmn:literalExpression id="_73C463E7-3A74-4007-9CB3-9EE9C6CE8EAA">
+          <dmn:text>matches(swiftMessage.bic,"[S-Z][A-Z]*" )</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_1802682E-50D8-45DE-A89A-307D065BC39A" name="resultA-F" typeRef="string"/>
+        <dmn:literalExpression id="_A68277EF-36EC-4DDB-B7B6-57E40942422C">
+          <dmn:text>if A-F then (DS1.RouteAF(swiftMessage)) else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_B3665823-C225-49A0-A665-D1CBBACFDDC9" name="resultG-M" typeRef="string"/>
+        <dmn:literalExpression id="_D90DD16C-509B-475D-816E-C94829B28B06">
+          <dmn:text>if G-M then (DS2.RouteGM(swiftMessage)) else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_2CDC3278-6FC0-41F8-8F9D-BF5B627E42C4" name="resultN-R" typeRef="string"/>
+        <dmn:literalExpression id="_023C6275-969B-48BB-A561-09A41AAE6D61">
+          <dmn:text>if N-R then (DS3.RouteNR(swiftMessage)) else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:variable id="_3F9AD701-9B97-4785-8C63-E4053D0FDB77" name="resultS-Z" typeRef="string"/>
+        <dmn:literalExpression id="_494F733A-FC6F-40B4-807E-944C3686B236">
+          <dmn:text>if S-Z then (DS4.RouteSZ(swiftMessage)) else ""</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+      <dmn:contextEntry>
+        <dmn:literalExpression id="_3B390E54-659C-42BE-9382-A2D9C01FF484">
+          <dmn:text>string join ([resultA-F, resultG-M, resultN-R, resultS-Z])</dmn:text>
+        </dmn:literalExpression>
+      </dmn:contextEntry>
+    </dmn:context>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_B9AA2987-A03C-4194-8325-866F8F5FBED0" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_8C19D42A-911D-4927-88C4-D6EF02C5DBDB">
+            <kie:width>50</kie:width>
+            <kie:width>556</kie:width>
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_AF47F1A4-8FE3-4765-9C1E-4483ADA4B92F">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_613A8784-CC18-4F08-9706-B7E3F3BC4F7F">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_4B3A04BE-6012-4E0E-80A1-74C25E86CBA6">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_73C463E7-3A74-4007-9CB3-9EE9C6CE8EAA">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_A68277EF-36EC-4DDB-B7B6-57E40942422C">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_D90DD16C-509B-475D-816E-C94829B28B06">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_023C6275-969B-48BB-A561-09A41AAE6D61">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_494F733A-FC6F-40B4-807E-944C3686B236">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+          <kie:ComponentWidths dmnElementRef="_3B390E54-659C-42BE-9382-A2D9C01FF484">
+            <kie:width>1067</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_2169E3CB-C61D-4767-A3D6-90214D0C19E2" dmnElementRef="_2169E3CB-C61D-4767-A3D6-90214D0C19E2" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="661.2990654205607" y="644" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_8B814570-E940-44F7-855F-451A2E4052CD" dmnElementRef="_8B814570-E940-44F7-855F-451A2E4052CD" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="661" y="551" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_4444302B-1ABA-4DBF-9234-BE56CB757F04" dmnElementRef="_4444302B-1ABA-4DBF-9234-BE56CB757F04">
+        <di:waypoint x="711.2990654205607" y="669"/>
+        <di:waypoint x="711" y="601"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

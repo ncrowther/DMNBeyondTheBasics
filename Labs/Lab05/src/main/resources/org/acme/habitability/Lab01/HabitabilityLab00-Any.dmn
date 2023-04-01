@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/Habitability00Any" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_B727A2EB-B76A-4A86-99C9-4598FF447310" name="Habitability00Any" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/Habitability00Any">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_F150D414-8F95-41C4-872C-EB08D48A9E90" name="Habitability" isCollection="false">
+    <dmn:typeRef>string</dmn:typeRef>
+    <dmn:allowedValues kie:constraintType="expression" id="_4D10F37A-EBBF-4220-86AB-072B7B871BBA">
+      <dmn:text>"Habitable", "Bearly Habitable", "Not Habitable"</dmn:text>
+    </dmn:allowedValues>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_73034967-A97F-46FE-9567-2314822620A6" name="oxygen">
+    <dmn:extensionElements/>
+    <dmn:variable id="_5451A0F2-73C5-492E-AE33-4C4C14E3A247" name="oxygen" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:inputData id="_124ABFB2-0502-47AF-AE9B-1FCACF345D3D" name="temperature">
+    <dmn:extensionElements/>
+    <dmn:variable id="_5D33DB84-79FA-4137-8336-A861B4D03C72" name="temperature" typeRef="number"/>
+  </dmn:inputData>
+  <dmn:decision id="_50673309-AA07-4CCC-8DAF-622F4F1377DA" name="HabitabilityAny">
+    <dmn:extensionElements/>
+    <dmn:variable id="_D5EF833C-F790-4DE0-8627-FB09D4FC0B66" name="HabitabilityAny" typeRef="Habitability"/>
+    <dmn:informationRequirement id="_1D15CDCC-3FED-44CE-A81E-03859E642908">
+      <dmn:requiredInput href="#_124ABFB2-0502-47AF-AE9B-1FCACF345D3D"/>
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="_1B577A69-8BAE-47BE-A150-1F31FEC260D0">
+      <dmn:requiredInput href="#_73034967-A97F-46FE-9567-2314822620A6"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A" hitPolicy="ANY" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_F417C665-F6C0-423C-B5B0-A815265E165E">
+        <dmn:inputExpression id="_9D420170-714D-457C-A1DD-A254F3680627" typeRef="number">
+          <dmn:text>oxygen</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_1C7878BB-2FDD-4966-BA90-D4A4C099ED9B">
+        <dmn:inputExpression id="_09CCBE8F-0B8F-4122-AF0E-82A3946F4FA8" typeRef="number">
+          <dmn:text>temperature</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_6CE0F167-04A9-4B24-8699-480E6E6CFBC8"/>
+      <dmn:annotation name="Description"/>
+      <dmn:rule id="_14305DC5-DC4B-4FD3-A8A4-2524537541D9">
+        <dmn:inputEntry id="_CB10A2F7-04E9-4252-9112-F964E84D47FF">
+          <dmn:text>[20..60]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_311E193F-C73C-4817-9295-4469905C1CA2">
+          <dmn:text>[0..50)</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2DC16832-88E4-45A2-9B89-93ACCF0F9714">
+          <dmn:text>"Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_03DE2CB7-B945-4DED-8706-29930F0E4B6C">
+        <dmn:inputEntry id="_80E8BC21-99D9-4A3D-9E4D-9A89BDBF7BC5">
+          <dmn:text>[20..60]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D9934FE1-4A03-4CEE-A346-6116A5996ED8">
+          <dmn:text>[50..70)</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_9D96BC3A-C486-4DCF-AC22-BEFD3870E07E">
+          <dmn:text>"Bearly Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_6CD9AD95-5756-4804-A083-4B7172ED925B">
+        <dmn:inputEntry id="_1ACF6DDB-C9E6-4FC9-8555-ED265CBCF134">
+          <dmn:text>[20..60]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_D08F709E-F108-45B3-A003-13427BB887B4">
+          <dmn:text>[-20..0)</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_40E09776-45CA-415D-BF1F-BDC0CBB9E16E">
+          <dmn:text>"Bearly Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_D37C0810-06D6-4C83-A32D-E0C56016E141">
+        <dmn:inputEntry id="_326AD394-E56C-4343-A49A-5A018E4B028C">
+          <dmn:text>[20..60]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_67266248-E17D-4232-8D77-4838B7469F1F">
+          <dmn:text>&lt;-20</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B312D864-F795-4290-816E-FECB9A15655B">
+          <dmn:text>"Not Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_C2A5E868-16A7-4231-B50B-05BBA9EFAED7">
+        <dmn:inputEntry id="_41477C5A-BC54-4603-9ECE-E4621319DCD1">
+          <dmn:text>[20..60]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_512BFD96-E824-4DCC-A845-55984B83DC56">
+          <dmn:text>&gt;=70</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_65E5E8DA-7514-4C90-80FC-869FE4AA7AC5">
+          <dmn:text>"Not Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_3CBAFB03-8BDC-4684-8ED3-833B44C6D84F">
+        <dmn:inputEntry id="_00AE7014-9FF5-4C3B-BD83-32352BDC7685">
+          <dmn:text>&lt;20</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7CA811C8-1E00-48D5-9279-E3CB5B1E9E8C">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_AD0915D5-9EB0-46D9-A279-C08A1AA9200C">
+          <dmn:text>"Not Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_9998544F-7B9B-4264-B336-263036F63F0C">
+        <dmn:inputEntry id="_58F3FCFB-8DF2-4567-8697-82825E3F7883">
+          <dmn:text>&gt;60</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_56E4CD6A-A714-4B4F-A29E-0176BE507274">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B365E400-6F48-43BD-B4EE-2CAAC5FCD3E6">
+          <dmn:text>"Not Habitable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_AC37257A-FB81-411C-96D9-FA81D60F94FE" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_05FF900C-0783-41D8-BF77-E57D8B6ABE4A">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>550</kie:width>
+            <kie:width>799</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_73034967-A97F-46FE-9567-2314822620A6" dmnElementRef="_73034967-A97F-46FE-9567-2314822620A6" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="467" y="369" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_124ABFB2-0502-47AF-AE9B-1FCACF345D3D" dmnElementRef="_124ABFB2-0502-47AF-AE9B-1FCACF345D3D" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="693" y="369" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_50673309-AA07-4CCC-8DAF-622F4F1377DA" dmnElementRef="_50673309-AA07-4CCC-8DAF-622F4F1377DA" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="577" y="79" width="119" height="51"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_1D15CDCC-3FED-44CE-A81E-03859E642908" dmnElementRef="_1D15CDCC-3FED-44CE-A81E-03859E642908">
+        <di:waypoint x="743" y="394"/>
+        <di:waypoint x="636.5" y="130"/>
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="dmnedge-drg-_1B577A69-8BAE-47BE-A150-1F31FEC260D0" dmnElementRef="_1B577A69-8BAE-47BE-A150-1F31FEC260D0">
+        <di:waypoint x="517" y="394"/>
+        <di:waypoint x="636.5" y="130"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

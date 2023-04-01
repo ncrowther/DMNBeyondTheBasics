@@ -3,7 +3,7 @@
   <dmn:extensionElements/>
   <dmn:inputData id="_2169E3CB-C61D-4767-A3D6-90214D0C19E2" name="swiftMessage">
     <dmn:extensionElements/>
-    <dmn:variable id="_28032AF5-18F2-42FC-90AA-23715631CD51" name="swiftMessage" typeRef="DS1.Swift"/>
+    <dmn:variable id="_28032AF5-18F2-42FC-90AA-23715631CD51" name="swiftMessage" typeRef="Swift.Swift"/>
   </dmn:inputData>
   <dmn:decision id="_8B814570-E940-44F7-855F-451A2E4052CD" name="Route">
     <dmn:extensionElements/>

@@ -14,70 +14,70 @@
           <dmn:text>Oxygen</dmn:text>
         </dmn:inputExpression>
       </dmn:input><dmn:output id="_3EC92DDC-D347-4CAC-86ED-4BE76DFB30E0"/>
-      <dmn:annotation name="annotation-1"/><dmn:rule id="_115c9efa-26d5-4d71-862c-b8a57c01dae3">
-<dmn:inputEntry id="_8e219f48-3bae-40e0-ae3b-8eceff0363f1">
+      <dmn:annotation name="annotation-1"/><dmn:rule id="_9284106d-0b24-4eef-a81b-15e10fa54e2f">
+<dmn:inputEntry id="_67877474-bb19-4b54-915d-06bcafeb98a0">
 <dmn:text>&gt;=50</dmn:text>
 </dmn:inputEntry>
-<dmn:inputEntry id="_5e352465-a14e-40a5-b00d-a5bfb7db6981">
+<dmn:inputEntry id="_1e213085-e50f-4642-9e52-930778a44fc3">
 <dmn:text>&gt;=50</dmn:text>
 </dmn:inputEntry>
-<dmn:outputEntry id="_9c14b682-3228-452e-aecf-7faade05042a">
+<dmn:outputEntry id="_947d6f55-2d3d-465f-a771-d67cca4c76d8">
 <dmn:text>"Dangerous"</dmn:text>
 </dmn:outputEntry>
 <dmn:annotationEntry>
 <dmn:text/>
 </dmn:annotationEntry>
 </dmn:rule>
-<dmn:rule id="_796d80ad-ea1e-45f7-a6ba-7f2e56459dc9">
-<dmn:inputEntry id="_9712a6db-e8f1-4ece-8c1e-89e6dbcafef5">
+<dmn:rule id="_c35b7243-5e1b-4010-8afc-bfed4ac1c0dc">
+<dmn:inputEntry id="_84fbb516-a9cd-4ea2-b79a-0851cd76401b">
 <dmn:text>[16-49]</dmn:text>
 </dmn:inputEntry>
-<dmn:inputEntry id="_e67e88b2-b2a2-4ae5-8907-ec78cc4a0c53">
+<dmn:inputEntry id="_f34ae971-1960-4577-ac82-c5500ebb2ab7">
 <dmn:text>[16-49]</dmn:text>
 </dmn:inputEntry>
-<dmn:outputEntry id="_7564c271-b1c9-4b0b-98fe-14ad7e3d2618">
+<dmn:outputEntry id="_28b097c4-356f-43a4-aafa-6ee3300a26e9">
 <dmn:text>"Optimal"</dmn:text>
 </dmn:outputEntry>
 <dmn:annotationEntry>
 <dmn:text/>
 </dmn:annotationEntry>
 </dmn:rule>
-<dmn:rule id="_bef9908b-2eb5-4382-b594-24b3de668831">
-<dmn:inputEntry id="_49ab2eb7-9cbc-421f-8150-4639f26dc25b">
+<dmn:rule id="_ad69f845-3984-4900-b65d-0a927a175aea">
+<dmn:inputEntry id="_167aa2fd-ddb6-4fe5-b60d-d21bbd671fb0">
 <dmn:text>[5-15]</dmn:text>
 </dmn:inputEntry>
-<dmn:inputEntry id="_72e0196f-6118-40f0-bad8-8fa5e067e63b">
+<dmn:inputEntry id="_ed6a10e0-33bd-41c3-b9d2-6c3993ab667a">
 <dmn:text>[5-15]</dmn:text>
 </dmn:inputEntry>
-<dmn:outputEntry id="_a07fae81-a75a-4342-a130-e25ffa7c9f14">
+<dmn:outputEntry id="_c3473cbf-3ee5-42f1-9226-15bb09bc1bcc">
 <dmn:text>"Bearable"</dmn:text>
 </dmn:outputEntry>
 <dmn:annotationEntry>
 <dmn:text/>
 </dmn:annotationEntry>
 </dmn:rule>
-<dmn:rule id="_edeead76-9ab3-4969-a755-4410e3535dae">
-<dmn:inputEntry id="_accda790-e31d-45ea-b61c-d9eca85cdc65">
+<dmn:rule id="_aa19d258-1cad-41f0-bded-c12da1a20260">
+<dmn:inputEntry id="_72609d5d-6e98-4043-a94e-7c8424c182c3">
 <dmn:text>&lt;5</dmn:text>
 </dmn:inputEntry>
-<dmn:inputEntry id="_d53e2270-2237-44eb-bf07-e3512100e2d4">
+<dmn:inputEntry id="_e0193aa0-c38b-48ed-a237-4a5f88ff297f">
 <dmn:text>&lt;5</dmn:text>
 </dmn:inputEntry>
-<dmn:outputEntry id="_fba1ef7b-1995-4113-a2dd-810557e47e0b">
+<dmn:outputEntry id="_d994c09d-4b7f-4e62-86bf-eef28628c74a">
 <dmn:text>"Deadly"</dmn:text>
 </dmn:outputEntry>
 <dmn:annotationEntry>
 <dmn:text/>
 </dmn:annotationEntry>
 </dmn:rule>
-<dmn:rule id="_fb2700f7-feca-480f-9e66-be1dc47a6777">
-<dmn:inputEntry id="_c882e07a-e4cd-44a0-a221-d83a54259ecb">
+<dmn:rule id="_f8f6246a-1799-4f7d-a555-7caa84f9a7d6">
+<dmn:inputEntry id="_98879ec0-e1df-462a-b087-bb4ee72f174a">
 <dmn:text>&lt;0</dmn:text>
 </dmn:inputEntry>
-<dmn:inputEntry id="_86d04e41-ac0e-4ed5-a9fd-f9b5886d63e9">
+<dmn:inputEntry id="_cfd9cb4f-19b5-4b59-b5fe-54cb5c83e3ba">
 <dmn:text>&lt;0</dmn:text>
 </dmn:inputEntry>
-<dmn:outputEntry id="_71f41947-29ce-4da1-b09c-48258a70c6f5">
+<dmn:outputEntry id="_87a7f408-caad-4cf9-b14b-81ecca991091">
 <dmn:text>"Still deadly"</dmn:text>
 </dmn:outputEntry>
 <dmn:annotationEntry>

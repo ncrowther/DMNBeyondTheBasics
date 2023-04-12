@@ -37,30 +37,29 @@ public class XMLGenerator {
         }          
     }
 
-    private List<File> filenames = new LinkedList<File>();
-    private static final String BASE_PATH = "D:/IBAMOE/git/DMNBeyondTheBasics";
+    private static final String BASE_PATH = ".";
     private List<TableColumn> tableColumns;
-    private int tableRows = 0;
-
+    private int tableRows;
 
     public void readCsvFiles() {
         String csvFolder = BASE_PATH + "/excel";
        final File folder = new File(csvFolder);
-       listFilesForFolder(folder);
+       final List<File> filenames = listFilesForFolder(folder);
 
        Iterator<File> iter = filenames.iterator();
        
        while (iter.hasNext()) {
-        tableColumns = new ArrayList<TableColumn>();
-        tableRows = 0;
-        File file = iter.next();
-        readCsv(file.getAbsolutePath());
-        generateDMN(file.getName());
+          tableColumns = new ArrayList<TableColumn>();
+          tableRows = 0;
+          File file = iter.next();
+          readCsv(file.getAbsolutePath());
+          generateDMN(file.getName());
        }
-
     }
 
-    private void listFilesForFolder(final File folder) {
+    private List<File> listFilesForFolder(final File folder) {
+
+        List<File> filenames = new LinkedList<File>(); 
         for (final File fileEntry : folder.listFiles()) {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
@@ -70,6 +69,7 @@ public class XMLGenerator {
                     System.out.println(fileEntry);
             }
         }
+        return filenames;
     }
 
     private void readCsv(String csvFile) {

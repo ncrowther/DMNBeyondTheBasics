@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/Breathabililty" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="Breathability" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/Breathabililty">
+  <dmn:extensionElements/>
+
+  <dmn:decision id="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" name="Classification">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B6D36E32-4CF5-47E4-A5B9-81F4B9C01119" name="Classification" typeRef="string"/>
+    <dmn:decisionTable id="_7CCC4E09-15AD-4108-A087-287BAACE06B3" hitPolicy="FIRST" preferredOrientation="Rule-as-Row"><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
+        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
+          <dmn:text>﻿Methane</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
+        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
+          <dmn:text>Oxygen</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input><dmn:output id="_3EC92DDC-D347-4CAC-86ED-4BE76DFB30E0"/>
+      <dmn:annotation name="annotation-1"/><dmn:rule id="_115c9efa-26d5-4d71-862c-b8a57c01dae3">
+<dmn:inputEntry id="_8e219f48-3bae-40e0-ae3b-8eceff0363f1">
+<dmn:text>&gt;=50</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5e352465-a14e-40a5-b00d-a5bfb7db6981">
+<dmn:text>&gt;=50</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9c14b682-3228-452e-aecf-7faade05042a">
+<dmn:text>"Dangerous"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_796d80ad-ea1e-45f7-a6ba-7f2e56459dc9">
+<dmn:inputEntry id="_9712a6db-e8f1-4ece-8c1e-89e6dbcafef5">
+<dmn:text>[16-49]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e67e88b2-b2a2-4ae5-8907-ec78cc4a0c53">
+<dmn:text>[16-49]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7564c271-b1c9-4b0b-98fe-14ad7e3d2618">
+<dmn:text>"Optimal"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bef9908b-2eb5-4382-b594-24b3de668831">
+<dmn:inputEntry id="_49ab2eb7-9cbc-421f-8150-4639f26dc25b">
+<dmn:text>[5-15]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_72e0196f-6118-40f0-bad8-8fa5e067e63b">
+<dmn:text>[5-15]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a07fae81-a75a-4342-a130-e25ffa7c9f14">
+<dmn:text>"Bearable"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_edeead76-9ab3-4969-a755-4410e3535dae">
+<dmn:inputEntry id="_accda790-e31d-45ea-b61c-d9eca85cdc65">
+<dmn:text>&lt;5</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d53e2270-2237-44eb-bf07-e3512100e2d4">
+<dmn:text>&lt;5</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_fba1ef7b-1995-4113-a2dd-810557e47e0b">
+<dmn:text>"Deadly"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fb2700f7-feca-480f-9e66-be1dc47a6777">
+<dmn:inputEntry id="_c882e07a-e4cd-44a0-a221-d83a54259ecb">
+<dmn:text>&lt;0</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_86d04e41-ac0e-4ed5-a9fd-f9b5886d63e9">
+<dmn:text>&lt;0</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_71f41947-29ce-4da1-b09c-48258a70c6f5">
+<dmn:text>"Still deadly"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_29F4A98A-07F6-46C3-BB7E-007BB02F7B94" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_7CCC4E09-15AD-4108-A087-287BAACE06B3">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" dmnElementRef="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="565" y="184" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

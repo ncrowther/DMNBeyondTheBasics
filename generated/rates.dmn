@@ -1,0 +1,5042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/Breathabililty" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="Breathability" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/Breathabililty">
+  <dmn:extensionElements/>
+
+  <dmn:decision id="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" name="Rate">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B6D36E32-4CF5-47E4-A5B9-81F4B9C01119" name="Rate" typeRef="string"/>
+    <dmn:decisionTable id="_7CCC4E09-15AD-4108-A087-287BAACE06B3" hitPolicy="FIRST" preferredOrientation="Rule-as-Row"><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
+        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
+          <dmn:text>﻿L0</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
+        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
+          <dmn:text>L1</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input><dmn:output id="_3EC92DDC-D347-4CAC-86ED-4BE76DFB30E0"/>
+      <dmn:annotation name="annotation-1"/><dmn:rule id="_28bbafe5-1d04-4b88-a47a-20f4d2df8796">
+<dmn:inputEntry id="_2414834f-868c-43a0-a03f-4294eb9df767">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3de767c1-8591-4339-89a0-c9c9d4cd5687">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_66b0a1f5-c954-4610-98f8-630cb42ad677">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_70deeb72-4df7-4761-b41f-5143e00f3512">
+<dmn:inputEntry id="_9257af8f-613b-4519-8621-219f277a88ab">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0d09ab98-3878-44b6-ad1b-e8a4abcbdfd8">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_29a17fb2-1394-45af-9a33-bbdc095fbdbf">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_0336629f-de02-454c-b8f3-007e8ed49f34">
+<dmn:inputEntry id="_f8e10ca1-4f0d-4e09-bec4-4be02fb46438">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0a4f6893-c0e5-442c-8339-ae50cdeb5bcb">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_396d400b-2d9a-4894-b231-f3db301a0393">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d0ad1620-e08b-4694-8377-f4de90bbe10e">
+<dmn:inputEntry id="_b13ecd40-6574-4ba0-a3d9-8edcd79243ee">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d5e16e7b-90ae-4c43-b46a-3ba54cdb2a06">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_42877e5b-6f57-43f7-a2e0-2a4e9d1f7406">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a490ac79-77dc-4620-aecf-9b795f44422a">
+<dmn:inputEntry id="_c24892db-bd9b-4e6e-8fed-e655bc363e0d">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_27f69656-426f-4c0e-b291-8fe97b818351">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_26cca23d-fb15-42a4-ba9a-8bf0b179cfba">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ccc78b85-ecd7-42c4-8a21-e72d4c411a48">
+<dmn:inputEntry id="_b49cf851-69f2-4786-9895-ba7e470a5599">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f59ef0d6-e2e6-444d-aebe-6c4a36a78080">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9050a82d-4463-4b4d-bb23-d8e1d939e7a4">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ae91af2d-4eb6-4972-a4f4-1995979bd897">
+<dmn:inputEntry id="_c065c9e7-e297-4866-ba13-d0a398011410">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ab495c39-16b2-4b0b-8c6f-ee84e9cedbe1">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_280c9292-9479-43e2-8177-c82642dc5bf0">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_af9574ea-4e27-4e31-93db-a8d0df2abce3">
+<dmn:inputEntry id="_9381b09b-4cc0-4cb0-8915-c79cad9017d9">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d5863fb1-55e5-4670-8525-4925f0a9ac63">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_aafe31c6-69e1-47b2-933e-e7039de81f9e">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6622bdfe-4392-411e-908d-59bfe07844c6">
+<dmn:inputEntry id="_d2f9182e-5bca-4dd2-baea-76bb8cfc6233">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d6c6b0e9-5107-415d-b01c-ebeb64c35952">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b728f226-67fe-4ec1-acbe-54e8cd766431">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f99f3fb0-5533-4d4f-925f-6c3407f5635d">
+<dmn:inputEntry id="_a6374a70-6e1d-47d6-b362-30385989d820">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9ec78bc4-ff90-462e-bf4c-1cda1f3670b8">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_197637ed-984e-4265-ad01-aa2d220eb0f1">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1d3dd318-de79-4ded-938f-0a8182dd6648">
+<dmn:inputEntry id="_be48bf4c-80c6-4656-99e5-7db38fac3148">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_24e46117-abe2-4870-84c6-b5e86024bad9">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6a7ef0e8-8135-4293-8f6d-2a0a76da9257">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5921aad4-de50-4c65-b6c0-9da7e8634271">
+<dmn:inputEntry id="_e3143e56-b22d-4a72-9ed3-21feb1979794">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_135c5030-5c4a-42e2-a754-9fe454c3930d">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a48d1d7b-b68d-4d83-ade0-82d4fbd09f73">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fe3e388f-6d23-42be-9e70-64070fcc2156">
+<dmn:inputEntry id="_5d971a5f-65e0-4936-bbb9-4b06cf7f4bcd">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6f5775f7-1360-4cda-a479-74514745fa13">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_061b62e7-6b09-4209-9172-c0b3f17eb595">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_91d23e74-7fd8-48f8-aba8-4b93c392c938">
+<dmn:inputEntry id="_a352d63d-24b6-4eef-8801-3da57cbfc2e6">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9cea0dea-4fd3-40dd-9811-9f2c186a5401">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d22a52cd-fba3-41f0-ab8c-d97e614f092a">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_93063704-c122-4742-9519-4f36813d51f3">
+<dmn:inputEntry id="_63315b4b-840f-40c8-9865-1fccdea5c1c3">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_109c6653-c247-4c83-b503-6da446173b99">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_368e8385-64c0-40fc-8c00-5a6f5e3df506">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4bed2bc8-ebee-431f-b9c8-37da6762ab89">
+<dmn:inputEntry id="_52951d8d-2591-4975-928e-d30502c8cb69">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_24213fae-7a35-482b-8acf-e164327d11fb">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ff81ed3c-1f8b-4eae-ad0f-12c96705a485">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a1aa6bf1-62e6-49bf-868f-7dac1e5da27a">
+<dmn:inputEntry id="_48dc5a06-c197-4ec7-92b9-597b681880a4">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_304554ef-b631-4b65-b5ef-88c674a63e3d">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_440a9283-20bb-4572-abbe-e05cce6fcac0">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_12a4bca6-2bb9-40f5-aeb8-b10add585879">
+<dmn:inputEntry id="_040df953-c0ce-45b7-bfde-086b3b549f90">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f2b3b8b7-b2c8-4971-acc8-bd5ce7772021">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b4f8dce1-6ae3-4e35-a6d0-7af64dd43877">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a5bf0f46-b581-4ac3-b796-90ed7da1f993">
+<dmn:inputEntry id="_cde8d153-858a-4c30-a5e2-3c814ef6451f">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bda474cb-37f8-4f15-9e20-fded6781e114">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b743f763-3298-4988-94b9-64695e8f8723">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8be89c2a-755e-49f7-bc53-07158df02b45">
+<dmn:inputEntry id="_4b5b3bb9-5945-40af-ac55-58876de86c19">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bccd9933-4d15-4671-8a79-1dac28e961bb">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_119731a6-4713-4642-8d92-c8faffa4064a">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_722d0b60-a1cb-436f-ac2c-0d1442970014">
+<dmn:inputEntry id="_834e8567-e7cb-4154-8cf7-405cc2a1a758">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7923f725-85fb-4574-85e7-43821300aebc">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a13679df-09e6-4f97-be33-019d1896c5cd">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_724600d8-6265-4685-8d29-d1ba9e322c98">
+<dmn:inputEntry id="_dcc9c5fd-fd05-4545-9248-8b649102ff1a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_686391e1-d620-4548-98cc-66e0cc4693ba">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9fdbf70c-c4c0-40c3-a0a5-a4e43992a4de">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_85bceeec-580b-493c-b0a7-f941cd09dd5a">
+<dmn:inputEntry id="_39b2e3d1-dc15-4b1f-82f6-7f6418881853">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7c2ef6c1-1b01-4503-98ca-b4ef0a0423df">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_fe596de6-abbb-42e6-81ec-4f2e462fa85c">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_80e1f2cc-31c7-490c-a226-42c2338fbbac">
+<dmn:inputEntry id="_8a72f3aa-3b19-4049-a965-128b9a9222f0">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_502496ba-0aa0-4ed5-a6b3-49bf71c2e13c">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_69a88c0c-5d3e-4e7a-a86f-948a8891e12b">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5e7c6f63-5e18-4161-a0b0-2602674e37f6">
+<dmn:inputEntry id="_952808b0-99b8-44e0-a171-e6c1379ceb21">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_23c31847-3744-4467-b6c9-b6d8d6d75c94">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c33b4777-9559-45e7-a03d-b3efc13152be">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d863070f-afc3-407e-bbbc-3cbd9a92d334">
+<dmn:inputEntry id="_e2595840-5b81-4da1-a400-6ba687353c36">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a3c912cb-cadb-4208-b0db-3179d8ad79b7">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5853d7d3-27d1-4b29-bfc8-67e45537714e">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ee08beed-ffe2-4757-b3f0-54877a5706f5">
+<dmn:inputEntry id="_7ab567ec-8c3d-4914-a7ed-b6381d5d34e3">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0770ad71-9a70-43c8-9993-080fc5b74dfa">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b71dd1bf-bd4e-4a81-9c84-5b181afb1b02">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_18e1dde0-06ed-4123-9c68-b3183ab76740">
+<dmn:inputEntry id="_6182fa97-2839-48f9-a5d0-d11ba230907e">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b2e88b88-5448-47ce-a043-2b39428f5adc">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_933f55f4-c8e7-4923-8757-286115ad7cc8">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_345605d5-38c1-4757-b30e-f00097e3ad90">
+<dmn:inputEntry id="_e3ffccc2-c9de-464f-9cc7-922be9553082">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_53b14f44-20fc-434f-b601-ccfa0e18fc02">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_62c7cca9-8a18-4390-86d8-3f15edec588c">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1eb786c4-3277-4967-af1d-05b55cebdf43">
+<dmn:inputEntry id="_5368fd07-ab3b-47d3-8519-a6e770a89bdf">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ce2dcd60-fb97-4059-b37a-0349668cb1ff">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a4cc3a38-02e1-4faf-925e-12344db776ac">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_540a2e6e-a9e5-44c3-851e-708544fbf63d">
+<dmn:inputEntry id="_5cd8472a-d3b9-4b16-a1da-e670f0f277a0">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c193258d-b80e-4005-8ee4-15325581a52e">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_64c4f506-cb27-4335-9cd8-90a2e9f94705">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_14890a61-7bc9-481b-81a0-e3f9e9b05875">
+<dmn:inputEntry id="_48a657a8-4c57-44f3-9077-961f20b09403">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_341c324c-4d4d-4a24-8496-e1bc13cfe07f">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_73565fcc-4d7d-4cdb-bc11-d4f38a4b65f9">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9adf8b93-a0f3-44fe-b0f5-e1957386bc72">
+<dmn:inputEntry id="_11863412-98d2-4d69-88d9-47499ed35e88">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f35d3858-bdde-4011-9e81-303042786083">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4485d94f-0869-4f34-a775-c491019cbccb">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9ac42ce2-4af7-4467-83ae-3a0ebdcdfea6">
+<dmn:inputEntry id="_ff1ac302-e390-4615-8f75-f59f65fc17d1">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_feb47b63-a7d7-491b-8e5c-925dc400bfe9">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_1ff941b2-8d6c-4519-bc91-22909928cc2a">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e76e47e6-a824-444c-8808-2111d1974094">
+<dmn:inputEntry id="_f9e4474c-7cd2-460c-b28c-d76d6f44a090">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_dffbcce6-dc02-49f7-a54a-f0d7c31e52b2">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_081b4228-4d29-4a23-a145-ab4827b13364">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_7c172cc8-dba0-4051-a100-6837ab3f0bcc">
+<dmn:inputEntry id="_a7eab986-028c-4999-b8d7-f6a209735a2b">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2ccf42b1-7d6d-4e2e-857a-b1d5ae17cbb7">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3aedd098-0dc7-47cd-813e-a9c07dc99704">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_96d6d25c-a905-4818-9926-c779b6ebab7e">
+<dmn:inputEntry id="_d5f3bdf0-c6aa-494e-805c-ce2f73e3d3e1">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_32b5d5a3-0445-43ca-ae4d-a77a42091b03">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4f9de43a-19d9-41c0-b73c-a4b5253e0b51">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b706a884-3a53-4e67-b62c-60f9bdab5da7">
+<dmn:inputEntry id="_40b31940-a084-4bbd-8393-e39fb368a431">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_35d76097-1e4c-4fe5-8ef0-7fc3c22388bb">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f5c47f70-7ce8-4191-bf4a-ccce1eddd765">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_045a3bf2-32b2-4c73-9314-0ce27ab8ebd9">
+<dmn:inputEntry id="_f17ffe11-b13b-4c49-baca-bdd705a8de20">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_53a57881-5efa-4598-a051-2400144d690c">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c40a50fb-940c-49e2-9a43-e3525c318d5a">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3f9958cc-37cb-4d7b-9e40-a1097e02fc05">
+<dmn:inputEntry id="_b4121023-3174-4191-af60-27c2ba97c5cb">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_06cabd60-a09a-4d5c-b5ef-11747695c1ea">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4ea822e7-22b4-4c17-96ff-0e73a101e4ce">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_815b6601-fc67-4623-abf7-1ca2e4d34864">
+<dmn:inputEntry id="_79577cec-6f91-4e6c-8347-633efdd1c196">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c6b2ea64-d985-4249-bf7b-4d7cbf394c86">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9c1f8d32-2645-4ff9-952d-b62076cb32d2">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_79cf4a43-951f-43e9-8bf9-56254c97e2d8">
+<dmn:inputEntry id="_20f89ef8-6d6d-4a4d-8559-15f82305fb8b">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8b3ea202-1f74-4c41-8239-cdb508683174">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_02cea30e-4c65-4212-b22d-de289f84676b">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2164ab87-5caf-4828-9675-2709ce6ed717">
+<dmn:inputEntry id="_4eabb1b5-3832-4eaf-820a-8d553faab680">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b48a4b7c-91f2-4320-bb0f-a91a4703e9ad">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6ba675b0-61e7-43fc-b839-8ddc7925b52e">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e9c5317f-cc99-4403-9924-0e4a92ca9115">
+<dmn:inputEntry id="_23cc3287-27d9-4ca6-917e-6b3100f59eb8">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_606eeedb-5041-46f2-830d-ef8e4d2bf829">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a2cd6dd0-8a45-4c15-aeec-d3ba3ab15d9d">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fa96f604-e5d2-4695-bfcf-1c983d0942b2">
+<dmn:inputEntry id="_da887360-9423-4ed5-aba1-1d3acedd1c16">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1d1749f1-3127-4da1-9be1-5c31d3af4a1e">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_cdc9bc2f-f718-4976-a067-4134f83ca6b5">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3ed626df-8eb3-48f2-a1ce-99e765772e98">
+<dmn:inputEntry id="_36988725-8ecc-4b42-848f-add44fa4ecf9">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_776b4099-9d7e-4184-b984-c1f95db5f24c">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_64d62afc-33bf-4e3c-b82d-a5d033bc3844">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a8a62ae9-181f-45cd-a3f8-4ed1a66a3844">
+<dmn:inputEntry id="_a64c5062-59cb-48b5-90dd-f3104b19e32d">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_552aa470-1d63-4164-9d41-441a2d2a2dde">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0a5783c0-6402-419d-9c22-921573800d2f">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d3ba0254-f523-42ec-be35-557f32059598">
+<dmn:inputEntry id="_d47462f2-695e-494a-8db3-37d6a4552b96">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_67bde91b-5301-4698-821e-df40681b0eae">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_daff41b1-efd3-4930-8111-5a66f54e451c">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bfcb0ee4-77b6-403f-bb55-9621ca7a2425">
+<dmn:inputEntry id="_952e8bab-6c6d-43df-92e5-70092a281b2e">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c4e24fa4-03ac-46c7-a373-e8b2107ca4b3">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_593f20aa-0011-46b9-ae25-bbe1316a7024">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bf32f674-38a5-4c66-bd6b-b57924b126eb">
+<dmn:inputEntry id="_4b77f9b8-6671-4d8c-9cc2-fc5ef238d370">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9bfb985d-a892-4070-843c-8a7574c2f496">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5463d5b2-318f-4655-8338-622416416f1f">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b3b5f1cd-4fa8-4487-adf7-2cdb662eec51">
+<dmn:inputEntry id="_3cf2f97d-589e-4490-9979-db44ed4118b6">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_58cc132b-45c3-4313-9522-f00b850eac5a">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e5f3a767-1365-4932-bd79-4ce1332edb21">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b8a0f7dd-0be7-4ee4-8a8f-40ecb544deee">
+<dmn:inputEntry id="_2e733625-4f96-4b4b-97d6-58cdf7bd3c3d">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3cfc761d-9a5d-4762-be4e-93bbec135c32">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0ff9f713-bb06-492f-ab00-3eba136f6b3c">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3a84008c-c2a3-451b-b043-35ba9e015a32">
+<dmn:inputEntry id="_4889ed7d-3ffa-4444-8f7d-618c7d16afa7">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0e07e47c-0d49-41bb-8b35-ae024a2ccb8b">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8016281b-ec3c-43ec-b039-cdc702e3b6f5">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5391c746-bedb-4e05-b55a-7968d8b48218">
+<dmn:inputEntry id="_5f37ddf1-b691-41b0-a8a5-3fa971e641ba">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2404c2a6-55a9-44d5-87fc-9dea5db2b1e4">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_22eb8615-c84f-4c4b-a228-aee144adaa0d">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_34461909-2f38-40df-b769-272d9a78a243">
+<dmn:inputEntry id="_3bf5068d-cb78-4926-9fde-db1acf8d5a50">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_36f3ba93-6198-492d-9fe1-a83b3db9c9d1">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_aac1b7ad-5419-4e5a-8776-9f7bccc5bb4a">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_32a9e58d-8bc5-4a50-9a67-36088dab83a0">
+<dmn:inputEntry id="_51b5c95f-3418-4b3b-829c-cf0cd43a617e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6c842fdb-e1a2-41a9-9cdb-dd5b78098ce2">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d74b3f79-835b-4565-909c-88b84ffd028c">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_45ba1c62-be42-4092-8145-1d68cb959d90">
+<dmn:inputEntry id="_b3fc9e17-9a61-4705-bb78-c405d4b2d954">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_abd7b737-0e2b-4769-b48c-4950b20877e1">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ddc00658-81d7-44e4-aaf1-a0e89f44db89">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2d2c2e2b-d28f-4717-becb-09d7235ff3be">
+<dmn:inputEntry id="_ed88ab67-4ecc-42a2-b7dd-54a65102c78c">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1090930c-a123-4cb0-94fe-dcff3f9ceb0f">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bbf9dd4f-b890-414b-bb97-92e3f5019b18">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_784766a2-3683-4cbb-867a-731566d4ce92">
+<dmn:inputEntry id="_d1dc9f00-9503-45df-ad70-411cc117e548">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_fa37e3de-985b-46fb-a1f1-81301badf73a">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_388048f3-bdd1-450b-b1a0-9455b320d6a7">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bf59805f-d5e6-40b6-87fb-8ced12574e53">
+<dmn:inputEntry id="_ce076519-fab8-4633-ba33-e08b4967e75e">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_84218698-f508-406b-bb7e-7c43e50e45ff">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bff65625-5bd0-40b4-b9a4-d94e3742d753">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5c5c7562-f78e-47c0-a7ba-e956293d4d03">
+<dmn:inputEntry id="_1ebde90c-ad7c-4106-850f-09d6ea5cca54">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1a186d98-9d43-4598-83ae-c7a5106aa119">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_010b3743-58e8-44e2-985e-d36cd5dec13e">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2c542bac-0827-402d-a8b1-282d566431aa">
+<dmn:inputEntry id="_1e5aa990-96dd-4bd3-915e-3ae1bb836bed">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_14260ed5-38eb-4e48-8a0b-2139be55dd9c">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_1d50ecad-a367-410f-b2f5-4e7fe00511ec">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e6612a1a-e877-442c-b65b-f72a2cae88d3">
+<dmn:inputEntry id="_269eb397-7285-4f2d-b9ad-fbbcb2f2f885">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_fe106dcb-75bb-453a-9869-b71c25279114">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_76a25735-7d0c-49e1-9d20-2d5f892d125d">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_23430314-20be-4939-b353-26ee868b2771">
+<dmn:inputEntry id="_a8a2ef87-8f8d-471e-ba86-772a7d8c468a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_cbe77117-4abb-4baa-abaf-5a1a8011c31e">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_65533bec-75d6-40eb-b3f3-e6f277491c51">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_449745f0-0e22-4961-b309-23692c175af3">
+<dmn:inputEntry id="_f3e9adaf-dc18-466f-883e-8165d2824471">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4fd0a135-49be-4f2b-9751-b3ac96520f5b">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3f2a513b-2826-44b9-84fa-f0d185b2fae0">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c3235a50-b533-4729-9863-6e5b7f470027">
+<dmn:inputEntry id="_4bdeacbf-1e09-4a81-81dc-06e8fef9d026">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5fc871ef-0bfc-402b-9a44-d6f343ff66b8">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2be33039-f521-441c-854e-0c1a11a31a81">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4a080c19-92ef-43e6-bf3a-c6df923d7fb5">
+<dmn:inputEntry id="_f66fcc61-edf5-459d-a8d5-55532a368458">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c3692a88-74e0-482f-8275-669d0065cf9c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e0cb7f98-fc0a-4c98-81aa-28b5149a890c">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ff9a1196-9f1c-4591-b283-040cc2ef897a">
+<dmn:inputEntry id="_de248f17-fef6-4f5c-9e3e-d3f3fa7f3445">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8fc86ff8-f2e6-42bc-910b-8254d8d14e39">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_31f236de-dba0-42de-9b2e-14c3c8a9c863">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_eb79982f-1a05-43c7-869b-fd05b0a6529a">
+<dmn:inputEntry id="_9e5026c1-2b69-4344-a4ba-9b1801c63642">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d7be1916-1b97-4475-bb03-f7e3d1eae30a">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_638982fd-af59-4d4a-80ff-22132fbc612a">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_379534e2-3080-4963-ac24-531082a645cb">
+<dmn:inputEntry id="_8bf01762-d470-4e86-9812-36d13669ca56">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_78838a4e-a21a-4f61-95c1-fc9ef091f83a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f846799d-d7c7-42c6-8d56-c860c9f66197">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a92163f2-e7ac-41f0-85e7-e7c7211369e8">
+<dmn:inputEntry id="_88d55881-584d-4bc0-9723-1fbf3bd90d88">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b715f196-b5bf-4e2a-991a-87397ebb307d">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3a5e575b-19cb-4ff1-b237-563c5557d867">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1cb72f61-fa92-4ecc-aff8-f6648b940a0c">
+<dmn:inputEntry id="_9338f97d-42c4-4f1e-b64a-bd3bf99df89b">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5dee0a5a-4a60-4dfe-b51a-1352c1b0f279">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_80c2f490-b2b7-4e7a-a4e0-dc825f7e00f1">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6cd44593-972f-4682-8a45-8f4a422663fb">
+<dmn:inputEntry id="_24b97cc0-cbc3-4dff-a585-fe9f50df3f82">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ff967dd2-9309-4dc3-9911-e029de9b30b5">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e7466ac0-e964-46f3-b578-b1fb356ac95e">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a5e4ba19-88b7-4917-aea3-5ba9402b4b02">
+<dmn:inputEntry id="_ae7caf8a-9c0d-403c-a351-8a1f8d1168a3">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ed5d4e65-870f-4118-9fb4-a287a7c9c7c7">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f09db094-c952-4457-a0aa-a6b9f88b8594">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_73afecfe-9fbc-4cb5-b9f2-4c81d132c754">
+<dmn:inputEntry id="_f6c8ae6f-6fe1-487b-b17b-f8709f218082">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7bb2789a-0cce-4998-bb27-7fc7fb3764b1">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ad2c8938-42d1-4d27-b27e-00e22ebfcb7a">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_19906aa1-4288-4a06-99fe-79b055440902">
+<dmn:inputEntry id="_cd718177-929e-49e6-89c3-8e4d36ba0eee">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f63778b2-0991-478f-87d8-cc0b83c2ac36">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c1ead6ee-be4b-4945-b78d-e2a92e918d33">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_47eaf114-6860-4711-b692-c902d29ecf61">
+<dmn:inputEntry id="_bc881b83-6b96-4f30-a15c-b769542ca139">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_dd26289b-4743-477f-8df7-75b046dcdbfd">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_43b60b01-0d98-4cbc-aeaa-ddb8854fb2bb">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_13f8b2f9-3ffe-4bf0-a43f-0bc90ef591ca">
+<dmn:inputEntry id="_e83ce637-6758-404b-87b7-70a0dacf9a98">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_76ce308b-0ebf-4264-9efe-4c48f83c3823">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_98b16b55-fdd6-4425-ac5d-ce81af46a9cd">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_000bd444-f497-4014-a776-9d0167ed7ca7">
+<dmn:inputEntry id="_a92ae5b7-853e-4018-ac9c-0141eaf66b62">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1f74657e-db31-4a00-b7c5-e582fbd6c4fc">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5d81b7ce-a6b8-4200-b080-584a2891542c">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c2a2f0c6-ead5-4521-ad94-3a6364f51d85">
+<dmn:inputEntry id="_b7621854-eb97-47a8-8ac5-7546ef2fcbef">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6817733e-0ad1-4f17-a069-7650ed709b9c">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d25dbef7-ce38-4a42-b3c1-a437d2b94201">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1d02a39b-ab64-4423-aa13-14b164326866">
+<dmn:inputEntry id="_264b8d69-c838-4839-b9a5-9b1d064cac06">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5f8c969f-d0cd-4530-a97f-2d72379460a9">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e972af1d-eed1-4dbc-8105-9b0856a8be9d">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_09912a7e-193e-4f63-9b1a-8df7c169e2f0">
+<dmn:inputEntry id="_068d31ff-a481-401c-babf-703eb60811ff">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d90aaa64-9319-4b0b-add2-317a456ce946">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7175da09-fec1-4d0a-a401-502aea83c129">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2fc14b45-de17-484b-ad24-ab9f3bd600ad">
+<dmn:inputEntry id="_7356e94a-9949-40e3-9cb0-1c4049dc6929">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_228aa27e-bae1-401d-b1c8-a6b4e756ae7c">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3c751708-9217-4d31-a4af-2a6b0c8af088">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_274c0cf3-57cf-4c49-a752-a5f7116005b0">
+<dmn:inputEntry id="_3c1dccdb-d604-4d55-9402-50206f75821c">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4750eaed-8ec7-4b37-abab-97baccd64617">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4748cdd8-689f-4cc8-b99a-c31dfd3d2314">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c7ac7638-338d-41a5-ae6f-29c7b205f502">
+<dmn:inputEntry id="_18de680a-67e6-40f8-952a-2278f018dceb">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8424b006-1506-4634-86a4-1ee9f6a509bb">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5c9260a1-f747-4a5d-8a84-3b7abe0cb2db">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3510a58e-7a9e-4b7d-bdfb-3bb0cdcf653c">
+<dmn:inputEntry id="_4cc3406f-d990-4761-bf16-1157115fda3e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b6810990-a809-4325-a3ee-332f8952cc1f">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a720cfa2-6ff0-48fd-b87a-9e091e640d76">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6e1e4a43-419c-49b8-aec9-d092892976b2">
+<dmn:inputEntry id="_437c098e-a1b5-4f18-b46b-ef7afb02309f">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c17690af-bf22-4d63-9929-d88645aa62dc">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7e119eeb-fb99-44f9-a8a3-ae215e72f7d7">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_21f026df-34c1-4123-a426-fca405d3c40f">
+<dmn:inputEntry id="_19c19379-c8cc-4b9d-bb8e-6dcfdcb4be32">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2f74f6ef-bf1f-420d-9e89-92e2b9ec8f9e">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c52c457e-e669-4ca1-9033-d16e9871e902">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3e27c0dd-d216-47aa-a3b5-f0d1da5be537">
+<dmn:inputEntry id="_729ed9dd-319d-4910-9ad1-116f84adb6d5">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d8449d56-14b4-45f4-97a9-d6f254d5c689">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_57ee279a-f4d4-41bf-a4eb-822d75a2597a">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_095a4d1e-e76c-4b45-b300-4f3b9d4d1f66">
+<dmn:inputEntry id="_3346d5ad-645c-45cb-90de-cba487536f4b">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_81dbc6ad-23a6-4991-abfe-60aeb6b067a7">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_fcdb98f9-1e45-4208-ad43-06d710beb97a">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e44871f9-fd10-4412-8f00-1216d404afb6">
+<dmn:inputEntry id="_a8bf34b7-93e1-4871-8b2b-f5504eddb9fe">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_723fdfb0-3ccd-488a-8a03-3f62c295a93e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6cd9d7e4-fb90-44c0-b08e-9c59307fbc01">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c19bb33e-f57b-479a-a36d-a9a9b32c553b">
+<dmn:inputEntry id="_94fb43da-03d1-4f29-b71f-fe67a40f975d">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4f9b695e-c5c6-4b46-8c09-43b09fcc8175">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_003bc2e6-bd56-4a8d-b23a-d52f7605ef92">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b9429c42-c32d-4ec8-a6f3-307c715efd87">
+<dmn:inputEntry id="_a9ad5d37-19be-426b-a384-7e4d7b9fa7a4">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3af59ca4-5287-4691-a494-ac609c236c41">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_1bd0dfd6-6ec1-4ebb-8b2f-6074c73a993c">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b4c6b38c-2e3f-44e0-8679-69cb3c541347">
+<dmn:inputEntry id="_b4e4c5a5-118b-449e-9873-d217db198ad3">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_54e44dce-59c4-4e86-ae73-67a93531972f">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_875dd3ec-f965-4b4d-99d3-08d1972fafeb">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_7f2814e3-47e6-4286-b82a-9396e78b36f4">
+<dmn:inputEntry id="_163caf66-8f77-4308-9629-94fb9db1827d">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0bb0a973-d96a-445b-a7bb-d98ddb499cc5">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f524a9c6-a82b-4fdf-8ebc-5cafd5face1a">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_36ed3121-5893-44cd-b2f7-56db4a001b48">
+<dmn:inputEntry id="_6ac80a34-6ea2-451e-95ee-f8c18112c9e8">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c38d4d12-d833-427b-8429-489ed5d0a1c9">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_26848604-2a24-4480-9270-e1ddab433989">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d7ded266-ef5c-48c0-b9ac-622e1040e0c7">
+<dmn:inputEntry id="_648da35a-d2aa-4944-b1a2-f3e30e811748">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_50fe7e73-4fe5-4ddf-bc54-b19e6ce9a364">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3a93c3de-8c34-45a0-a661-4596602a5c21">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b658c331-25ba-4371-8da5-fcff3784fa40">
+<dmn:inputEntry id="_7e9e2149-8c66-4d72-8ee1-cc28ec282166">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5ad4d15d-bd11-48b7-9385-7dd326428d73">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2f530f07-0439-4b59-9e26-59b793f2c0e6">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bd7fe669-042b-42d6-8952-46491fb5693b">
+<dmn:inputEntry id="_f7119a82-952d-4937-bd7f-810366f4f636">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9d29ed86-f5a9-40b6-911a-d3e41d5def30">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_dda0111c-90d2-49c2-9f21-eba2fb300284">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2e09f291-01f2-450c-a645-3eaf8f8ca96b">
+<dmn:inputEntry id="_21c2d60c-9e6d-452b-8255-879552b2d3e4">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2bb6ed46-1c4a-41e0-a049-21e158f357e1">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_aa1c01ac-bc18-4ff3-8397-3b73b650a382">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f234f886-574e-4d84-917c-0ae50e67e69f">
+<dmn:inputEntry id="_6de42d2d-63f9-4c87-b919-a662fc34753e">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_37bddbf7-a105-4ab0-a2bb-47291f864f7c">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d096f9b4-dfbb-4487-8d88-316b10960014">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1bb15e58-451a-45ea-ac15-742a612517be">
+<dmn:inputEntry id="_6e0b49f9-4cf4-4aba-9283-39a01294d397">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0fb3a611-6027-4554-a16e-993b561511ff">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_37e2959f-c7f0-49a0-97b0-3fe06752f648">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_88316f5f-6421-4235-b3fc-ec83bf9e438a">
+<dmn:inputEntry id="_fbe035ea-5297-4301-ac13-8ac94ccea193">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8692d8ba-1978-472b-8498-67c48380b40c">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4e789cd3-2daa-4de9-a727-87f487f0f000">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ef88d3e9-db3e-44bf-929a-0430496b9243">
+<dmn:inputEntry id="_62bf74b5-f632-4766-bd6e-acbec57e6b33">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d05d696e-764c-47f3-b7d4-0089a1831d00">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_542dac99-b4aa-4fe3-8159-688855582a29">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6315a6fa-2b2d-4561-b251-92b98453ea87">
+<dmn:inputEntry id="_fe975c6e-65a2-46c5-9092-7bc3e7f08a72">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a28b43f2-376d-4775-a412-3add2df95926">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_965cbaff-7864-46eb-b1e8-b0db14d08e99">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_740776e6-d5aa-4924-984b-c8aee65b4714">
+<dmn:inputEntry id="_eb8ecf9d-e60b-45ef-88c3-cc53d9de48ac">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9fd6dc53-c187-41fa-88f1-6dabfab4ca9b">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_cf381afa-aed5-4348-927f-207805f426a4">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e44451d5-0f88-4205-9a64-35f43afc5f85">
+<dmn:inputEntry id="_658c3a7e-c9bd-4608-acf1-1748de1ba793">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_88e1949c-eaeb-4577-b546-e8de8b9da5f4">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ee7ee714-7199-464a-9a7c-c87f3e9b2aa3">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_721a637c-91a5-4a2d-aeed-0bfc01726c62">
+<dmn:inputEntry id="_3443307d-886e-4719-a704-fd7bf680bf36">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_543156fb-ba49-4f91-ae52-8617bafff54c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_de6552c5-3070-4dc8-b9f2-0499a7f2906b">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_79576d74-f37a-482b-9834-0da0575327f7">
+<dmn:inputEntry id="_40e426a7-5638-4d7a-b58d-33c7b10fed10">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_06b0f465-ec86-49e9-bf70-d1ee22720e0d">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6c457922-66b8-451e-97bb-7f4e5cc7f8c6">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a14255f9-49b9-4140-aab5-99bcbc4d7949">
+<dmn:inputEntry id="_108131db-3ead-48ce-8e9e-b41caab05150">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f0a8ff65-6ded-4652-9f54-ec11c65469f8">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5e595c35-b76b-40d1-9db9-0842d2e5f684">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_645361b3-2a85-4d2d-8793-923e87e5bc8b">
+<dmn:inputEntry id="_23e5e566-e6cf-4fb9-85dc-c25f8548bde9">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_675e451a-ac07-4b30-a23b-99bbb5ca83cf">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_31d801d2-83df-47bc-899a-af6e08810f2c">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8d95e9d7-1577-40f8-86a8-2c57c7051672">
+<dmn:inputEntry id="_653c5af6-fa8c-4814-9895-0eeabba2364a">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2b26b6a4-53f1-4443-a3a4-b3b4fb9d7a99">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0e13abc3-b561-4455-9020-c62412d803f9">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fcf30333-a61e-44f6-a6f8-a6e694ff5608">
+<dmn:inputEntry id="_7587d3a9-393c-4820-b829-1583dde9e4bc">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e37c5e76-c1b1-4c12-af23-34c2f33a9c4f">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_940bbb3b-81e0-45d5-bdeb-7a58eada302e">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_af4bb797-9bc2-4c49-b929-6026244ddb6f">
+<dmn:inputEntry id="_1dfb8918-fefa-4e8d-8ab8-ad9c6ac8c669">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_58587f1c-2c89-4bf3-9290-183761bdb09f">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_45956e03-d192-4179-86d8-059395287705">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1ac2079c-6e3a-4450-9b79-822b28fc5048">
+<dmn:inputEntry id="_b984800a-e5dd-4152-bb92-98622064e937">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7982aecf-4f25-40a4-82ba-c8738f5ba605">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_09a0da61-31a2-4be5-817b-6da91676399b">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_62c7543e-3996-494b-9c7b-bd5bed6357be">
+<dmn:inputEntry id="_ebc80add-c96d-452f-81d2-cb7672d17948">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_70b7022e-1d63-4572-91ed-0ce20d7eb6aa">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a3118b9d-faf6-4e82-9b14-461fe815054b">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d59305e0-ddcc-4c5d-b472-c5ce9ae59b8d">
+<dmn:inputEntry id="_898a59e7-77aa-40ee-bff5-1ace8f34e4ba">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_680b8a95-1bdb-4fce-a157-d7fa44ce7bc5">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b0dbea17-2c36-495f-9539-91d85a602908">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_17adbf8f-74af-4ec3-aa66-d2eb12e939e4">
+<dmn:inputEntry id="_aeccadd0-3630-4269-8ee9-2d26bddf1773">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bab62e0f-f6c4-414b-8f89-0be72dc109d5">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7ce28112-6b0f-462e-93c2-5fdfd9d0c4f2">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b6a09b78-ff16-4036-9907-a899372a67e1">
+<dmn:inputEntry id="_8614257e-c2d1-4dfc-a27a-440faa28bb30">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_31049203-c040-44fa-9474-bf2ce97c0412">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_56404298-500e-4617-ba2c-07eb101919db">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3f8eb048-81fc-4fe0-84bd-2140f0b84244">
+<dmn:inputEntry id="_ea3628da-f3eb-4542-82a7-52b4b89615cc">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_14522772-0e52-44da-a0b4-a43eca78b515">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_09db12dc-0829-4e4e-8344-4bcb4fac7aee">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_de355cc3-0500-4de1-ba42-1449bf3bf755">
+<dmn:inputEntry id="_bcc2b4c0-9bd4-4415-a035-6a941543cf6a">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_86f89633-bda2-4c3b-9b00-930227a07478">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_22654147-59df-4a01-bf95-c84b433c274e">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_01437c57-242e-405d-82bb-11402c0a7213">
+<dmn:inputEntry id="_4f42a0b1-0867-48a8-b330-d017727e1be3">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d947cb23-844b-4496-a0b3-8d89d2b0f850">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_08a50aca-a05f-498f-9ae7-11c86eece328">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f537c18d-6296-4c1e-be59-4d76df6b5d2f">
+<dmn:inputEntry id="_eb9f52cf-591e-437e-a4f5-2ac1a7710973">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_edc37dd0-165a-4269-a70a-c45833ae8603">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a0ee0bea-d78b-42b3-aecc-1ce8174234ac">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_58d74696-89bc-4ecb-b1dc-ce5fce5349d9">
+<dmn:inputEntry id="_441e1721-3395-45e8-a392-e38a4f067dae">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_96f85e08-4c74-4f52-ac88-ac4f9115de89">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c43242da-56e9-43f5-9307-b1c9b71b45a4">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d39e9ac6-b3c0-4bb3-a3d7-3e90f05c3e88">
+<dmn:inputEntry id="_b1c8b7b5-3d63-4ee7-9f85-7e0185d166cf">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_13e5c1f2-998e-4d8d-87c1-6e70d764ddc7">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5dcf552b-cea3-4f2b-b250-fa7896799c42">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_57f97516-1e30-4fe9-b33c-240185fa36ef">
+<dmn:inputEntry id="_2a494dde-a575-47de-89d0-ae537bf0288f">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7bb65663-d652-42fb-b01f-05f715575b20">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_1e4432b5-88c2-4571-8a7e-eb91a50ed5dd">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4c163430-5d98-417f-a6f7-c057695facc7">
+<dmn:inputEntry id="_e1b9da7d-b855-4c59-8f7d-f84634dbfeb7">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e8b2ede2-418a-4194-a5ae-1b830e573512">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4369c8d7-ca92-4267-aed2-6da612d3c74a">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8c0186db-f432-4b66-934d-903e0a1f6fb6">
+<dmn:inputEntry id="_6d4c24e9-2ad4-4f47-bbda-a767b9e46508">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f4adf2b1-8b51-492f-a2e9-c60d087f2178">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_89f16aa0-4aa7-4605-97e3-c48634b654db">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e2640850-7444-4042-b9ea-9e16b2fb0266">
+<dmn:inputEntry id="_c13727ff-d8a5-4e79-a493-ab20f906248d">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_708b893d-4d13-44e7-8e43-87258e761460">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b44a0be7-f882-4750-a415-fd67368910ac">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f1e35d8f-16e7-481f-8e60-1854db822f2c">
+<dmn:inputEntry id="_d27eb4de-20cc-45ea-86cd-669728079b6d">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_22181490-d122-411d-84f4-651f574bd48a">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_01105a23-d859-4ab7-ba67-5a38740314c2">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_83585a32-01dd-4a16-85ab-4f1f9db24caa">
+<dmn:inputEntry id="_40c30105-bee6-4e73-866f-9ba0212f69ca">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8c7f854e-1cd5-43bd-bf7d-139240050bf7">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ab695a86-206b-4ecb-91f0-e0978ebd682d">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f0c93fd5-acc1-41a2-8fe7-63481f031080">
+<dmn:inputEntry id="_f3fe972f-e145-4f73-bd4d-1b31808bc38b">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2eef550e-11ab-43cc-88e5-7ad177998dde">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8b5b18e9-d7cf-4856-a8ad-fe435fdf5a25">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_aad6cedc-3919-489b-8ae6-24dc5caa1098">
+<dmn:inputEntry id="_b08e3176-072e-4580-9fd6-0ce1ff0d2566">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_991c74c0-5852-4e7b-ba6d-1cc5d2a6a68c">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_788f52b8-e440-4f8c-bc6d-5896a7f76012">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6186e858-2330-4b35-9d0c-f26194d9219e">
+<dmn:inputEntry id="_bd3a3a1d-e277-4264-8867-ad974c49fb55">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_66cecf79-e29a-4828-9aa7-9f05a465de1b">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f6f60ec1-292e-42be-a033-83eb2bdc8c8a">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d577ea96-cf25-4147-b133-2bed31fb51d7">
+<dmn:inputEntry id="_77ab134e-6c22-45e0-84c2-bd22319a64ea">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_de58359a-04f3-4e67-8f50-1f6f18fb62c1">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a5ab733f-348c-4490-b4dd-fc8b46bfb8c3">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_94098825-d2f2-451c-b79f-91fcca435d0a">
+<dmn:inputEntry id="_7fda2fcc-149a-4ab7-af8d-b7e954e05788">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_edf7b2ca-91dd-4c38-9629-ed03cdd2da8f">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8fa4198e-cb63-4fb6-913e-651098059dc9">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_366395ce-94e4-4034-b181-8835919deb52">
+<dmn:inputEntry id="_b20acc66-a768-4b2f-bc65-e8af1b90c1f7">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6db02c53-c15a-4a8c-9762-6cea0d9be0b0">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c6357cd4-a1e5-4a01-b0b2-46f33c6c179e">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_51c1371c-7c9c-4f23-b296-71d00cda3ff0">
+<dmn:inputEntry id="_2446a7e3-82ba-4dc6-a9ea-b4d8afcdcb58">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c70b4322-e5a1-49a4-9836-f51a9863e251">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b2e42aee-d133-4106-bec6-4eb59d50b0c6">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2f1a60f6-94f0-4385-b510-8a0c7680c8dc">
+<dmn:inputEntry id="_716ea314-b243-4d26-9d7d-0dd8c31d0d4b">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d7218574-640a-4d60-ac7a-35f38e72e138">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_67faae90-c430-4483-91a8-c4de6d746a81">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4a9130e4-9051-4807-aed6-6889309d713b">
+<dmn:inputEntry id="_ffb78707-70a2-44db-b871-9fd04daf8607">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d7b8f043-8cfb-4ece-9fdf-8f78c505c3a5">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_47785ad9-5b88-4bd3-b501-b7b4781f4903">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4cd34587-971e-40f7-90b5-9264691233bf">
+<dmn:inputEntry id="_8c37660c-e05a-492d-9cd1-b9686f443f52">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c440ce4c-dc22-4ee6-9d5b-4391ea7c8979">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3ed4d429-b548-498d-88d8-69d5d67bbc6f">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_06eeca14-3379-4c09-8059-2341958e7d72">
+<dmn:inputEntry id="_db3aeee0-f509-4320-a603-ad7427fce6f1">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1d68812a-6f07-4625-bf3f-93494816a8fb">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0e7452e2-8f78-4122-9639-4417a94b5efa">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e270eebb-01b3-4cf9-bc92-25b744f5e576">
+<dmn:inputEntry id="_97585796-9805-4a42-8557-b39ee922a211">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_927139d1-d018-4827-a8bd-d6780c529ffd">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_412393a9-5e65-458a-b829-e6b450dfb164">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b8486a6c-b873-457e-ab62-b0c8a04f5054">
+<dmn:inputEntry id="_a0af3bb1-eae4-45d4-acc4-badbe4462fbe">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bd72af27-95ea-4d68-8b3a-08cbac5f8e2e">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f1955fae-9189-44a0-b63a-d71168416766">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_eb67682a-af6c-44dd-bfcc-df8e88b00a2d">
+<dmn:inputEntry id="_53bbaf8c-1d45-4faa-a4ca-2983031b7b50">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_09bcaff4-af50-437c-83ce-404104d4ea3e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_86de0acb-0977-49d3-8f73-040c2bc4a124">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_eae5291b-9ea0-4f43-b460-ca050f2bde51">
+<dmn:inputEntry id="_02912ed1-e869-4409-8e78-edfac7aab2ef">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a84ff1b5-3d80-46c9-91ff-1a4d11cf5db1">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ee07f96f-ddf8-4f95-967e-294f36288953">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6854f377-55d3-4bf8-b55e-d87be7f9d344">
+<dmn:inputEntry id="_f8956674-17df-4f8c-8863-ae5fbd9783d9">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5f4336dd-0897-452d-8522-5f917432933c">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_95a9a1dc-3f86-41b4-b1f3-70d8e04e25ac">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d5821fea-91a2-4987-b548-30ae6f4ca7e9">
+<dmn:inputEntry id="_8b67b717-3e6e-40eb-ba8e-0ba627348403">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6df3f2a1-52d1-47ed-8467-265ef58dd523">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ed182dcd-72c7-41a4-974c-c891f5f421fa">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6ff2521d-f832-4a2c-9d1f-7b4098706a8b">
+<dmn:inputEntry id="_953753b5-c09f-4970-a7f9-0e95415435ad">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_83fa75bd-651b-43ab-8e91-c4cb648a70b3">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_86e1c598-9b8c-467e-aea1-4f640bc2c05c">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a59fe5d4-09ab-43d7-88cf-fafde03636ac">
+<dmn:inputEntry id="_418a8887-dfb1-4239-9e2c-1a51e5870006">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f33e8f3f-9c98-4680-859c-83f84af00171">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5bb2a593-841f-4786-a8f6-32a534e0a1a3">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d0d484f4-d0c6-41c5-aabd-4c5aa8680f53">
+<dmn:inputEntry id="_43d7a207-4367-4fa1-ac8a-fd2cd8d02cad">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3c5ce966-ecc6-4b3b-b6e9-52dd29b758bb">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a2c65a56-e5d1-41f7-8901-4a0f9f8fafe7">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_67db8ed6-5f00-416e-bae7-8e8254cf0df9">
+<dmn:inputEntry id="_c7a1cdb3-d985-4193-bed8-5469b7d4d82b">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6da17c11-e102-4f3d-bcd3-7f3cc25299bf">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6f2af69c-158b-499b-8c82-24dcad36864a">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d830c734-81bc-49d0-ab7b-f6810075cfc1">
+<dmn:inputEntry id="_5f83c38b-5f9a-4931-b07d-8dce540ec378">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a92bc643-9677-4186-b203-6476e725f34f">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_95e09095-16ba-49cf-a341-cc29f003c82c">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_dfe5043a-9fad-4902-ad9b-b6dcbc8eea47">
+<dmn:inputEntry id="_24208577-4773-4f8c-b3e2-31bfaa02789b">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c298cb2e-92ef-4901-b547-120856bf0c3b">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9333568c-12d7-4057-b7c7-f5536908ea19">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_64165f0a-b5ba-4f54-a8c4-06d39e5869e7">
+<dmn:inputEntry id="_1218068a-6450-4062-ba83-76cfbabce32e">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_71f86f69-9d8d-408e-8793-bb8003d6b746">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3bcb3175-9d1f-4d2f-af57-72bc3180fed0">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_83c38580-d6ab-4351-a69d-a06d9474f457">
+<dmn:inputEntry id="_5cb98e6c-1696-4a8e-96ca-08983ed1d813">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a8585732-6147-4ca5-a675-2c69e479632c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_228c33ee-7f7f-44b4-b084-af6edc01d163">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d966dc8a-5ec1-4a90-bf60-93a4e47e10b9">
+<dmn:inputEntry id="_f4932f1e-524a-492c-bc9a-2eae893aec04">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_01512e12-b859-4e2a-9d74-b07c67b9c57c">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_73b30388-e377-462f-8840-935fd40b04cb">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2a0cf6fb-360c-4e1b-962d-17b6b44d94d7">
+<dmn:inputEntry id="_09d5b074-3759-410f-88e0-7bd793bd7402">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_878e5c2b-06b0-42e2-aef4-b7eb7bada93d">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_79a73797-b06a-4019-b1a2-2e6d2a842961">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_efd3ee30-7729-4fa9-9cd1-15e0775e1da9">
+<dmn:inputEntry id="_0a40fd54-b9cb-468c-b705-ceee636e6de8">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_60f220c4-fb7b-4422-b84d-467f5273b8e5">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8b6feff6-afae-4933-9573-14251641244f">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6c9c560d-9ccc-4abe-94ea-800fce3b1bca">
+<dmn:inputEntry id="_c9e5093d-f054-4265-8e0c-98d92e842520">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_cd54ea68-d202-44b3-8f33-87fdf96ff942">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0595065b-0d55-4623-a092-eefe90ced349">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b411a88d-89eb-41c8-ba0a-d0f75b9f889f">
+<dmn:inputEntry id="_ac9a0de0-8f22-43ae-8398-4dc190c1d10a">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d4c7ed35-e7ef-4a40-8254-782416d3fbd2">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e3dc6d10-b91c-40a5-96bf-99a0431c525e">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e2218bca-113c-426a-9edd-60e509ef3dd4">
+<dmn:inputEntry id="_677d737e-e9d8-4393-bd71-fe1cba5398c1">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5c163f28-1d1e-4e5a-844b-47789dd91da3">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8b48b53c-ce81-4ce3-a275-b537f016ed7f">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5439f190-6653-4979-902d-cccd00c00234">
+<dmn:inputEntry id="_ac1dd610-bf9e-47f8-a5c6-08285b3fba17">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0c8c648a-b0bb-440a-8b19-95cafe528ce2">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e136c7e9-62eb-4016-aee2-f9d6567af2a2">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_65e3c07c-9519-42a7-8fe4-39fbcdd83fc6">
+<dmn:inputEntry id="_c5520fff-25f7-4178-91ec-f8036aad585c">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8d07b914-0e4a-47cb-89be-f0037f816cb1">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c72484be-4529-44fa-b70b-29c22c6f7ea2">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4c366d08-89f2-416b-a165-555c9c8a5d08">
+<dmn:inputEntry id="_82915b4f-db0e-4fe7-a0da-694b4cd9419e">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_cbffe5ca-f6c2-4923-8bcd-ddbd0e2eaa07">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_cc0a759e-5b97-4e2e-bde3-cc2f3daa72bc">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d5347ebf-16d8-4a8e-9f4f-f07dbae9442f">
+<dmn:inputEntry id="_9ed9cb67-8a70-4a83-b20f-5174a2956de8">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_66466b4a-23b3-4792-8ae5-1284b547208d">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2c53b472-37c4-48f1-be1e-75bdaa577787">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3da29835-f0a0-4609-8685-f4f22a3ccfc4">
+<dmn:inputEntry id="_02b6c828-136a-4681-9a0b-9a644ca11cb0">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f7c47d23-a318-487c-bb27-f303921cbb16">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9873be72-241b-49c6-8b2e-3dd7db6432c5">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3b386929-7320-424a-a67e-dc71e21662bb">
+<dmn:inputEntry id="_3efec17c-e4ff-4dd4-8a09-f2a135e5f700">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_18168a1f-5d9c-4a76-8b92-c6a9cb410e33">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8ede30e3-f0e7-44d7-9372-2aef94114f73">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_200605d5-393a-4405-93fa-8a4b6bd45d81">
+<dmn:inputEntry id="_6a289bab-db30-46c0-86ed-f4908217177b">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a5e7865d-c3b8-40ff-baaf-bd075897391e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_aec1fb17-b24d-4260-9b68-ad187aca2b57">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5f37cbdd-ce9a-470a-858a-8b8045605588">
+<dmn:inputEntry id="_1babc762-37fa-468b-a99c-64d18adc75dc">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_34b265cd-dee1-4ca3-ace2-14406617afbf">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_300dd909-cde2-47f2-a4e6-295b7ba14e19">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_98ff18d8-a4eb-425c-8953-38f06cec1e58">
+<dmn:inputEntry id="_8e7e1094-925a-4a8e-8ba7-7208db710d68">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5c8e676c-a081-4396-9efc-7ddbdf6a680a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_114faf99-4894-4435-a39d-f8a00d9adca8">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5af58d79-1ddd-45d3-8b3c-4078e5ddc9d0">
+<dmn:inputEntry id="_fc29a4c2-0240-4b9a-bcb8-d86bee4ea125">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0d72d886-ea66-42d8-bb1a-805827ec1f35">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_aac91c7f-2a06-49c2-9bca-26ba0e51fc5f">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6aaa2d5e-1ee9-4886-8b4b-8e4eea9f2217">
+<dmn:inputEntry id="_04e08472-818c-4e86-92b2-aac2d99c2993">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4e5bc949-931f-400e-a404-0293ce8e01af">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_78871b98-61b1-4637-9dd3-fd4c0437940b">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_80b887a8-686f-414e-ba12-a0c98b222ed8">
+<dmn:inputEntry id="_648fde18-6759-47fe-a198-38a5d1294f79">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3ad4f928-63fd-48c4-bfe8-67c92dc1679a">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_50b30d62-749d-4bc6-a777-8e509c42a077">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8b782105-69d6-440e-94fa-056cab23ebc0">
+<dmn:inputEntry id="_c468e069-664f-49fd-809d-1b44b217d99b">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b1bce815-bfef-4c7e-b064-78251e50fab6">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a34ee349-1b5e-451b-9f16-1a1eda29a133">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b0b39097-8dc7-4e02-b004-e23f427c39b6">
+<dmn:inputEntry id="_43e59871-fa5a-4bcd-9346-c9e3e5d76a19">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f813c119-1117-4a7d-bf3a-631d90ee2bbf">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_97a1523d-c1a5-40e2-8ad5-6dfc558a4566">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_cff673a6-5e02-405e-9cd6-8624d80a660d">
+<dmn:inputEntry id="_73ba2e92-524d-40fd-afdc-6f0a76dc8cd8">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_38e46787-29f2-4adc-a55b-ba3e1d05c03b">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6e4b1bd5-a77d-4c7b-a21e-38e371206e69">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_7d59a8a5-be32-4db3-a9c9-b51612d5f729">
+<dmn:inputEntry id="_992d9816-fa85-4ea7-b076-ebaaf6ee9467">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3cf93051-9fe0-4a0a-ae8d-e305dcd1eb35">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7b339414-7099-4003-9690-37af0ce123b4">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_43577250-d4b4-48ba-ab85-69ef4be0f2e3">
+<dmn:inputEntry id="_a2fc84bc-d077-461c-8b52-637d8aad5e2b">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_00c3ab15-df03-446f-8318-759d88421193">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7e20b565-ca24-4cfd-b406-645db580f7fd">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bd93c164-4a82-4bc6-85a0-6c306d1b16a5">
+<dmn:inputEntry id="_688751d6-8c4a-4787-a1f4-18247a8de8b6">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_34006bc4-37b2-4fc4-8be5-785e7204074f">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bfe6fc2d-09af-447d-849f-a16a44d23b91">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a7c0164a-402d-41b9-8981-df915831bd9a">
+<dmn:inputEntry id="_2169787a-ccf6-4836-a55c-69f4ee129964">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_819b673e-48ca-4edf-9cc2-75e3b8b42760">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_987a5645-e310-4e6f-b510-54c1e53708b0">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_410769a6-40dd-41f6-a8ba-593072d8980f">
+<dmn:inputEntry id="_6bf635c3-98f1-4c04-85a4-0682d2e64c96">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_af51c45a-5195-43d0-a38d-3c3eefbbffd9">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b7fd4a4f-5d83-413d-b981-5654e162c608">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_52d4958d-c129-4248-8f0f-7a2f2deb902a">
+<dmn:inputEntry id="_be27b2de-eb43-4be8-bbdc-279aabea55b8">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_01eaddd3-6c47-4279-a5e5-5f14f9d15492">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0039aefa-49c5-4ce8-82fd-f600496bf56c">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e090de54-0f61-4aef-914a-60412fa829dd">
+<dmn:inputEntry id="_2d0916c1-6034-47e5-8e4c-e337bdaf4c9f">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6e8e92b6-9bb7-4406-a59e-f1f9e74023c2">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_88b35ba6-9cc4-47cb-a7c4-c65a071df347">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a10ef4db-81f2-4825-b934-464c09c4e7bc">
+<dmn:inputEntry id="_dbc2d38d-8698-44bd-90da-60a5d7a7840e">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_342224c1-2873-4eab-91b0-2069ad47d4b5">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7ecf7b07-8ab3-4a4c-bbdd-8916671e158c">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d3fc3596-7c30-4ae4-9b4b-1405144cfb16">
+<dmn:inputEntry id="_bb391132-bc89-4d36-a0db-f23adc4aca1b">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_749ad61a-5d37-411e-a601-e95f3879761c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_46f4d04b-a566-46e1-971f-887dd399014d">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_7693c29d-6059-4c8f-ae80-f4fbb3efa3e9">
+<dmn:inputEntry id="_b44d4e61-a547-41bf-86dc-6615ca240a0d">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7937c619-759c-4628-b606-1c1f75e966a8">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a3db453a-b47c-40d5-9b4c-815aa0419b78">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bf411cc1-0be4-42a3-bf7a-ff9b4e46d4d7">
+<dmn:inputEntry id="_79bfeaab-e871-4797-8a66-e4f5e34fc812">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bb53b474-1f27-420e-b1e4-eab87276df46">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bf1e1aa5-fe14-4a2d-85f2-6fb57e100459">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_65c0223c-df57-47b7-8bac-5747b5f78856">
+<dmn:inputEntry id="_d3ff6a5c-d6b6-4467-afe7-00752e6cee93">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_de22aafe-36cf-4d4f-a673-5d0e56ee344e">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_96cf8bd7-e8f6-4a22-ba4f-6e63d6d7a9be">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_75b39629-e143-46e7-a048-42a124447e58">
+<dmn:inputEntry id="_9e9d4dc8-8a3e-46c6-bdce-e93b8879f845">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_14a8e5a8-30e2-444c-bc3b-f55aa1f982fc">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d03b89bc-2ea9-40b0-ba9d-c83a19acdd46">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b45d02d3-ec42-4b41-8343-1560a0484fd3">
+<dmn:inputEntry id="_792a9d42-a32f-4398-b224-987f9d31274f">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0f6174f1-03a9-416e-bc93-c3b384fed57b">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b9ce2029-f7c3-4f5f-98b8-25c9d7b4adcf">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1ad5136d-7806-443d-9fb9-e78f67e09f80">
+<dmn:inputEntry id="_5f1f0c26-6d39-4265-bdf8-26eb5ef6c14d">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5557c6da-5c75-47b8-a44d-ddae011856ff">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e5232a8e-9670-48c3-bf10-841df7b60052">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b49e025d-426e-48f6-a329-03d92df2892a">
+<dmn:inputEntry id="_9cd70470-4de5-4fa8-a696-455050c31ed3">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_83a009ed-3cac-407c-868e-903b7a66079d">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bc9f4636-9494-464f-ba92-7b9c667e7489">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_14828ed8-ea40-41fa-b5b8-b4d076587a27">
+<dmn:inputEntry id="_9b0881bb-d018-4741-9d6a-2bec969ff871">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3a702304-86e9-4b20-8ae9-bf0e835328f5">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_849f2655-922d-4729-98d7-7b32936c7437">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_84cb773b-5a95-41f7-b480-a83c03bb3fc8">
+<dmn:inputEntry id="_6c3f0ac1-33aa-4e6c-8da6-6f52fb70090b">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bea6a52b-ba37-4e2a-afe2-ed1dc5375c17">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_be4779b0-132a-458b-be58-b41b11fec9a6">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e07be36c-801d-4cb9-9754-b92121a25491">
+<dmn:inputEntry id="_26bfb056-e8e5-4880-9a41-813a235371b1">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c8b4a915-e1b6-4bbd-a5e5-b13f2a950d48">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9dde34da-fdc0-4754-98ec-841cb50cafb2">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6a178b2f-b1f3-46ea-98a9-0d53ab231018">
+<dmn:inputEntry id="_889aebcd-3b74-4606-b855-213ac50801f1">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3a053ce6-1e4c-472c-8a33-8b1ba5ebccfe">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_fbcd73fc-aa63-4e0e-a944-4e8e3e33f0a6">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_532f9951-bf95-491d-a743-caa817872d86">
+<dmn:inputEntry id="_64d40ed8-016c-4faa-b0d6-d5f92517a532">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d366b9ad-1245-435b-9aa4-1b7c0a3b7eb9">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3d9e5030-f448-4dd2-b2d0-975719905397">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9b88c046-a35c-48ab-8a6a-95cda9e5cd07">
+<dmn:inputEntry id="_f778a87a-f670-4315-a643-9faf6c62d156">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1aaf5bf5-fbad-466a-ab52-018392beb21e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7be0cb04-c48d-4167-9d6c-2d16b810fbad">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_823fc249-5729-4ecd-9c14-dde560b0bc17">
+<dmn:inputEntry id="_091df04f-9e1f-4a2e-a643-83101db24c40">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8c7ce86b-f9e8-4ff8-b1f6-1835e9264707">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_47395635-7a1c-4eed-a495-455827c32f3e">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_03184e2c-8076-45e1-82b0-ca12bee2e933">
+<dmn:inputEntry id="_84bb3282-791c-4b8a-bcc5-fb97c63f957b">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_184868a1-4ba3-4bfd-b077-1ea3c65d265a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a564f64a-abff-4127-8d98-0d1e83069573">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_866e0051-a5d8-4596-a60c-82b951bd9ba3">
+<dmn:inputEntry id="_9b06e67c-897f-416e-9fb3-b16082165975">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9add45c3-836e-47af-b721-718b65d67bb5">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5e29d39c-07f7-4b0d-b0a9-9c481647a212">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ef41bb7c-555e-404f-b405-74c8f59fbfc1">
+<dmn:inputEntry id="_a808b89b-09de-4bb9-9eb6-447b695cde94">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8137350f-1579-4fcc-9c2f-04debc651530">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_77e621f6-b9ed-4a8d-94a1-2228b800ea20">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_73ac114d-d107-4917-8b6c-14b5702e93c1">
+<dmn:inputEntry id="_3b12a4b1-b3fa-45e4-9b9c-dd8125569343">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3fa772ec-5fb1-4f10-b129-8cd344b5c5b5">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_da5638ed-9382-4d34-bbbe-09a3b38f1fbb">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b22ff093-560d-4842-96fc-354009b0c55a">
+<dmn:inputEntry id="_bf4b724e-4c63-4e5b-87d0-b1b45cf125f0">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7ee03913-492f-4feb-843a-eaf2c8ae6cfd">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f8cbd85e-7d83-4d6e-8839-a889a535cc0f">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e1d061cb-0086-4cf4-b39d-c6dfa0eecdb2">
+<dmn:inputEntry id="_63cd2048-b102-4706-9269-dd4c6cb1df80">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_151a99c6-6237-46bf-a40f-466f7a2edb7d">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_de3a3733-caea-4a29-8e43-3e73412461e0">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d5d01902-d8eb-48d4-9ad6-a7b2c7b45eeb">
+<dmn:inputEntry id="_8e6e47ff-5f1f-4c2b-8cc8-3cbc7c393672">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_016f2afb-c816-4437-88ab-b118556adecf">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_895bdf07-eedf-407d-87c2-0671d46e1462">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8ed2ea76-5a36-4847-b9dd-8e0ef5a3b272">
+<dmn:inputEntry id="_a559eea5-7489-4fb2-b082-e77dee5c1607">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1dffde9c-3b88-4980-9744-8b91eb508eee">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2753836d-bba7-4044-9513-e961e7effd24">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_69b24a9e-52ee-47de-bad8-fc67a28706ab">
+<dmn:inputEntry id="_519720ec-79eb-4fa7-a757-79924d053f7d">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3763a20e-bde4-4bbb-af1a-fa67e420d954">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4edad996-b55b-4d6c-b4e6-b9df0336f8b7">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e3cecffc-a38d-4d41-958d-b8112093845f">
+<dmn:inputEntry id="_859edc07-12f6-4ba0-9f20-28a3b0af840b">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_20cefd4c-6956-4a62-909b-0b43d39de5aa">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_85b30c9f-8fe3-49ef-9a11-f8fb797c914e">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_0d10beae-4f5c-4151-82f8-3852468755e1">
+<dmn:inputEntry id="_3ed51ee6-1bcf-4457-ba03-4fc4d0b04dbd">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2745c108-3d33-4430-a660-da0180017b73">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_72631acb-f62d-42bd-bd1c-0f3f46408f41">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e9d90d42-b3be-4b31-82fd-8c9d2ca6803f">
+<dmn:inputEntry id="_811b6ce6-728d-467c-b3a5-b97b95e26b77">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c97feca7-eaf8-4a38-bf27-33675ee7c388">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_34c98006-7b9f-478e-8772-eece91634f4d">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d236f390-8eb7-404b-a260-44589f2d48b0">
+<dmn:inputEntry id="_9d2118ca-ecfc-48f3-b6cd-50168c3c9406">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c8522a01-fd1b-4fdc-8cbc-b90e9a912aab">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_812138e6-a389-4c47-9727-3506fb2ba6a6">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6968f6a1-141a-4f36-9054-25eab9a810ce">
+<dmn:inputEntry id="_b1f48288-c112-4dbc-89ef-35336d56482e">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2fe941f1-6d6b-4f4e-b5c5-f5ff61593eb0">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_02be9690-d6f8-4015-bb3c-f1e6e1e569f2">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8fa87cb9-c43b-4515-92df-d604c4e7fa61">
+<dmn:inputEntry id="_58a87fb5-3223-4d02-b9dc-8b433402637c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c7306e2f-0e49-438a-a822-2a32c93b6246">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b0f58cc2-fa18-4d8f-aac5-4ba0dfe013b5">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_78a2f6d5-897e-40da-926e-f0a5252a5755">
+<dmn:inputEntry id="_33fdfaeb-9806-42d1-b50e-007b7bd10e20">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_fe099894-a1f7-4360-b67e-f63740e899b9">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6a2f616b-8de7-4086-8b0c-78d8ab3b164b">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fcc4532b-8729-435c-9e4b-233028c33be5">
+<dmn:inputEntry id="_2677869f-9c16-49fd-bfdb-c7efa0bd7e55">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_81727ccc-d316-42bf-9437-db073be33491">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2d12bbfc-c2db-419a-898c-05655efd8462">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c7ffd424-61fa-4187-a6af-a9ef4f9eb40d">
+<dmn:inputEntry id="_cc5d5c77-e94f-4ad4-b579-293dfda561a5">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4721490c-4948-4e07-8b57-1679f541abaa">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5c702a1d-3b89-4895-bf47-1fc5d28a5806">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_682835c9-e80d-422b-87a7-f7ee105b23de">
+<dmn:inputEntry id="_80b4fd9e-220c-4fda-ad15-7a0b3983d15b">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e3272f59-c92e-4513-b3f4-51b01592cf95">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6342ccca-822b-4ca5-ab5b-cc3888d2149a">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8f63f6ac-5544-4b44-9c86-fc363828ff53">
+<dmn:inputEntry id="_04ef48f4-e6fc-49cd-a23e-a6d2bbb02552">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_74bf0f76-1da7-4db5-858b-9d210c1cac13">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2f221e23-981f-463b-9a07-36d95f6f8c5b">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_214096e2-7510-4616-92b2-da46f32f1bc3">
+<dmn:inputEntry id="_afa97c7b-d00c-4cec-a84a-a61769fe7331">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0dc84f91-301f-42fc-ac53-b5b02b79275e">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8a77c2c5-eef0-4c76-9c78-19a9ba1484fd">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_0e1c17ad-34ff-4d26-9be2-0c50adad3f57">
+<dmn:inputEntry id="_a313eab3-d5f3-433a-af5d-7146fe1c53c8">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_730309b5-1ace-4396-8c3c-115ca41b7c25">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_015df439-369b-47d9-8cc0-231beee086cd">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4d8ba207-ef00-4dc3-b1a8-8a8ffee2d6f4">
+<dmn:inputEntry id="_3900b415-79b0-4f54-8315-760add214f79">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_aa07cb77-1cf4-4df8-9817-f5fe43d77c73">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4b84b791-a6ec-44d0-b34f-a40bf55b4530">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bcad6961-78d9-43d0-a756-5caadfb542a0">
+<dmn:inputEntry id="_7532d772-281e-4da4-a146-02069ce6ad2c">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ae231d48-f52a-4062-9b20-09de9bc0802f">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ee55c274-fdf6-4fcf-9776-f343d25734cd">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_cba70506-a633-473e-a3a0-0f5442581045">
+<dmn:inputEntry id="_4f03fd5d-0f1f-46ef-b191-5ac558797fa3">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_68cce1bf-389e-4a09-98a3-90c36af74aad">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_57aac581-7f35-453f-a82a-53e44f035507">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5b6516a5-ea15-4ce4-b024-1e04400bdc51">
+<dmn:inputEntry id="_9d41a62a-c899-47f2-8c96-c8b8677e126e">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6673c22f-549a-4bf6-bb1a-a8e02832fce3">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a6563754-ab46-423d-a228-76d87e43f093">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9135734c-ef89-48fa-8008-bc26521a5ddd">
+<dmn:inputEntry id="_5718e144-1ebb-46cc-958f-905892665a8c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_871063da-1371-4758-be11-e39865431b91">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e32d0eef-c330-409a-8deb-719dd9475973">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_952e71e4-afe1-4b45-8159-d5d61b254ef0">
+<dmn:inputEntry id="_c08465e3-ddd8-4c1c-af8d-3fdf78ce8d8b">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d209b926-d8a8-4e83-9557-503a7fab2bbe">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f96a011e-3f10-44d5-ad08-3248764d7037">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9fd3bda4-d11e-472c-93d1-9331caea0583">
+<dmn:inputEntry id="_6c3b76c3-09dc-4d59-aeb6-93a8ece26e21">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0980a575-b05b-49bc-81f2-9e5641ce026a">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_23a5ae77-bc35-4453-bef2-b7364fec0771">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_36f5e3fb-c345-4a46-88d2-be21616a664c">
+<dmn:inputEntry id="_60de41e5-0859-4d8d-842d-7cbcaac2b98a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_89ddbe09-fe54-46d0-9928-af741145fdd8">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_827d4def-1f5e-4f6f-b4bb-3cffe621e3ac">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5f97f964-f44f-44e9-8483-297de37906a9">
+<dmn:inputEntry id="_921c9f2a-3c91-4571-bb9a-f0c3d44fe0da">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ee03e41d-4656-40da-a417-82d57b0b9106">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4588da44-e5f0-42ce-bf66-8e28abf58f9a">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e350b618-0323-4796-b594-e90ed911a394">
+<dmn:inputEntry id="_0fbbc73b-a1e5-481d-bf73-20124c24b520">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ef0f4c1f-3b78-4d68-83ec-15da612378c6">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8ab91d7f-ae35-4ce0-90a5-b489f676cc5c">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2771979b-297d-459d-ac93-d514c7ae2fd7">
+<dmn:inputEntry id="_7430f818-227c-465b-9967-311bfe6ab034">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9288354a-cbd8-479d-8b12-aa99518eb353">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5413f97e-d3dc-4e9f-803e-a2882682f212">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e15c34f9-00d3-48f5-9bd7-8956fd4444b0">
+<dmn:inputEntry id="_fe20763d-dc9b-4fea-a3bf-434df14ce5bc">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_94c66904-bad0-456c-9390-635d847ae743">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5b1ae85c-1070-471d-8ca3-a936a8cca884">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_7bb1cff1-7ff7-4f12-ba8d-31d829878d29">
+<dmn:inputEntry id="_5f153f00-b69d-422b-bb66-f09952580704">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f7b2e4bb-b0d3-41fb-a271-8c6f2b16327d">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f79221cd-e362-48b8-98b9-328da7eaef2d">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9ea4c32b-ce4a-4b18-8f3c-66c0d7d14182">
+<dmn:inputEntry id="_4cbad429-dfef-43e3-bcc3-6175bd61d82c">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_86b97138-b95b-4867-bcbd-477047600929">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e352eb1a-af58-4885-b254-999305b5237c">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_222ea64a-1b19-4173-8e76-6c86db798528">
+<dmn:inputEntry id="_5434642d-26dc-4cec-b1a3-a3d3b4664b28">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_153ab7be-3471-4439-ad0a-6aa0ff50164a">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_18f41160-f910-46b5-a028-a139f4fbf9aa">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f8ae847e-8aec-4e9f-9a29-ba4954cbf8e2">
+<dmn:inputEntry id="_3481a3b7-9acb-4c41-8678-7c4746d54834">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_94a881e3-db2f-4e30-a355-f4713679e199">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ecced047-72a5-49b3-a4dd-595a612cac7d">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d4392bed-a680-4898-b1d7-0f95e7fbde71">
+<dmn:inputEntry id="_ea7db02e-e276-4920-bac3-dc129cb07d10">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4e13bc22-6803-4aaf-91ff-8f171b8d7490">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ba403fd7-85d0-43a9-9e9a-a92a8f1e19b8">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_424f1c9b-ff33-4f51-9295-bd3a1f09b618">
+<dmn:inputEntry id="_0babff2c-7b1b-4cb7-904e-15549bc0299b">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_01af0a69-1d0f-49c8-81dd-c82a4c3361d7">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_67601d26-656d-4e40-8158-7d7e761b3b22">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_0ef50e55-99e9-4a5c-ad4a-3fcc44e52628">
+<dmn:inputEntry id="_8485a07f-4024-4e13-ad25-5ddb1215c8d6">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_601fa124-52a7-4a54-9a94-19401807cd9f">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_39181819-1768-4b0b-b0a8-e4d7d30b3410">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f4031fc1-dc04-4f74-a108-b4a07a07ef5b">
+<dmn:inputEntry id="_31c72c32-d944-4d81-9735-125d80584506">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_233d01c4-980e-48ad-a1f1-12a5a1767092">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2a02301d-e1ff-4489-b2a6-657f178255c8">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fe8ef7ff-607c-4feb-809a-30790cc22f8c">
+<dmn:inputEntry id="_8275816d-866b-4213-b757-cc8aae0ed98e">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_aa5b33a0-a972-4519-8215-9dd5696c124b">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_62edab3e-9f38-43fb-b361-d8c6d66a9c92">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c7f49af9-cd83-4730-9f9e-3105e815d9f9">
+<dmn:inputEntry id="_76dfab93-2b61-4ee7-9be6-5409340f8732">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9dd9fa99-8b66-40bf-9bc1-58926b207dcd">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_860bebe6-4507-4bb5-ba35-7339e0f324ec">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e577d952-ec12-4d44-bed9-f75eeedf7ca4">
+<dmn:inputEntry id="_7271b1c1-90b3-46f2-ad64-cb53e36c5091">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1b60d79f-c2ea-42f6-9e06-e02a8f4523c5">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2d195c97-ca63-4151-8b27-1ed358b71266">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6ed3c0c5-a827-4f05-ba90-634124a6a7e6">
+<dmn:inputEntry id="_b251d306-2213-4b9d-98a3-821a6db0cf7a">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d62c04e8-fc1b-4ac9-a06e-fec3bf4e9953">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_321ee8e1-4e2a-4338-bdad-e0b282888078">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4526e157-a23d-42c0-aa97-d47e12658dab">
+<dmn:inputEntry id="_d08015b7-db00-44f6-983c-6d29215377aa">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_3a02fd55-5af9-4bb1-81b7-7335e69b99b0">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4b791472-0ce3-4f6f-a26b-2094e1f00bc1">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4e1cbff8-3319-4ead-8800-bffd6c012446">
+<dmn:inputEntry id="_59d42d78-4728-4c07-aa8b-65c88cd8633b">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8f03dd9d-3c16-4a02-8db6-9d1cb6cae9f0">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_cdedc117-0f43-450a-a91a-c31a24e1e5f9">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_128a0c82-fbeb-4808-8d71-eff2ac29ab5b">
+<dmn:inputEntry id="_bcff4850-598f-4e53-bdd2-72d5419ce968">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7d635c7c-1054-4621-be73-7160dac1a834">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d0d1f651-1192-4cbe-a3da-4561344bcb61">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_61125fae-75d8-448c-8bdd-63d99c10fd21">
+<dmn:inputEntry id="_f5f647ec-4935-41bd-a162-89b38ebebc02">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_663f8bca-ab77-4302-80c1-7f2be55fdc66">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8e7fc715-798c-4121-9c08-67e77a312b6a">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6881e889-2373-4465-a4f9-e49bdcb8a9ff">
+<dmn:inputEntry id="_b80aeae0-7c3e-4585-97ab-fbf0726880a3">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_fd729087-0fed-483a-ad9f-b0379f66ed2d">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ed185c1a-5b37-43b3-9a92-f07ec9bdf2f6">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c386db8a-78b7-4e10-ada0-2964f503c999">
+<dmn:inputEntry id="_097069ba-549e-495d-9e9a-19899bc87355">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8ab934e5-cff7-449e-be28-505604680e6f">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c1d8aeb2-3ea9-459b-a183-58ba0948644e">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_bf564627-4978-453b-8cf0-1381c1a5b9d2">
+<dmn:inputEntry id="_333f5cdd-26f1-46ab-b95f-908f8eac01bd">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e54cf7ae-a57a-4b49-bbea-08462fae83c5">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_fba42dd5-810c-4433-aee9-540449c7a269">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b0d61a36-25b1-40f5-a19d-563dac60b833">
+<dmn:inputEntry id="_b30265b2-d682-4111-af95-a716d4820058">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4c580af6-034b-4a9a-9443-9aed0cb450eb">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b97f863b-8bd7-4d99-8026-153e2f69f6d3">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a0e34e22-291d-418e-b6d3-b2af3f660e47">
+<dmn:inputEntry id="_8e2db37d-2e6f-4393-a7d6-abfd83fe3226">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_be331e83-4045-47ad-b474-8869e1be6638">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d92b869f-fa76-4a4d-9651-59c603235782">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3f84361d-1733-4263-990b-c0869b3903dd">
+<dmn:inputEntry id="_9e8fd0d6-9052-4fb5-9954-30798c0d4761">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f30d4977-075c-425d-8eb7-8e71dfaf1f3b">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9fe0605f-bb4e-442d-9f93-9c0f745a3609">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c5e9cff7-5b04-4e84-9c01-3db3ef420981">
+<dmn:inputEntry id="_1c7e0f11-1e64-412d-aa78-a81e057bf323">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_33e9330a-b2be-4a7c-a231-5fe9fca1a2ea">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b4820bdb-6d41-46e3-8746-a5b4ccc57238">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_00ef4cd3-bf47-4ea0-85fe-ec2add5e12a9">
+<dmn:inputEntry id="_4bbf8d81-da4c-42af-ac22-44ccde5fb898">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5eeda447-2486-40a3-8dff-40f4c03c0f7a">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ca12f033-1617-4d03-9860-0acd0f519a6e">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_873a61cb-6239-430b-8a6c-1005f60e5f79">
+<dmn:inputEntry id="_a7589099-36e2-4b2b-a19f-9db6b94bd550">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_94c16fad-c749-4ce9-9d20-a69537fd8684">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4dec75af-aed1-4dec-8f33-537e71bd8185">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b105bec0-c439-4f95-81d9-e2218d64758e">
+<dmn:inputEntry id="_5ca855ed-861a-4efa-859f-5f3e94c38290">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8610bfc0-bf6a-4be4-8077-6e776487ea6f">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a9a80f2a-f409-41be-8862-d720f4e84771">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_49dd23d7-c6d3-4028-ab48-5c825f9b43e4">
+<dmn:inputEntry id="_174559b6-56db-4ca1-a2f7-c4a7f27b5ae2">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0010bf0f-eba1-4442-aae3-c6989349f6fc">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_18433fac-da13-4657-9a83-b33e93168f3c">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_85f15545-6b8e-4826-9a29-3c57d076048b">
+<dmn:inputEntry id="_c0f6fca4-0239-49fd-b708-827de7cd40ac">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d4d9e890-609e-40ce-a9a5-9382d5ff2eb4">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bc850c9a-e05e-410e-a2ef-431f3cf4046d">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ce2db9bb-f9ec-4ba2-8181-c071067223a3">
+<dmn:inputEntry id="_be92f5d4-b887-47fe-90aa-9618fea13a06">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4239b71e-8645-4571-ba57-4d0a2099622a">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5b0d21cc-16b5-4a50-9c6c-a1d6feeafa38">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_aa9a379e-0cd9-4609-ac68-d9bf83a06818">
+<dmn:inputEntry id="_5271c40e-7daa-4b60-9b83-66ea85fac53d">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a7431cc2-8198-4e8a-9cb5-0d843582e307">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_ff3e66a2-3737-4310-9431-5f2ffe23daac">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ea89f838-0dc5-4a86-8b84-1082fa810070">
+<dmn:inputEntry id="_e3646328-5606-4cbe-aa36-3f59aeb1ce74">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_58f1d29f-19dd-4dd8-82a8-e23012c55bcc">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b22bc69d-6326-4eef-9954-db23b7ca9f64">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_424dab6b-67a5-4dce-9857-57742192a5da">
+<dmn:inputEntry id="_15e010a4-f34b-4f95-99ef-fc6ca259c6a3">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d68c163f-046c-43f4-8b8c-5a14dc0e6785">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_825e8070-b9a0-437d-bb20-255bf7ac6458">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1f9c93a3-d559-4032-beb7-ffc4aeca1c30">
+<dmn:inputEntry id="_c3b3447e-859b-4acd-839f-24596ef09890">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bf605364-a073-4866-b83a-34376002b571">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_43655d89-4a4f-4867-ae3a-14db335be2aa">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f751bbbf-d1ba-4d8f-865a-a17bd53f4eb5">
+<dmn:inputEntry id="_2595936e-4107-4243-856a-db33c6061090">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9cb036d7-5254-47ee-aecb-1ddeaa49f282">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a2403990-3d29-4007-a844-12e1ad758a68">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5846e131-3148-4043-a618-7fe11b4ed8a4">
+<dmn:inputEntry id="_d772513f-3d72-4c9f-8958-16930beacc7e">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_660d5e28-2407-4f14-9c37-40d0d666fb13">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_70f662c0-9d3d-4e76-a390-d7832cd0a555">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_59ce3edf-a0c0-4d01-a2e3-f8290ef1dd2b">
+<dmn:inputEntry id="_195291b2-3850-47e5-ab1f-b1560af82896">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d68e6de3-3d76-42fd-965f-c50cf0871729">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_52b4ac31-a06c-4e72-a339-633e4c586766">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_24bd0b2b-c279-4df8-8575-0a5d32155e73">
+<dmn:inputEntry id="_09188b1d-ca86-4394-b1d4-7b92f50142f1">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9f17d21e-5802-4dd6-896a-fd5a549a7920">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_159218d8-aaa1-4498-a2e7-3fe3588dad00">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2b43e46e-f7dc-428f-b383-67da428352b8">
+<dmn:inputEntry id="_3e6b8f85-b27d-4fda-ba77-2cd7f583954f">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_6b9b5740-00fe-4cbe-a2ed-51f117f7d1a5">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a18d13f7-45fd-4ee2-b982-5275c008faa0">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d9945377-6168-47f5-93bf-db66fb33eee0">
+<dmn:inputEntry id="_e1283b0f-10ad-4edc-b87c-82a516d9943e">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a0dc8f6f-a087-4a29-8316-6f126ab70aab">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a05d829e-4be7-45c8-bc9c-7d8495947333">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b1ebedf4-9b15-4f53-a186-b198a8b9a704">
+<dmn:inputEntry id="_dc34716e-b1c3-42e8-be33-719db16d8863">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5a5b89d2-e31d-4a81-9662-9f5483978ca3">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_24517826-69fe-4171-9c87-14d76fc6541f">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fc96654f-4e72-411d-bb4a-c3916b533fb7">
+<dmn:inputEntry id="_33e550fa-7abe-46d1-a1b9-773455c1afc6">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_aa1874d4-2d75-4660-b3bc-d737177de0b8">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_db75217e-8b8a-49d2-8ab5-e8d7eb32ec55">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_898e372d-d9a3-4012-907c-4cc8ce44414f">
+<dmn:inputEntry id="_d6fd4056-a567-4796-b732-7e0e239a069a">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_37610a8a-a6f1-4569-a18f-ff5334a3dc0c">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_90f3fef7-c3af-4f44-be7f-553149e45f79">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_28fa34d2-1e56-4425-809c-a32057e457da">
+<dmn:inputEntry id="_6aaf2d58-a0ac-4c40-a963-64de2d64ef86">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_429b13be-90ad-45e4-88a4-7f0da2fbcdda">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_09951ed6-f3ce-4989-a569-844c20182cc0">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_11ec7ab6-d3bb-4a7c-b189-2493b6d41b70">
+<dmn:inputEntry id="_10e85276-238a-47ad-ae8e-557fce3ce24e">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_bb46a550-a5c0-4291-be3a-702882c022be">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e05544cf-0ae7-49eb-af8b-29e7c656b6a4">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_acc252a6-c1dc-41f7-840f-0e38fb56c6e0">
+<dmn:inputEntry id="_0a8f9f56-4d2d-4a0c-8abd-df80148b0b54">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_13145fb8-30d7-476d-aa10-b4d9f9203de3">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_282441cd-4fe6-4c62-b985-8f14c9c22a5d">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_25240ea6-55c3-461b-9d3b-f211d65a21b5">
+<dmn:inputEntry id="_93fc9a8f-52da-4f0d-acfb-a2dd37e86402">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_14221a73-5005-4b9f-b545-2ec65aaf2786">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_33b0aa4f-d654-4973-ac87-46891f4133ae">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e2b44f1d-2b37-4c2d-ac6e-d9dceaf4ed74">
+<dmn:inputEntry id="_248cd501-8d93-494c-9eb7-81b01dd67e4b">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_37d9d167-6d56-429e-baa3-bdaef278654e">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2d288a7e-9313-487a-8f63-824f63844006">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_85503034-6d95-4633-bc08-855ffae24650">
+<dmn:inputEntry id="_8bf09166-535d-4d55-bf09-5a22400cef32">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4a6c52c4-44dd-4185-9ecc-97a06a2757f2">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0debb5cf-6d55-4f85-8965-7148893bbbd2">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ace450fb-9221-4de9-872f-1c3d6a0bec0b">
+<dmn:inputEntry id="_6e93455c-b526-4b38-a08b-541005aee8bc">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4d48d430-0fa2-4298-8896-4deb213fcc55">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bb4d17d7-d737-4a05-b7bc-5e4e22ba3018">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_938c2b7c-57ef-4f80-958f-20a5719fa162">
+<dmn:inputEntry id="_2b76dff8-387e-45e5-af63-0e879547d107">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b42282e2-64ac-467f-9eab-45a691c5aae4">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3eb7ab8a-ea26-46b9-9538-37edbb09b750">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1a89c50b-a78c-4c7b-9ced-c7f20fa69fdb">
+<dmn:inputEntry id="_95698450-5a8c-41a6-94a0-b0470f2f773f">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_489de4b3-9259-4991-bc84-dc85f69e1c40">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_75af07b6-5de0-4282-8e68-efba9af553a6">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_7274e1d2-e2c3-4aee-a9a9-80698095ba73">
+<dmn:inputEntry id="_0bf98efc-5141-429b-b47e-995d4a39b794">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7ceb73a8-cd76-4a8a-b4ca-83964ea63206">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_45c5829c-c40c-4401-8d13-66a6ddd67102">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b9e31bf4-9708-4981-a6fe-b43b1fee5747">
+<dmn:inputEntry id="_0a94e0b2-1fe7-48a5-a227-0efd972f3fc7">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_93eda189-16b7-4d43-ae65-9a1dcf785265">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a3c35a48-0036-4859-8020-6df567bb4bd5">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_55b4e3b5-d415-46be-a49b-42a436220987">
+<dmn:inputEntry id="_2d2f3005-f819-4b27-906b-a31d0214f4a2">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_69ad46da-e3ca-4247-bf6c-9b3f263a2d67">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_450be9e4-2a3e-43c8-a908-12b422bfe529">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_61f53a7d-23a6-4be7-ab94-83e429813735">
+<dmn:inputEntry id="_fc00df22-d57b-4460-a9fa-9c3733c62a95">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f88578ca-a8f7-4391-9ff5-b5b6a27aea87">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b3abbba6-846c-40cb-80a4-8ba2506fa34f">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_51ddf105-52a5-46a8-89a4-ddcb5de8bceb">
+<dmn:inputEntry id="_d3432abc-4c19-4808-a9d5-d4e4092a763a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0982dc17-9939-4ce6-b5d0-acaf364d42ad">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_0dea67c9-b92d-4fb6-81f2-bfea35a88420">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a646d415-3156-4a49-9ff3-10fb0d2d9a0c">
+<dmn:inputEntry id="_ad705d2a-8af0-4e6f-a7e5-dc14963cab82">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_26d94310-70be-48ef-8d0d-b8e2596f9d90">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_29e11f61-b067-43c7-b7fb-b87d9ace4862">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_536dd4fe-e5b8-4f31-aee1-80248369c0ef">
+<dmn:inputEntry id="_681562f5-ed17-49f2-9b55-3ced9fce0fd9">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2d862a3a-252e-43bd-a8fd-b61c8bf91062">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_29c0eeb9-52df-45cf-9b3d-a6e98a334819">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f33f958e-0903-4ec0-aef7-cfefcab0a0ae">
+<dmn:inputEntry id="_5c70cb1c-df8f-4cad-9f5a-6b9a2d8522fd">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8fa63d70-df1b-49d5-8d08-f5e4383f442b">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f860b651-701d-4122-82ab-18d5174c3002">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a75f3462-b9a8-4aa7-8c37-b734da1e9f88">
+<dmn:inputEntry id="_2bafac2b-d50f-4112-bf03-8fe1532ba374">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_41685e34-b3ab-4485-9adf-4c951616ed88">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5792e8df-f233-4b01-a4ea-939209b8a0ea">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_370f030d-adf1-4aa8-9ab9-93ad64b03f3c">
+<dmn:inputEntry id="_68706cec-5af9-43e9-a129-d45707a3dec0">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a81c94cd-b636-41ab-baab-b803351d4304">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_fb2ae1f6-2a22-49ed-b2a3-99c534a02d11">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_491827f7-79db-430f-9a40-a16f437e17ae">
+<dmn:inputEntry id="_28ccfbdf-8528-4833-9b21-9f2fcf94ef4a">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4722c66c-9c41-4750-84a8-89bc437b4d1f">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4ede8ed6-5e00-4cf1-bcc5-c8684ec7b44c">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_deb63b3f-5a83-4587-a422-680fab018d39">
+<dmn:inputEntry id="_d20ab950-5ebb-4a7c-9f33-702965515675">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b7cf5c11-9f42-4022-83b3-14f14a2ff086">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_197f4b26-c896-43e0-baf9-232ae1721368">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_53049c85-c8d8-4b7f-9039-57af43df7fed">
+<dmn:inputEntry id="_ea38e17d-bb44-410c-8c00-12f32d24598b">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_675e2faa-5869-41ca-b230-dfa280833fe4">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_40e43fcb-7280-4d59-b860-6cc28ba47736">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f30f3dbf-6d78-4722-b8bb-b0cb866e6cc9">
+<dmn:inputEntry id="_dccdd89a-7334-465d-a241-815973df5640">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_317e9226-89df-451e-b7a6-a0c9fe92e0e7">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4012d8d5-7179-4895-8de0-ef068369a6a5">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6e948367-cb9b-4232-93ff-169c1ef2f8b7">
+<dmn:inputEntry id="_87e85b7e-2ca3-4e7b-9d9a-74bd0ee92183">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1e81a78f-c1c3-458f-9a94-97d0499d9192">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7e920809-17f2-4512-89b5-1a8bbf46a374">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_f36524af-9846-499a-9048-4a2a5d015b84">
+<dmn:inputEntry id="_73e19f42-f8ca-4575-9763-7b57dadf080d">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_df66274b-bc6e-465f-b4e6-af1d0b29be9c">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_39e92469-f818-4250-89f9-02d1a0c63ef4">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_660d5edb-5b6b-4f25-b61f-13aadbba5b6e">
+<dmn:inputEntry id="_76f0566f-2931-4d71-9833-102cd995c09d">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ee20ac17-d2e7-4f9e-96a4-d3dae8811df5">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_385825b0-31d9-470f-a565-cca48779d9d9">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_013305cc-b40f-4936-862f-22952f60d501">
+<dmn:inputEntry id="_af09659b-3054-46c8-b9e0-823d11ee8da8">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_91c1d78c-039c-404a-8592-fd8a1c8c91a0">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_691553de-1da5-4cfa-9bfa-4bef9264feac">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fe6e5887-cd00-41ac-b559-c2f715f06167">
+<dmn:inputEntry id="_0a157ab7-eac8-4deb-8fd0-d73644b4f619">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e41ced18-2486-462d-b4e6-ecf72746d0fc">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5f5ca1a9-eef6-4148-bdd7-76a6fbcfa541">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d2ffdf29-5960-4d7c-8deb-61bc3fe85b5b">
+<dmn:inputEntry id="_b6b3e87e-46ee-46e7-8eb8-3a7325a7190c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_16103d8a-3a26-4f39-aeca-be2e5121c6ba">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bab95e4f-879e-46fa-9b17-5c9c98ff5728">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8c130b50-c23b-4218-bfd9-7d9894b83c47">
+<dmn:inputEntry id="_cfe05b46-eceb-49f2-8f8d-2ad5457824d8">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f6e0f5e8-0a2f-47d2-ab0c-2051058b4b1e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d99a4395-159a-416a-a590-45c832c1b54d">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_888d0986-b8f8-492c-9365-4fdb933543b1">
+<dmn:inputEntry id="_fbc3baaf-1015-40f1-a794-a42345470b58">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_03126cd5-e8cd-498b-a277-fca3c6697284">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_1849c9cf-66a0-4739-89ee-e8b1781a06b6">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6d0e2df7-790e-495b-a561-d7ff6e7fa5ec">
+<dmn:inputEntry id="_0688cfe7-2ac8-4fba-b948-67687c5e4bc5">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_edcc8683-b1f9-4b72-a6d8-52621f2731cc">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_edd07fed-96c2-482f-95e9-32ba861f852b">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d57ef5e0-c4ca-44f6-b134-22dc43f434d8">
+<dmn:inputEntry id="_24922a7e-faa6-4518-a592-1fce332f8309">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2a984c22-0f09-46fd-8db9-4e2a51568d65">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_8e4e53e5-ce96-484f-8118-4ea7fc51f27b">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_d01ae42a-4142-41b0-b49b-8cd42007ae07">
+<dmn:inputEntry id="_43c9881d-3275-4346-8f79-1f256e995f46">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b907f19a-e237-43e6-9085-0a1bda6d601d">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_013a4340-077c-47f1-8029-484b09a80589">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a9b1bf42-7c51-461e-a87f-cc6d155b2b5b">
+<dmn:inputEntry id="_98928c3a-a9be-4809-a4b5-d6bd6239080f">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9d2d1f64-597c-4dd7-9e32-c790ccfd2f25">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_e9f23f82-d7ce-43e7-a7ad-6e1b802b8649">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c469b056-12d6-49b4-92c8-2e61ce609766">
+<dmn:inputEntry id="_3454a734-3e15-46f7-bfa9-9511e6a670ac">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_70e37efe-6782-486e-9532-2a1c09a7c865">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a5fda579-312e-46bb-a626-5592117b8889">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_08f9389a-934f-46a9-bcf1-5d48027e5cf6">
+<dmn:inputEntry id="_7399fe64-ddb3-4e0e-b3e1-de973be19f5b">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5a899ad0-0d2d-4e03-b11e-5e1b66c4cb05">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_64655559-8607-42c1-841e-7f78ab3ebda1">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_05f0fa73-4af7-416f-b293-84c18b8179c1">
+<dmn:inputEntry id="_91875aa8-6dc4-46eb-b6a0-c356f1f25855">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1e398d26-964c-43e8-8298-efeb66112acd">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2404928a-6e92-46a9-a93a-0c1601f69fb0">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_035fd08d-dee1-4f88-bb05-c593da7fe801">
+<dmn:inputEntry id="_91d7ce81-2034-4d27-92a9-075f1f0790d3">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0f0b5aaf-b394-4fb1-9ccc-ce1c551aa240">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_4e8804d9-4724-4a3c-946b-001255871df9">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6336c3d9-c4db-414e-885d-6d5f9d803cc8">
+<dmn:inputEntry id="_db615b35-3689-4122-85be-6ed6a9457c1d">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_2dce05c4-0472-4fa4-a919-36da5ea08f6f">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_7fd31ef6-05be-48b3-ba82-130a3e31f0f6">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_47a4c29e-2c80-4dd7-a49a-d965e0a3dd8c">
+<dmn:inputEntry id="_e0d816b3-238c-4aa0-833d-dfb2ca2b8312">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e7bbc0bc-1b5c-425d-a2d8-300aedf48fa2">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_62619515-f76d-4ab8-ae47-401e3be0c405">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a79028e1-0e91-414f-a83f-c680910a0350">
+<dmn:inputEntry id="_c98cea9f-34dd-48e8-9a8e-b03369a9c07d">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_765f8848-6181-41b3-a14e-f056dbe3cca8">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f7c45d2d-e803-47b2-be8c-a6d5ff29a24f">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_690777c3-3bf5-4f51-87ab-45eec76fac55">
+<dmn:inputEntry id="_82174551-6500-45dd-974a-059b625dceb1">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_49f4d798-9cb1-4ab4-bff5-ba9a846efd8d">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_3110fec7-def1-4a82-88a4-de84f63b1fec">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5b4904e8-d3ea-48d0-a391-dd040b6dc6cb">
+<dmn:inputEntry id="_8b227868-6017-4cf9-983c-67c95a2a5b96">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_26291972-bb76-470b-a950-95687de2edc6">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2dc8704f-f747-485e-8265-bfe987b3f560">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ffebff9d-1b12-49bf-bb87-94b4b1aa4b6e">
+<dmn:inputEntry id="_712ae1f8-78b7-43e6-b3bd-93e394c17dbf">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1e858091-ea43-4783-a650-d17dcd896892">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b0e57bc3-b5f3-4e99-9c72-ac15526f5374">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ef528d19-3476-44b9-91d2-483cf2912a13">
+<dmn:inputEntry id="_346e59c0-5454-4b65-b0da-08f1685027b3">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8afa217b-31b0-4b7a-bc6c-52b0895af2a9">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_5b5c6ab0-740f-4259-8d5d-9d299ca2bebf">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_33b12cdb-fa12-4ab7-aedd-e739bd3145cc">
+<dmn:inputEntry id="_4d603736-494f-4a33-b515-69b537ac0457">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1359fea7-1807-4a14-aa0a-39e83f6e1f1d">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_de99c05f-386c-481e-b2a4-b9f551a683d3">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9669c4ba-751f-46a4-9d48-f67938bd7edf">
+<dmn:inputEntry id="_7270c8b7-b9f4-473d-b8c5-c8394a4399b6">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0f1df88d-60de-45e5-8f23-024d2c8e4e92">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_a23e115f-a920-49e8-8063-1d1e6c7b305a">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_edb7fc49-a5a4-4feb-8b5d-8b70f80124fc">
+<dmn:inputEntry id="_a2f3d594-a82a-4cc0-bac5-f7ac216f25d1">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_dd676571-df83-4535-8fef-165271471311">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_02c7a930-9b4a-4e8f-a2f2-17ee5791f8af">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_4e21bafe-bf7a-4f4b-bdfd-5da2ceaf2db1">
+<dmn:inputEntry id="_c762b02f-7551-4757-8da2-b783bc9ac599">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_fd30d1ad-5775-4229-9aea-bada3d5ce21c">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d8483958-53e0-4dc5-9b31-67f32aa084ed">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fc08cb7e-317f-4719-a7bc-ad1cf7c9dc0c">
+<dmn:inputEntry id="_dbf7c22c-9665-4b0b-8a74-e3e157f0fd47">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ce00edcb-8bf2-4b03-988a-21bde6fed980">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_847aa552-2516-467f-87ed-936cd0c6bb2f">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a366eed3-6d52-4fb0-a7bd-d6c18fc769cb">
+<dmn:inputEntry id="_6034961d-0751-4807-b36e-acb602f3b61f">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f5cb1480-f88f-4ecc-a0f2-4e0c78d6d5bb">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_bf75d45d-c2ae-4dc8-927f-0037e346e045">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e267bd2d-a3e5-429b-b905-237e1ca2b022">
+<dmn:inputEntry id="_1730cd2e-0ca2-46fc-a573-c51d25ccd92e">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_51e27fc6-e6a9-4a09-bba2-bcaf162a8959">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_15453a80-c22c-4044-9026-5ca28f72e9ce">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_9b8cb2b0-3d4c-4ed9-87c9-45de073a5919">
+<dmn:inputEntry id="_27e2b5ff-4d61-4c34-8082-8017649b7abc">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b3ae7422-6559-4609-9735-e437a20bd685">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_19afa721-b527-4239-962e-8487ce8bb790">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ecb5b240-18e9-48e7-8f46-e0f31009c732">
+<dmn:inputEntry id="_c4debd0c-8e02-40d0-a402-258d04772ee5">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_31ebbb66-13e5-4413-bd0b-4af1d870241b">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_eba0f139-b69b-4df4-9195-f454093415c6">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_a245fb8f-7128-4292-84fa-f908ccf059a0">
+<dmn:inputEntry id="_03509fc1-a663-42dc-ab4a-9d3fb563897a">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_32f4714d-72f0-44e4-bd57-5e58fc48d34c">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_9f7f1ccc-d645-4dd4-8369-99c073e709f7">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_813345f4-4d44-4ef9-bdc6-610419378dc7">
+<dmn:inputEntry id="_d8d17bb2-67b8-4613-b546-ae31b827bbe0">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_e3f4549a-dbac-47c9-9bc9-4834a48f6fd7">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f37aa4df-63b3-46c7-9f67-efd9f780c3f2">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_94fb3554-6453-4252-8b25-e429b838731c">
+<dmn:inputEntry id="_5ab8800d-0422-4164-aa12-cb13e31c310d">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0d8a6c62-da71-4477-913f-65293c710549">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_6801aa11-08b4-4a61-93cc-f83636365492">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_166d0a1e-6e6e-41fa-88f6-7aa684f31e0b">
+<dmn:inputEntry id="_e2774ad6-cfcb-4abe-a13f-dc6face3ff86">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4994122b-3634-4d53-9738-d643af2dba30">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b64db0c5-477c-450b-8aaa-30480b0edd23">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ed4f1b12-fdde-49e9-b0c2-2324c66c1462">
+<dmn:inputEntry id="_46b04c32-4eb2-4624-afc7-3ace7f2feb19">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1836520f-0323-4d0f-9337-9f51c79dc8a8">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_abc8e3ee-7a90-4f60-bf7c-a0489b38d5f2">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fceccb9a-68a9-4a01-b437-4d588b81b252">
+<dmn:inputEntry id="_100f31b1-e17b-4e30-929d-a77a80d81fff">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_09c06287-4662-4fae-af14-12560f43d630">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_688bc68b-8c93-4798-94d0-c14df4fd1546">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_fb23b655-6d41-4ff3-91f1-f2f87f552a83">
+<dmn:inputEntry id="_bb0c6a37-e6d1-41c4-8849-4acdabdedd1a">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8dce2578-8356-4a0f-832f-88c19557c474">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_22bda696-9615-4498-9ac8-25eae6f33940">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_1a6ea734-6d8d-41f3-8ad0-32fe1ec1810a">
+<dmn:inputEntry id="_6be39553-cdfb-4bc4-ad02-48a19254f9d6">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_044a2114-1eee-41e4-982f-c8adb102ca7d">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_14caf2f4-5d18-48be-8bf5-7c78521bed1b">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_c4c02989-011e-45ad-9510-b40dd8810f8f">
+<dmn:inputEntry id="_f7359cbc-8196-4077-9c4f-3fbbf32b7be7">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_54712e9e-e660-463f-a3f7-80e68f3c0337">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_927f973b-b7bf-422d-85ae-baeefb360c55">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5340129a-5ae3-418d-9e5e-2d08d25377ab">
+<dmn:inputEntry id="_5025be60-cdb4-435c-9090-99a9f2f14c8d">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_178bb1a1-1a4d-4a09-9669-d2c549d124cb">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_b06590eb-a0a6-4eac-a8e6-9f4edd234663">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_efddc516-5660-4bc7-be96-ba51f900cb24">
+<dmn:inputEntry id="_991d1f53-0ccb-463f-b587-883cc93174a3">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_30978bf4-7751-434a-9377-ad08dc9bf82f">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_41dbc1c2-71a6-4a71-89a8-6b4efbd8af63">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_777cf5ec-13d7-478c-958a-0a74abc9b681">
+<dmn:inputEntry id="_f79ae5e2-6258-4bd4-b233-7ce80b37745e">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ae2e76e4-8386-49ec-a413-0415278992bc">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f98531d6-e3a3-488c-95fa-7706ad48b6a8">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_ec79327e-e140-4414-aab1-b95d879cb77c">
+<dmn:inputEntry id="_46e1ac56-c6d6-4cdd-ae1d-cf4576920779">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8f07c5be-ceac-440d-ba2f-9f9ddbb3f490">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_072bf553-f418-4f6e-8d9b-945bb5ff624a">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_b4e262d0-b760-4bdd-b7e6-3acaa23939b0">
+<dmn:inputEntry id="_7f34a177-1fea-4274-9497-de3b427433b5">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_9a7eec5a-acb4-4de5-a357-8c8a989c456c">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_546eb5ab-d607-40f5-851d-936ce29f5271">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_2daf3b2f-c5af-457f-ae9a-850952a34d1e">
+<dmn:inputEntry id="_479008b4-3511-4e3d-a2dc-13cb47b108ab">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0b8a4a56-c498-4822-ac64-0bc789f3fbbd">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_c795bd7a-7c5d-4e55-befe-635231665992">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_16e08dbf-4943-4ff6-9842-690b55a3d04b">
+<dmn:inputEntry id="_cd27ce9b-aed0-4af2-9943-a10619e976c7">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_4be57d13-3885-4de3-a01b-4a4f9af006f7">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_58cb4cf7-d3d0-45dd-b9c1-f30554dd226a">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_5a991a7f-d7eb-4286-a102-254b655ada92">
+<dmn:inputEntry id="_38c2f2ba-365f-4ec3-b2e6-0e7155ef8e84">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_d2fe17ad-2517-4dba-adf9-e6f59d280836">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2872609d-00f4-4fb6-a1bc-7588335a4919">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_870029d5-ecbb-4788-8516-fea83ab6a2f8">
+<dmn:inputEntry id="_b73702cb-d0b1-4432-83fe-6efa9383f345">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_c0f92be8-00d5-409b-abd5-ac56fb54319f">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_848bbfff-bdc8-4891-92a9-5ec9f1ad3c7b">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_abf3f191-c138-4e14-a315-7318da0c3ba8">
+<dmn:inputEntry id="_2570421d-c8d1-4a75-a81e-bd93bf08d021">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a9df9156-7c20-474f-93bc-0c20994cf77a">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_406bd28a-dbbe-4cb1-b374-6bc23f1ed545">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_e9bce636-7294-4a1d-8a26-5232c46832e0">
+<dmn:inputEntry id="_b9121c4d-b409-4205-9d67-b68f44c99c08">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_ab257fe7-87a4-4b85-8b84-a0b9fc434dc0">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_db3a196b-8910-4ff3-9fb2-0d9cc7e7292b">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_72acdde1-ca0b-4819-b64e-be0da4bb7f4d">
+<dmn:inputEntry id="_ee05a0de-3cf8-4fd7-b48b-1adbad76c5b7">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_0295122b-9de5-44c0-ad9e-fe0beb99679c">
+<dmn:text>[0..50]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_326ea4e1-50ee-49ae-b94b-428125effea9">
+<dmn:text>"0.00%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_3552db04-6010-4317-9afd-4f8b71d09935">
+<dmn:inputEntry id="_e81d164e-54f1-41cb-96f6-5382d20e64f7">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_f8e09601-a220-4f97-8dc0-5ac99111c5d3">
+<dmn:text>[50..250]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_41ca3cdc-0721-4bba-9c37-9d5124ac7a6b">
+<dmn:text>"0.01%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_649fc69a-173a-4e86-8de6-6263af416733">
+<dmn:inputEntry id="_9aab7168-7f05-4c82-9b43-51d17753bd43">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_5bd75bfe-d349-456a-be44-e4e8cf69c9a5">
+<dmn:text>[250..1000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_95d862f0-e42e-4533-b90e-1955b32fe6d6">
+<dmn:text>"0.02%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_012c0f69-22a2-4af4-b45e-7cd52b6b6107">
+<dmn:inputEntry id="_526b451b-613f-4622-8181-7e40719dc8c8">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_b435116a-840b-4119-8608-9cd46594d031">
+<dmn:text>[1000..2000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_042bcee3-a827-4162-9210-e8a29069b2e6">
+<dmn:text>"0.04%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_8d740861-f684-4995-9480-44fc8372949a">
+<dmn:inputEntry id="_67bda091-59a8-44f7-9c1c-8ebd5848e4c2">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_a61fd874-1a5c-435a-bd0e-5434e3523267">
+<dmn:text>[2000..3000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_362bd464-358f-4ec8-acc9-6f7f17ecf408">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_628d5f9b-213e-444e-8c62-e87df33d332b">
+<dmn:inputEntry id="_7efccaba-b9c8-43e6-bb8e-ee4323f0b114">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_07ad07e7-c777-46fe-bd24-a24124b3723c">
+<dmn:text>[3000..4000]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_2ae6fc48-f851-4120-992b-7c52df7bb3cf">
+<dmn:text>"0.05%"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_29F4A98A-07F6-46C3-BB7E-007BB02F7B94" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_7CCC4E09-15AD-4108-A087-287BAACE06B3">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" dmnElementRef="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="565" y="184" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

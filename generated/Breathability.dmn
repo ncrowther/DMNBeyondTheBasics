@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/Breathabililty" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="Breathability" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/Breathabililty">
+  <dmn:extensionElements/>
+
+  <dmn:decision id="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" name="Classification">
+    <dmn:extensionElements/>
+    <dmn:variable id="_B6D36E32-4CF5-47E4-A5B9-81F4B9C01119" name="Classification" typeRef="string"/>
+    <dmn:decisionTable id="_7CCC4E09-15AD-4108-A087-287BAACE06B3" hitPolicy="FIRST" preferredOrientation="Rule-as-Row"><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
+        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
+          <dmn:text>﻿Methane</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
+        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
+          <dmn:text>Oxygen</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input><dmn:output id="_3EC92DDC-D347-4CAC-86ED-4BE76DFB30E0"/>
+      <dmn:annotation name="annotation-1"/><dmn:rule id="_d8179cb0-c378-472d-9af6-028c1f1a78a5">
+<dmn:inputEntry id="_30d7b9cc-a8eb-4f0f-8bff-5b5cb9e01192">
+<dmn:text>&gt;=50</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_8aa2656d-b382-414e-bbfb-c475918e98c9">
+<dmn:text>&gt;=50</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_f94d535c-222f-4d76-a974-aaa6034038e5">
+<dmn:text>"Dangerous"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_6e25a0cf-e298-4349-8795-9c2ad5abfd6e">
+<dmn:inputEntry id="_bbe01868-2974-4617-85eb-34d41967770e">
+<dmn:text>[16-49]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_66b633ae-2380-4f86-bed0-8be4ccf4192f">
+<dmn:text>[16-49]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_d58be1df-c715-4ede-9c4b-66b4f7efdffb">
+<dmn:text>"Optimal"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_52e59ddc-5ccf-488d-8773-ddae3e172810">
+<dmn:inputEntry id="_6e508f58-e308-4684-b805-dcb5f1e46a74">
+<dmn:text>[5-15]</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_1f9a1331-d67f-410f-bd29-f7a1633849b5">
+<dmn:text>[5-15]</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_1bce0346-dd05-4e9d-8a06-93eef8dc7de3">
+<dmn:text>"Bearable"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+<dmn:rule id="_85913ffd-3d6a-48c6-8eea-9d211e9ae5a2">
+<dmn:inputEntry id="_5c709309-748b-4ac8-8fce-cb8f7d6b358d">
+<dmn:text>&lt;5</dmn:text>
+</dmn:inputEntry>
+<dmn:inputEntry id="_7a68796b-b0b0-424c-9e15-52601c70728b">
+<dmn:text>&lt;5</dmn:text>
+</dmn:inputEntry>
+<dmn:outputEntry id="_43f22924-cab2-4c61-b9fb-0e5ca7e69aec">
+<dmn:text>"Deadly"</dmn:text>
+</dmn:outputEntry>
+<dmn:annotationEntry>
+<dmn:text/>
+</dmn:annotationEntry>
+</dmn:rule>
+
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_29F4A98A-07F6-46C3-BB7E-007BB02F7B94" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_7CCC4E09-15AD-4108-A087-287BAACE06B3">
+            <kie:width>50</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" dmnElementRef="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="565" y="184" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>

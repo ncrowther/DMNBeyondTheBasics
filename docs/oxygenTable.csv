@@ -1,5 +1,0 @@
-﻿Oxygen,Classification
->=50,Dangerous
-[16-49],Optimal
-[5-15],Bearable
-<5,Deadly

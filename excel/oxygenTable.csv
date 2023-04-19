@@ -1,6 +1,4 @@
-﻿Methane,Oxygen,Classification
->=50,>=50,Dangerous
-[16-49],[16-49],Optimal
-[5-15],[5-15],Bearable
-<5,<5,Deadly
-<0,<0,Still deadly
+﻿Oxygen:Number,Breathability:String
+[16..49],Optimal
+[5..15],Bearable
+<5,Deadly

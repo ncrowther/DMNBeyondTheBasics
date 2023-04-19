@@ -1,99 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/Breathabililty" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="Breathability" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/Breathabililty">
   <dmn:extensionElements/>
-
-  <dmn:decision id="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" name="Classification">
+  <dmn:decision id="_BBA8FB3E-8E56-41E2-A9D5-80FECE01097C" name="Breathability">
     <dmn:extensionElements/>
-    <dmn:variable id="_B6D36E32-4CF5-47E4-A5B9-81F4B9C01119" name="Classification" typeRef="string"/>
-    <dmn:decisionTable id="_7CCC4E09-15AD-4108-A087-287BAACE06B3" hitPolicy="FIRST" preferredOrientation="Rule-as-Row"><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
-        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
-          <dmn:text>﻿Methane</dmn:text>
+    <dmn:variable id="_B6D36E32-4CF5-47E4-A5B9-81F4B9C01119" name="Breathability" typeRef="string"/>
+    <dmn:informationRequirement id="_2F7BA1FC-344E-4C69-9DA7-54429213451C">
+      <dmn:requiredInput href="#_826483A0-56A1-4A57-851D-96D060B8DC4D"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_7CCC4E09-15AD-4108-A087-287BAACE06B3" hitPolicy="FIRST" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
+        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="number">
+          <dmn:text>﻿Oxygen</dmn:text>
         </dmn:inputExpression>
-      </dmn:input><dmn:input id="_B5F7CC81-05CD-4589-B4EA-3C8C450C387C">
-        <dmn:inputExpression id="_F85D9764-2343-4949-9B00-BBFF1F816D62" typeRef="string">
-          <dmn:text>Oxygen</dmn:text>
-        </dmn:inputExpression>
-      </dmn:input><dmn:output id="_3EC92DDC-D347-4CAC-86ED-4BE76DFB30E0"/>
-      <dmn:annotation name="annotation-1"/><dmn:rule id="_9284106d-0b24-4eef-a81b-15e10fa54e2f">
-<dmn:inputEntry id="_67877474-bb19-4b54-915d-06bcafeb98a0">
-<dmn:text>&gt;=50</dmn:text>
-</dmn:inputEntry>
-<dmn:inputEntry id="_1e213085-e50f-4642-9e52-930778a44fc3">
-<dmn:text>&gt;=50</dmn:text>
-</dmn:inputEntry>
-<dmn:outputEntry id="_947d6f55-2d3d-465f-a771-d67cca4c76d8">
-<dmn:text>"Dangerous"</dmn:text>
-</dmn:outputEntry>
-<dmn:annotationEntry>
-<dmn:text/>
-</dmn:annotationEntry>
-</dmn:rule>
-<dmn:rule id="_c35b7243-5e1b-4010-8afc-bfed4ac1c0dc">
-<dmn:inputEntry id="_84fbb516-a9cd-4ea2-b79a-0851cd76401b">
-<dmn:text>[16-49]</dmn:text>
-</dmn:inputEntry>
-<dmn:inputEntry id="_f34ae971-1960-4577-ac82-c5500ebb2ab7">
-<dmn:text>[16-49]</dmn:text>
-</dmn:inputEntry>
-<dmn:outputEntry id="_28b097c4-356f-43a4-aafa-6ee3300a26e9">
-<dmn:text>"Optimal"</dmn:text>
-</dmn:outputEntry>
-<dmn:annotationEntry>
-<dmn:text/>
-</dmn:annotationEntry>
-</dmn:rule>
-<dmn:rule id="_ad69f845-3984-4900-b65d-0a927a175aea">
-<dmn:inputEntry id="_167aa2fd-ddb6-4fe5-b60d-d21bbd671fb0">
-<dmn:text>[5-15]</dmn:text>
-</dmn:inputEntry>
-<dmn:inputEntry id="_ed6a10e0-33bd-41c3-b9d2-6c3993ab667a">
-<dmn:text>[5-15]</dmn:text>
-</dmn:inputEntry>
-<dmn:outputEntry id="_c3473cbf-3ee5-42f1-9226-15bb09bc1bcc">
-<dmn:text>"Bearable"</dmn:text>
-</dmn:outputEntry>
-<dmn:annotationEntry>
-<dmn:text/>
-</dmn:annotationEntry>
-</dmn:rule>
-<dmn:rule id="_aa19d258-1cad-41f0-bded-c12da1a20260">
-<dmn:inputEntry id="_72609d5d-6e98-4043-a94e-7c8424c182c3">
-<dmn:text>&lt;5</dmn:text>
-</dmn:inputEntry>
-<dmn:inputEntry id="_e0193aa0-c38b-48ed-a237-4a5f88ff297f">
-<dmn:text>&lt;5</dmn:text>
-</dmn:inputEntry>
-<dmn:outputEntry id="_d994c09d-4b7f-4e62-86bf-eef28628c74a">
-<dmn:text>"Deadly"</dmn:text>
-</dmn:outputEntry>
-<dmn:annotationEntry>
-<dmn:text/>
-</dmn:annotationEntry>
-</dmn:rule>
-<dmn:rule id="_f8f6246a-1799-4f7d-a555-7caa84f9a7d6">
-<dmn:inputEntry id="_98879ec0-e1df-462a-b087-bb4ee72f174a">
-<dmn:text>&lt;0</dmn:text>
-</dmn:inputEntry>
-<dmn:inputEntry id="_cfd9cb4f-19b5-4b59-b5fe-54cb5c83e3ba">
-<dmn:text>&lt;0</dmn:text>
-</dmn:inputEntry>
-<dmn:outputEntry id="_87a7f408-caad-4cf9-b14b-81ecca991091">
-<dmn:text>"Still deadly"</dmn:text>
-</dmn:outputEntry>
-<dmn:annotationEntry>
-<dmn:text/>
-</dmn:annotationEntry>
-</dmn:rule>
-
+      </dmn:input>
+      <dmn:output id="_3EC92DDC-D347-4CAC-86ED-4BE76DFB30E0"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_489efd16-416c-4989-a9e6-57b3fa1234dd">
+        <dmn:inputEntry id="_24229535-010a-4d27-9790-ad1b36dfdc83">
+          <dmn:text>[16..49]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_39f058d6-bb81-4022-b23d-ba151a357593">
+          <dmn:text>"Optimal"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_8ff6c646-0d5b-40b0-bf60-5f856980df7d">
+        <dmn:inputEntry id="_33d00bde-94c6-47ae-90c6-b3d580c111d6">
+          <dmn:text>[5..15]</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_cd39c734-5eb1-47b1-bf28-9bf7a561429a">
+          <dmn:text>"Bearable"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_8e6ff065-abeb-4a2b-a7f7-d8f92b633056">
+        <dmn:inputEntry id="_9e2bc1c8-2ada-414f-945f-05b3a956c8db">
+          <dmn:text>&lt;5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2bc48634-5e12-4468-926b-5c4274991bcd">
+          <dmn:text>"Deadly"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
     </dmn:decisionTable>
   </dmn:decision>
+  <dmn:inputData id="_826483A0-56A1-4A57-851D-96D060B8DC4D" name="Oxygen">
+    <dmn:extensionElements/>
+    <dmn:variable id="_C7482E2D-7821-42A1-97D3-64612309E230" name="Oxygen"/>
+  </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_29F4A98A-07F6-46C3-BB7E-007BB02F7B94" name="DRG">
       <di:extension>
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_7CCC4E09-15AD-4108-A087-287BAACE06B3">
             <kie:width>50</kie:width>
-            <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
@@ -109,6 +75,19 @@
         <dc:Bounds x="565" y="184" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_826483A0-56A1-4A57-851D-96D060B8DC4D" dmnElementRef="_826483A0-56A1-4A57-851D-96D060B8DC4D" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="565" y="373" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_2F7BA1FC-344E-4C69-9DA7-54429213451C" dmnElementRef="_2F7BA1FC-344E-4C69-9DA7-54429213451C">
+        <di:waypoint x="615" y="398"/>
+        <di:waypoint x="615" y="234"/>
+      </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
 </dmn:definitions>

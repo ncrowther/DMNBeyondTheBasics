@@ -112,9 +112,9 @@
       <dmn:text>DS2.SurfaceDS(planetInfo.surface)</dmn:text>
     </dmn:literalExpression>
   </dmn:decision>
-  <dmn:decision id="_16E69BE3-A918-46D0-9BE7-69CCE650E2B3" name="Atmpsphere">
+  <dmn:decision id="_16E69BE3-A918-46D0-9BE7-69CCE650E2B3" name="Atmosphere">
     <dmn:extensionElements/>
-    <dmn:variable id="_AA2B47C0-3AEC-4137-BC13-B65C63181F3C" name="Atmpsphere"/>
+    <dmn:variable id="_AA2B47C0-3AEC-4137-BC13-B65C63181F3C" name="Atmosphere"/>
     <dmn:informationRequirement id="_17A87DD4-DEBB-428F-9A23-8BA071FD8E3D">
       <dmn:requiredInput href="#_C7E3BC33-E49D-48B9-BF42-08C64A4F3A2D"/>
     </dmn:informationRequirement>

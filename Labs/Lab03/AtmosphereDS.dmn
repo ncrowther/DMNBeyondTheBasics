@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/Atmosphere" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="AtmosphereDS" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/Atmosphere">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/Atmosphere" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:included1="https://kiegroup.org/dmn/Habitability01" id="_D22C5EC8-4E20-46AD-A8F0-5909A7F4A319" name="AtmosphereDS" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/Atmosphere">
   <dmn:extensionElements/>
-  <dmn:itemDefinition id="_2FEE7134-DD01-495C-B23E-E0DA1A7AD226" name="Atmosphere" isCollection="false">
-    <dmn:itemComponent id="_B8C8CEA8-2AC1-44B5-9691-7B5EFA49B80D" name="oxygen" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_D82487F1-EA54-4756-AE92-F4A4B8A169DC" name="methane" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_AE112632-248D-41BB-9F16-A64FF1B65AC2" name="carbonDioxide" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
-  <dmn:itemDefinition id="_CB3EC2AB-ECD8-4799-9660-9EAD4FBF6358" name="Surface" isCollection="false">
-    <dmn:itemComponent id="_63F98493-74C8-4486-A60E-4B3A6318F399" name="temperature" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_5D920903-75A8-4596-9036-2719A1FA4394" name="pressure" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_D98E063E-9944-4609-8EE8-FC3FC79AEA0F" name="gravity" isCollection="false">
-      <dmn:typeRef>number</dmn:typeRef>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
-  <dmn:itemDefinition id="_4B053B30-ECFC-4D96-AE19-2735EF8C9514" name="PlanetInfo" isCollection="false">
-    <dmn:itemComponent id="_04EFBAEA-50F3-4D95-8CF2-7C36A9879890" name="surface" isCollection="false">
-      <dmn:typeRef>Surface</dmn:typeRef>
-    </dmn:itemComponent>
-    <dmn:itemComponent id="_740BAFD5-65B9-42D4-9D24-00D449C6363A" name="atmosphere" isCollection="false">
-      <dmn:typeRef>Atmosphere</dmn:typeRef>
-    </dmn:itemComponent>
-  </dmn:itemDefinition>
+  <dmn:import id="_24BB1E5A-04C4-4A46-B693-D8DF622BCF2E" name="PlanetDataType" namespace="https://kiegroup.org/dmn/Habitability01" locationURI="PlanetDataType.dmn" importType="http://www.omg.org/spec/DMN/20180521/MODEL/"/>
   <dmn:decisionService id="_BF054A6C-11AD-43CD-B885-C0E26BE53BEF" name="AtmosphereDS">
     <dmn:extensionElements/>
     <dmn:variable id="_31CAB0AD-F412-43E6-9EE1-3287ECFAA963" name="AtmosphereDS" typeRef="string"/>
@@ -295,7 +266,7 @@
   </dmn:decision>
   <dmn:inputData id="_E30BDA4C-4B2E-4AB2-BE9A-C2FF579871BE" name="atmosphericData">
     <dmn:extensionElements/>
-    <dmn:variable id="_C4E17E0D-0AFC-4379-BB8C-733D01E09950" name="atmosphericData" typeRef="Atmosphere"/>
+    <dmn:variable id="_C4E17E0D-0AFC-4379-BB8C-733D01E09950" name="atmosphericData" typeRef="PlanetDataType.Atmosphere"/>
   </dmn:inputData>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram id="_29F4A98A-07F6-46C3-BB7E-007BB02F7B94" name="DRG">

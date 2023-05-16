@@ -1,0 +1,42 @@
+{
+    "Flight List": [
+      {
+        "Flight Number": "BA001",
+        "From": "LHR",
+        "To": "LAX",
+        "Departure": "2023-05-16T13:54:39.329Z",
+        "Arrival": "2023-05-16T13:54:39.329Z",
+        "Capacity": 100,
+        "Status": "cancelled"
+      },
+      {
+        "Flight Number": "BA002",
+        "From": "LHR",
+        "To": "LAX",
+        "Departure": "2023-05-17T13:54:39.329Z",
+        "Arrival": "2023-05-17T13:54:39.329Z",
+        "Capacity": 2,
+        "Status": "scheduled"
+      }
+    ],
+    "Passenger List": [
+      {
+        "Name": "Fred Bloggs",
+        "Status": "bronze",
+        "Miles": 0,
+        "Flight Number": "BA001"
+      },
+      {
+        "Name": "Fred Bloggs",
+        "Status": "bronze",
+        "Miles": 1000,
+        "Flight Number": "BA001"
+      },
+      {
+        "Name": "Mary Scott",
+        "Status": "gold",
+        "Miles": 10000,
+        "Flight Number": "BA001"
+      }
+    ]
+  }

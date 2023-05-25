@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/Flight-rebooking" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_0019_flight_rebooking" name="0019-flight-rebooking" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/Flight-rebooking">
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://www.drools.org/kie-dmn/PassengerPriority" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_0019_flight_rebooking" name="Lab06-PassengerPriority" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://www.drools.org/kie-dmn/PassengerPriority">
   <dmn:extensionElements/>
   <dmn:itemDefinition id="_tPassengerTable" name="CardStatusList" isCollection="true">
     <dmn:typeRef>string</dmn:typeRef>
@@ -164,7 +164,7 @@
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
-      <dmndi:DMNShape id="dmnshape-drg-i_Passenger_List" dmnElementRef="i_Passenger_List" isCollapsed="false">
+      <dmndi:DMNShape xmlns:p0="https://www.drools.org/kie-dmn/Flight-rebooking" id="dmnshape-drg-i_Passenger_List" dmnElementRef="p0:i_Passenger_List" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -173,7 +173,7 @@
         <dc:Bounds x="221" y="409" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-d_PrioritizedWaitingList" dmnElementRef="d_PrioritizedWaitingList" isCollapsed="false">
+      <dmndi:DMNShape xmlns:p1="https://www.drools.org/kie-dmn/Flight-rebooking" id="dmnshape-drg-d_PrioritizedWaitingList" dmnElementRef="p1:d_PrioritizedWaitingList" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -182,7 +182,7 @@
         <dc:Bounds x="313" y="258" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNShape id="dmnshape-drg-b_PassengerPriority" dmnElementRef="b_PassengerPriority" isCollapsed="false">
+      <dmndi:DMNShape xmlns:p2="https://www.drools.org/kie-dmn/Flight-rebooking" id="dmnshape-drg-b_PassengerPriority" dmnElementRef="p2:b_PassengerPriority" isCollapsed="false">
         <dmndi:DMNStyle>
           <dmndi:FillColor red="255" green="255" blue="255"/>
           <dmndi:StrokeColor red="0" green="0" blue="0"/>
@@ -191,11 +191,11 @@
         <dc:Bounds x="400" y="400" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="dmnedge-drg-_E0951376-FA59-4FA8-AC18-2C6CC3A3F553" dmnElementRef="_E0951376-FA59-4FA8-AC18-2C6CC3A3F553">
+      <dmndi:DMNEdge xmlns:p3="https://www.drools.org/kie-dmn/Flight-rebooking" id="dmnedge-drg-_E0951376-FA59-4FA8-AC18-2C6CC3A3F553" dmnElementRef="p3:_E0951376-FA59-4FA8-AC18-2C6CC3A3F553">
         <di:waypoint x="271" y="434"/>
         <di:waypoint x="363" y="283"/>
       </dmndi:DMNEdge>
-      <dmndi:DMNEdge id="dmnedge-drg-_D20C573C-395E-4E47-B387-95A00B4486DD" dmnElementRef="_D20C573C-395E-4E47-B387-95A00B4486DD">
+      <dmndi:DMNEdge xmlns:p4="https://www.drools.org/kie-dmn/Flight-rebooking" id="dmnedge-drg-_D20C573C-395E-4E47-B387-95A00B4486DD" dmnElementRef="p4:_D20C573C-395E-4E47-B387-95A00B4486DD">
         <di:waypoint x="450" y="425"/>
         <di:waypoint x="363" y="283"/>
       </dmndi:DMNEdge>
